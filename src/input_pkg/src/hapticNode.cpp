@@ -117,7 +117,7 @@ void HapticNode::commThread()
   int server_socket;
   server_socket = socket(PF_INET, SOCK_STREAM, 0); // create socket by using 'socket()'
   if (server_socket == -1)
-    printf("socket() error");
+    printf("socket() error... end");
   else
   {
     printf("socket() init OK\n");
