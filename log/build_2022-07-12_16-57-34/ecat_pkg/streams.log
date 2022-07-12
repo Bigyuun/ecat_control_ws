@@ -1,0 +1,75 @@
+[0.026s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg
+[0.071s] -- The C compiler identification is GNU 9.4.0
+[0.122s] -- The CXX compiler identification is GNU 9.4.0
+[0.127s] -- Check for working C compiler: /usr/bin/cc
+[0.188s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.189s] -- Detecting C compiler ABI info
+[0.249s] -- Detecting C compiler ABI info - done
+[0.261s] -- Detecting C compile features
+[0.261s] -- Detecting C compile features - done
+[0.263s] -- Check for working CXX compiler: /usr/bin/c++
+[0.329s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.330s] -- Detecting CXX compiler ABI info
+[0.398s] -- Detecting CXX compiler ABI info - done
+[0.412s] -- Detecting CXX compile features
+[0.412s] -- Detecting CXX compile features - done
+[0.415s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.440s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.441s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.621s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.648s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.696s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.701s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.781s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.811s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.879s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.927s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.929s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.929s] -- Looking for pthread.h
+[0.994s] -- Looking for pthread.h - found
+[0.994s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.059s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.059s] -- Looking for pthread_create in pthreads
+[1.113s] -- Looking for pthread_create in pthreads - not found
+[1.113s] -- Looking for pthread_create in pthread
+[1.168s] -- Looking for pthread_create in pthread - found
+[1.169s] -- Found Threads: TRUE  
+[1.281s] -- Found rclcpp_lifecycle: 2.4.1 (/opt/ros/foxy/share/rclcpp_lifecycle/cmake)
+[1.304s] -- Found rttest: 0.9.0 (/opt/ros/foxy/share/rttest/cmake)
+[1.307s] -- Found tlsf_cpp: 0.9.0 (/opt/ros/foxy/share/tlsf_cpp/cmake)
+[1.310s] -- Found ecat_msgs: 0.0.1 (/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/cmake)
+[1.343s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[1.489s] -- Configuring done
+[1.501s] -- Generating done
+[1.502s] -- Build files have been written to: /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg
+[1.511s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg
+[1.513s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j8 -l8
+[1.551s] [35m[1mScanning dependencies of target ecat_node[0m
+[1.625s] [ 16%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/main.cpp.o[0m
+[1.626s] [ 33%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/ecat_node.cpp.o[0m
+[1.627s] [ 50%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/ecat_slave.cpp.o[0m
+[1.630s] [ 66%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/timing.cpp.o[0m
+[1.638s] [ 83%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o[0m
+[13.841s] [100%] [32m[1mLinking CXX executable ecat_node[0m
+[14.212s] [100%] Built target ecat_node
+[14.222s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j8 -l8
+[14.252s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg
+[14.260s] -- Install configuration: ""
+[14.260s] -- Execute custom install script
+[14.260s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib/ecat_pkg/ecat_node
+[14.269s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ament_index/resource_index/package_run_dependencies/ecat_pkg
+[14.278s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ament_index/resource_index/parent_prefix_path/ecat_pkg
+[14.287s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/ament_prefix_path.sh
+[14.295s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/ament_prefix_path.dsv
+[14.303s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/path.sh
+[14.312s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/path.dsv
+[14.321s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.bash
+[14.329s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.sh
+[14.338s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.zsh
+[14.346s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.dsv
+[14.355s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.dsv
+[14.363s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ament_index/resource_index/packages/ecat_pkg
+[14.372s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/cmake/ecat_pkgConfig.cmake
+[14.381s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/cmake/ecat_pkgConfig-version.cmake
+[14.390s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.xml
+[14.402s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg

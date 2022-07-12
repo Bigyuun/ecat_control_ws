@@ -1,0 +1,9 @@
+{
+  "package_name": "ecat_msgs",
+  "non_idl_tuples": [
+    "/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs:msg/DataReceived.msg",
+    "/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs:msg/DataSent.msg",
+    "/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs:msg/GuiButtonData.msg",
+    "/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs:msg/HapticCmd.msg"
+  ]
+}

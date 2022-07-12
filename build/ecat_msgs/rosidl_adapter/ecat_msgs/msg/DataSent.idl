@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ecat_msgs/msg/DataSent.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module ecat_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      " The timestamp is the time at which data is sent .")
+    struct DataSent {
+      std_msgs::msg::Header header;
+
+      sequence<int32> target_pos;
+
+      sequence<int32> target_vel;
+
+      sequence<int16> target_tor;
+
+      sequence<uint16> control_word;
+
+      uint8 op_mode;
+
+      int32 vel_offset;
+
+      int16 tor_offset;
+    };
+  };
+};

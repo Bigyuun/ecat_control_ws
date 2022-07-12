@@ -1,0 +1,4 @@
+source;share/safety_pkg/local_setup.bash
+source;share/safety_pkg/local_setup.dsv
+source;share/safety_pkg/local_setup.sh
+source;share/safety_pkg/local_setup.zsh

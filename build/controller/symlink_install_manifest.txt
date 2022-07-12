@@ -1,0 +1,16 @@
+/home/daeyun/Desktop/ecat_control_ws/install/controller/lib/controller/joy_node
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/package_run_dependencies/controller
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/parent_prefix_path/controller
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/ament_prefix_path.sh
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/ament_prefix_path.dsv
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/path.sh
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/path.dsv
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.bash
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.sh
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.zsh
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.dsv
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.dsv
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/packages/controller
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/cmake/controllerConfig.cmake
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/cmake/controllerConfig-version.cmake
+/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.xml
