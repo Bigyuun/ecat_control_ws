@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_endoscope_viewer.cpp
-../../../../src/gui_pkg/include/gui_pkg/endoscope_viewer.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/endoscope_viewer.hpp
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_gui_globals.cpp
-
-/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_gui_node.cpp
-
 /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_main_window.cpp
 ../../../../src/gui_pkg/include/gui_pkg/main_window.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/main_window.hpp
@@ -25,18 +13,6 @@ QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
-
-/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_timing.cpp
-
-/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_video_capture.cpp
-../../../../src/gui_pkg/include/gui_pkg/video_capture.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/video_capture.hpp
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/qrc_resources.cpp
 
 /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/data_received.hpp
 ecat_msgs/msg/detail/data_received__struct.hpp
@@ -362,10 +338,6 @@ opencv2/core/core.hpp
 gui_globals.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/gui_globals.hpp
 
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/endoscope_viewer.cpp
-../include/gui_pkg/endoscope_viewer.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/endoscope_viewer.hpp
-
 /home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp
 ../include/gui_pkg/gui_node.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/gui_node.hpp
@@ -381,16 +353,6 @@ QApplication
 /home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp
 ../include/gui_pkg/main_window.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/main_window.hpp
-
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/timing.cpp
-../include/gui_pkg/timing.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/timing.hpp
-
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/video_capture.cpp
-../include/gui_pkg/video_capture.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/include/gui_pkg/video_capture.hpp
-QDebug
--
 
 /opt/etherlab/include/ecrt.h
 asm/byteorder.h
@@ -5713,10 +5675,6 @@ opencv2/viz/viz3d.hpp
 /usr/include/opencv4/opencv2/viz/widgets.hpp
 opencv2/viz/types.hpp
 -
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug
-qdebug.h
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
 qstring.h

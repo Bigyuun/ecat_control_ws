@@ -1,0 +1,53 @@
+[0.028s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j8 -l8
+[0.086s] [ 16%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o[0m
+[1.222s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:[m[K In constructor ‘[01m[KEthercatLifeCycleNode::EthercatLifeCycle::EthercatLifeCycle()[m[K’:
+[1.222s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:29:5:[m[K [01;31m[Kerror: [m[K‘[01m[Khaptic_subscriber_[m[K’ was not declared in this scope; did you mean ‘[01m[Kjoystick_subscriber_[m[K’?
+[1.222s]    29 |     [01;31m[Khaptic_subscriber_[m[K= this->create_subscription<ecat_msgs::msg::HapticCmd>("HapticInput",qos,
+[1.222s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[1.222s]       |     [32m[Kjoystick_subscriber_[m[K
+[1.222s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:29:67:[m[K [01;31m[Kerror: [m[K‘[01m[KHapticCmd[m[K’ is not a member of ‘[01m[Kecat_msgs::msg[m[K’
+[1.222s]    29 |     haptic_subscriber_= this->create_subscription<ecat_msgs::msg::[01;31m[KHapticCmd[m[K>("HapticInput",qos,
+[1.222s]       |                                                                   [01;31m[K^~~~~~~~~[m[K
+[1.222s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:29:67:[m[K [01;31m[Kerror: [m[K‘[01m[KHapticCmd[m[K’ is not a member of ‘[01m[Kecat_msgs::msg[m[K’
+[1.227s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:30:118:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KEthercatLifeCycleNode::EthercatLifeCycle::create_subscription<<expression error> >(const char [12], rclcpp::QoS&, std::_Bind_helper<false, void (EthercatLifeCycleNode::EthercatLifeCycle::*)(std::shared_ptr<sensor_msgs::msg::Joy_<std::allocator<void> > >), EthercatLifeCycleNode::EthercatLifeCycle*, const std::_Placeholder<1>&>::type)[m[K’
+[1.227s]    30 |                                 std::bind(&EthercatLifeCycle::HandleControlNodeCallbacks, this,std::placeholders::_1)[01;31m[K)[m[K;
+[1.227s]       |                                                                                                                      [01;31m[K^[m[K
+[1.227s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_lifecycle.hpp:40[m[K,
+[1.227s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:1[m[K:
+[1.227s] [01m[K/opt/ros/foxy/include/rclcpp_lifecycle/lifecycle_node.hpp:230:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp_lifecycle::LifecycleNode::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[1.227s]   230 |   [01;36m[Kcreate_subscription[m[K(
+[1.227s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.227s] [01m[K/opt/ros/foxy/include/rclcpp_lifecycle/lifecycle_node.hpp:230:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[1.228s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:30:118:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.228s]    30 |                                 std::bind(&EthercatLifeCycle::HandleControlNodeCallbacks, this,std::placeholders::_1)[01;31m[K)[m[K;
+[1.228s]       |                                                                                                                      [01;31m[K^[m[K
+[1.235s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:[m[K At global scope:
+[1.235s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:189:74:[m[K [01;31m[Kerror: [m[K‘[01m[KHapticCmd[m[K’ in namespace ‘[01m[Kecat_msgs::msg[m[K’ does not name a type
+[1.235s]   189 | void EthercatLifeCycle::HandleControlNodeCallbacks(const ecat_msgs::msg::[01;31m[KHapticCmd[m[K::SharedPtr msg)
+[1.235s]       |                                                                          [01;31m[K^~~~~~~~~[m[K
+[1.236s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:189:95:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kmsg[m[K’
+[1.236s]   189 | void EthercatLifeCycle::HandleControlNodeCallbacks(const ecat_msgs::msg::HapticCmd::SharedPtr [01;31m[Kmsg[m[K)
+[1.236s]       |                                                                                               [01;31m[K^~~[m[K
+[1.236s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:189:94:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kmsg[m[K’
+[1.236s]   189 | void EthercatLifeCycle::HandleControlNodeCallbacks[34m[K([m[Kconst ecat_msgs::msg::HapticCmd::SharedPtr[01;31m[K [m[K[32m[Kmsg[m[K)
+[1.236s]       |                                                   [34m[K~[m[K                                          [01;31m[K^[m[K[32m[K~~~[m[K
+[1.236s]       |                                                                                              [32m[K)[m[K
+[1.236s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:189:95:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[Kmsg[m[K’
+[1.236s]   189 | void EthercatLifeCycle::HandleControlNodeCallbacks(const ecat_msgs::msg::HapticCmd::SharedPtr [01;31m[Kmsg[m[K)
+[1.236s]       |                                                                                               [01;31m[K^~~[m[K
+[1.396s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:[m[K In member function ‘[01m[Kvoid EthercatLifeCycleNode::EthercatLifeCycle::UpdateCyclicVelocityModeParameters()[m[K’:
+[1.396s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:1363:40:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_[m[K’ was not declared in this scope
+[1.396s]  1363 |             sent_data_.target_vel[0] = [01;31m[Ktarget_[m[K[0];
+[1.396s]       |                                        [01;31m[K^~~~~~~[m[K
+[1.398s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:[m[K In member function ‘[01m[Kvoid EthercatLifeCycleNode::EthercatLifeCycle::UpdateVelocityModeParameters()[m[K’:
+[1.398s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:1467:40:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_[m[K’ was not declared in this scope
+[1.398s]  1467 |             sent_data_.target_vel[0] = [01;31m[Ktarget_[m[K[0];
+[1.398s]       |                                        [01;31m[K^~~~~~~[m[K
+[1.400s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:[m[K In member function ‘[01m[Kvoid EthercatLifeCycleNode::EthercatLifeCycle::UpdateCyclicTorqueModeParameters()[m[K’:
+[1.400s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.cpp:1611:40:[m[K [01;31m[Kerror: [m[K‘[01m[Ktarget_[m[K’ was not declared in this scope
+[1.400s]  1611 |             sent_data_.target_tor[0] = [01;31m[Ktarget_[m[K[0];
+[1.400s]       |                                        [01;31m[K^~~~~~~[m[K
+[2.412s] make[2]: *** [CMakeFiles/ecat_node.dir/build.make:102: CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o] Error 1
+[2.412s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/ecat_node.dir/all] Error 2
+[2.412s] make: *** [Makefile:141: all] Error 2
+[2.416s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '2': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j8 -l8

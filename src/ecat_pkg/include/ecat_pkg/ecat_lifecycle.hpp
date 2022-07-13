@@ -46,6 +46,8 @@
 #include "ecat_msgs/msg/data_received.hpp"
 #include "ecat_msgs/msg/data_sent.hpp"
 /******************************************************************************/
+#include "ecat_msgs/msg/haptic_cmd.hpp"   // CKim - Header for custom message
+/******************************************************************************/
 #include <rclcpp/strategies/message_pool_memory_strategy.hpp>   // /// Completely static memory allocation strategy for messages.
 #include <rclcpp/strategies/allocator_memory_strategy.hpp>
 /// Delegate for handling memory allocations while the Executor is executing.
@@ -130,6 +132,8 @@ class EthercatLifeCycle : public LifecycleNode
         LifecyclePublisher<ecat_msgs::msg::DataSent>::SharedPtr     sent_data_publisher_;
         /// This subscriber  will be used to receive data from controller node.
         rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr         joystick_subscriber_;
+        rclcpp::Subscription<ecat_msgs::msg::HapticCmd>::SharedPtr         haptic_subscriber_;
+        
         rclcpp::Subscription<ecat_msgs::msg::GuiButtonData>::SharedPtr  gui_subscriber_;
 
         
@@ -142,7 +146,7 @@ class EthercatLifeCycle : public LifecycleNode
         * @brief This function handles callbacks from control node.
         *        It will update received values from controller node.
         */
-        void HandleControlNodeCallbacks(const sensor_msgs::msg::Joy::SharedPtr msg);
+        void HandleControlNodeCallbacks(const ecat_msgs::msg::HapticCmd::SharedPtr msg);
 
         /**
          * @brief Sets Ethercat communication thread's properties 
@@ -343,6 +347,7 @@ class EthercatLifeCycle : public LifecycleNode
         uint8_t emergency_status_ = 1 ;
         // Will be used as a parameter for taking timing measurements.
         std::int32_t measurement_time = 0 ; 
-        Timing timer_info_ ; 
+        Timing timer_info_ ;
+        double target_[7] = {};
 };
 }

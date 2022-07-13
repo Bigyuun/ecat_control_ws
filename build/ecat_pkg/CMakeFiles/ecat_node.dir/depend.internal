@@ -13,7 +13,11 @@ CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__builder.hpp
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__struct.hpp
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__traits.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__builder.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__traits.hpp
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/gui_button_data.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/haptic_cmd.hpp
  /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_definitions.hpp
  /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_globals.hpp
  /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_lifecycle.hpp
@@ -634,7 +638,11 @@ CMakeFiles/ecat_node.dir/src/main.cpp.o
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__builder.hpp
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__struct.hpp
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__traits.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__builder.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__traits.hpp
  /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/gui_button_data.hpp
+ /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/haptic_cmd.hpp
  /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_definitions.hpp
  /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_globals.hpp
  /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_lifecycle.hpp

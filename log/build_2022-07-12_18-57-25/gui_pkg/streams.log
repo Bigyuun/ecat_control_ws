@@ -1,0 +1,88 @@
+[0.032s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg -- -j8 -l8
+[0.082s] [35m[1mScanning dependencies of target gui_node[0m
+[0.214s] [  4%] [32mBuilding CXX object CMakeFiles/gui_node.dir/src/main_window.cpp.o[0m
+[0.224s] [  8%] [32mBuilding CXX object CMakeFiles/gui_node.dir/src/main.cpp.o[0m
+[0.237s] [ 12%] [32mBuilding CXX object CMakeFiles/gui_node.dir/src/gui_node.cpp.o[0m
+[0.238s] [ 16%] [32mBuilding CXX object CMakeFiles/gui_node.dir/include/gui_pkg/moc_main_window.cpp.o[0m
+[2.396s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:[m[K In constructor ‘[01m[KGUI::GuiNode::GuiNode()[m[K’:
+[2.396s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:11:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.396s]    11 |     for(int i = 0; [01;35m[Ki < g_kNumberOfServoDrivers[m[K; i++)
+[2.396s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.448s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:[m[K In member function ‘[01m[Kvoid GUI::GuiNode::HandleControllerCallbacks(sensor_msgs::msg::Joy_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.449s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:47:82:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[2.449s]    47 |   void GuiNode::HandleControllerCallbacks([01;35m[Kconst sensor_msgs::msg::Joy::SharedPtr msg[m[K)
+[2.449s]       |                                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[2.454s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:[m[K In member function ‘[01m[Kvoid GUI::GuiNode::HandleMasterCommandCallbacks(ecat_msgs::msg::DataSent_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.454s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:59:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.454s]    59 |       for(int i=0; [01;35m[Ki < g_kNumberOfServoDrivers[m[K ; i++){
+[2.455s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.457s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:[m[K In member function ‘[01m[Kvoid GUI::GuiNode::HandleSlaveFeedbackCallbacks(ecat_msgs::msg::DataReceived_<std::allocator<void> >::SharedPtr)[m[K’:
+[2.457s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:70:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.458s]    70 |       for(int i=0; [01;35m[Ki < g_kNumberOfServoDrivers[m[K ; i++){
+[2.458s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.601s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:[m[K In member function ‘[01m[Kvoid MainWindow::on_b_send_clicked()[m[K’:
+[4.601s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:203:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[4.601s]   203 |     for(int i = 0 ; [01;35m[Ki < g_kNumberOfServoDrivers[m[K; i++){
+[4.602s]       |                     [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.609s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:[m[K In member function ‘[01m[Kvoid MainWindow::ShowAllMotorStatus()[m[K’:
+[4.609s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:405:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[4.609s]   405 |     for(int i = 0; [01;35m[Ki < g_kNumberOfServoDrivers[m[K ;i++){
+[4.609s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.617s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:[m[K In member function ‘[01m[Kvoid MainWindow::ShowOperationMode()[m[K’:
+[4.618s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:596:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[4.618s]   596 |     for(int i = 0; [01;35m[Ki < g_kNumberOfServoDrivers[m[K ; i++){
+[4.618s]       |                    [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.469s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/../../../../src/gui_pkg/include/gui_pkg/gui_node.hpp:50[m[K,
+[5.469s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/../../../../src/gui_pkg/include/gui_pkg/main_window.hpp:48[m[K,
+[5.469s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_main_window.cpp:9[m[K:
+[5.469s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:49:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kg_kOperationMode[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[5.469s]    49 | static int8_t   [01;35m[Kg_kOperationMode[m[K = kProfileVelocity ;  // Velocity mode - slave
+[5.469s]       |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.469s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:42[m[K,
+[5.469s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/../../../../src/gui_pkg/include/gui_pkg/gui_node.hpp:50[m[K,
+[5.469s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/../../../../src/gui_pkg/include/gui_pkg/main_window.hpp:48[m[K,
+[5.469s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg/include/gui_pkg/moc_main_window.cpp:9[m[K:
+[5.469s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_definitions.hpp:502:20:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::string GetErrorMessage(const int&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[5.469s]   502 | static std::string [01;35m[KGetErrorMessage[m[K(const int& err_code)
+[5.469s]       |                    [01;35m[K^~~~~~~~~~~~~~~[m[K
+[5.796s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/gui_node.hpp:50[m[K,
+[5.796s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/main_window.hpp:48[m[K,
+[5.796s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:1[m[K:
+[5.796s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:[m[K At global scope:
+[5.796s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:49:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kg_kOperationMode[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[5.796s]    49 | static int8_t   [01;35m[Kg_kOperationMode[m[K = kProfileVelocity ;  // Velocity mode - slave
+[5.796s]       |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[5.796s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:42[m[K,
+[5.796s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/gui_node.hpp:50[m[K,
+[5.796s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/main_window.hpp:48[m[K,
+[5.796s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main_window.cpp:1[m[K:
+[5.796s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_definitions.hpp:502:20:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::string GetErrorMessage(const int&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[5.796s]   502 | static std::string [01;35m[KGetErrorMessage[m[K(const int& err_code)
+[5.796s]       |                    [01;35m[K^~~~~~~~~~~~~~~[m[K
+[6.111s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/gui_node.hpp:50[m[K,
+[6.111s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:1[m[K:
+[6.111s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:[m[K At global scope:
+[6.111s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:49:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kg_kOperationMode[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[6.111s]    49 | static int8_t   [01;35m[Kg_kOperationMode[m[K = kProfileVelocity ;  // Velocity mode - slave
+[6.111s]       |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[6.111s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:42[m[K,
+[6.111s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/gui_node.hpp:50[m[K,
+[6.112s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/gui_node.cpp:1[m[K:
+[6.112s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_definitions.hpp:502:20:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::string GetErrorMessage(const int&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[6.112s]   502 | static std::string [01;35m[KGetErrorMessage[m[K(const int& err_code)
+[6.112s]       |                    [01;35m[K^~~~~~~~~~~~~~~[m[K
+[6.112s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/gui_node.hpp:50[m[K,
+[6.112s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/main_window.hpp:48[m[K,
+[6.112s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main.cpp:2[m[K:
+[6.112s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:49:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kg_kOperationMode[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[6.112s]    49 | static int8_t   [01;35m[Kg_kOperationMode[m[K = kProfileVelocity ;  // Velocity mode - slave
+[6.112s]       |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[6.112s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:42[m[K,
+[6.112s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/gui_node.hpp:50[m[K,
+[6.112s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/../include/gui_pkg/main_window.hpp:48[m[K,
+[6.113s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/src/main.cpp:2[m[K:
+[6.113s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg/../ecat_pkg/include/ecat_pkg/ecat_definitions.hpp:502:20:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::string GetErrorMessage(const int&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[6.113s]   502 | static std::string [01;35m[KGetErrorMessage[m[K(const int& err_code)
+[6.113s]       |                    [01;35m[K^~~~~~~~~~~~~~~[m[K
+[9.446s] [ 20%] [32m[1mLinking CXX executable gui_node[0m
+[10.796s] [100%] Built target gui_node

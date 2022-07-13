@@ -1,0 +1,59 @@
+[0.029s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
+[0.065s] [35m[1mScanning dependencies of target hapticNode[0m
+[0.104s] [ 50%] [32mBuilding CXX object CMakeFiles/hapticNode.dir/src/hapticNode.cpp.o[0m
+[2.615s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In constructor ‘[01m[KHapticNode::HapticNode(char**)[m[K’:
+[2.615s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:51:31:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[2.615s]    51 | HapticNode::HapticNode([01;35m[Kchar * argv[][m[K) : rclcpp::Node("HapticNode")
+[2.615s]       |                        [01;35m[K~~~~~~~^~~~~~[m[K
+[2.634s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::commThread()[m[K’:
+[2.634s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:191:22:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kstatus[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+[2.634s]   191 |   std::future_status [01;35m[Kstatus[m[K;
+[2.634s]       |                      [01;35m[K^~~~~~[m[K
+[2.635s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:194:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcount[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.635s]   194 |   static int [01;35m[Kcount[m[K = 0;
+[2.635s]       |              [01;35m[K^~~~~[m[K
+[2.637s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::commWriteThread(int)[m[K’:
+[2.637s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:227:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdata_size[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.637s]   227 |     int [01;35m[Kdata_size[m[K = TCP_BUFFER_SIZE;
+[2.637s]       |         [01;35m[K^~~~~~~~~[m[K
+[2.637s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:231:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktimestamp[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.637s]   231 |     double [01;35m[Ktimestamp[m[K = 0;
+[2.638s]       |            [01;35m[K^~~~~~~~~[m[K
+[2.638s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:232:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_q[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.638s]   232 |     double [01;35m[Ktarget_q[m[K[7] = {0};
+[2.638s]       |            [01;35m[K^~~~~~~~[m[K
+[2.638s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:233:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_qd[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.638s]   233 |     double [01;35m[Ktarget_qd[m[K[7] = {0};
+[2.639s]       |            [01;35m[K^~~~~~~~~[m[K
+[2.639s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:234:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_qdd[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.639s]   234 |     double [01;35m[Ktarget_qdd[m[K[7] = {0};
+[2.639s]       |            [01;35m[K^~~~~~~~~~[m[K
+[2.639s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:235:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_current[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.640s]   235 |     double [01;35m[Ktarget_current[m[K[7] = {0};
+[2.640s]       |            [01;35m[K^~~~~~~~~~~~~~[m[K
+[2.640s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:236:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_moment[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.640s]   236 |     double [01;35m[Ktarget_moment[m[K[7] = {0};
+[2.640s]       |            [01;35m[K^~~~~~~~~~~~~[m[K
+[2.641s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:222:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kqd_count[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.641s]   222 |   static int [01;35m[Kqd_count[m[K = 0;
+[2.641s]       |              [01;35m[K^~~~~~~~[m[K
+[2.643s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::commReadThread(int)[m[K’:
+[2.643s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:422:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.644s]   422 |     for(int i=0; [01;35m[Ki<motor_val.size()[m[K; i++)
+[2.644s]       |                  [01;35m[K~^~~~~~~~~~~~~~~~~[m[K
+[2.667s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::DoubleToIntByte(char*, double)[m[K’:
+[2.667s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:503:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Klong unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+[2.667s]   503 |     for(int i=0; [01;35m[Ki<sizeof(cnvt_double.data_char)[m[K; i++)
+[2.667s]       |                  [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.668s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:500:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbuf_data[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.668s]   500 |     char [01;35m[Kbuf_data[m[K[8];
+[2.668s]       |          [01;35m[K^~~~~~~~[m[K
+[4.845s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K At global scope:
+[4.845s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:222:14:[m[K [01;35m[Kwarning: [m[K‘[01m[Kqd_count[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[4.845s]   222 |   static int [01;35m[Kqd_count[m[K = 0;
+[4.845s]       |              [01;35m[K^~~~~~~~[m[K
+[4.846s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:194:14:[m[K [01;35m[Kwarning: [m[K‘[01m[Kcount[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[4.846s]   194 |   static int [01;35m[Kcount[m[K = 0;
+[4.846s]       |              [01;35m[K^~~~~[m[K
+[7.751s] [100%] [32m[1mLinking CXX executable hapticNode[0m
+[8.013s] [100%] Built target hapticNode

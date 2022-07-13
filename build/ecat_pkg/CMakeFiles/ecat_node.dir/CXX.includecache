@@ -142,6 +142,42 @@ type_traits
 std_msgs/msg/detail/header__traits.hpp
 /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/std_msgs/msg/detail/header__traits.hpp
 
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__builder.hpp
+ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+rosidl_runtime_cpp/message_initialization.hpp
+-
+algorithm
+-
+utility
+-
+
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+rosidl_runtime_cpp/bounded_vector.hpp
+-
+rosidl_runtime_cpp/message_initialization.hpp
+-
+algorithm
+-
+array
+-
+memory
+-
+string
+-
+vector
+-
+
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__traits.hpp
+ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+rosidl_runtime_cpp/traits.hpp
+-
+stdint.h
+-
+type_traits
+-
+
 /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/gui_button_data.hpp
 ecat_msgs/msg/detail/gui_button_data__struct.hpp
 /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/ecat_msgs/msg/detail/gui_button_data__struct.hpp
@@ -149,6 +185,14 @@ ecat_msgs/msg/detail/gui_button_data__builder.hpp
 /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/ecat_msgs/msg/detail/gui_button_data__builder.hpp
 ecat_msgs/msg/detail/gui_button_data__traits.hpp
 /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/ecat_msgs/msg/detail/gui_button_data__traits.hpp
+
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/haptic_cmd.hpp
+ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+ecat_msgs/msg/detail/haptic_cmd__builder.hpp
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/ecat_msgs/msg/detail/haptic_cmd__builder.hpp
+ecat_msgs/msg/detail/haptic_cmd__traits.hpp
+/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/ecat_msgs/msg/detail/haptic_cmd__traits.hpp
 
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_definitions.hpp
 iostream
@@ -213,6 +257,8 @@ ecat_msgs/msg/data_received.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_msgs/msg/data_received.hpp
 ecat_msgs/msg/data_sent.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_msgs/msg/data_sent.hpp
+ecat_msgs/msg/haptic_cmd.hpp
+/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_msgs/msg/haptic_cmd.hpp
 rclcpp/strategies/message_pool_memory_strategy.hpp
 -
 rclcpp/strategies/allocator_memory_strategy.hpp
@@ -266,14 +312,6 @@ iostream
 ecat_lifecycle.hpp
 -
 
-/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_node.cpp
-ecat_node.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_node.hpp
-
-/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_slave.cpp
-ecat_slave.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_slave.hpp
-
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/main.cpp
 rclcpp/rclcpp.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/rclcpp/rclcpp.hpp
@@ -281,10 +319,6 @@ ecat_node.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_node.hpp
 ecat_lifecycle.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_lifecycle.hpp
-
-/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/timing.cpp
-timing.hpp
-/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/timing.hpp
 
 /opt/etherlab/include/ecrt.h
 asm/byteorder.h

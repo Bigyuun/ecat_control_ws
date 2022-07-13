@@ -1,0 +1,10 @@
+[0.029s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/safety_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/safety_pkg -- -j8 -l8
+[0.066s] [35m[1mScanning dependencies of target safety_node[0m
+[0.114s] [ 50%] [32mBuilding CXX object CMakeFiles/safety_node.dir/src/safety_node.cpp.o[0m
+[5.280s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg/include/safety_pkg/safety_node.hpp:56[m[K,
+[5.280s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg/src/safety_node.cpp:1[m[K:
+[5.280s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:49:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kg_kOperationMode[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[5.281s]    49 | static int8_t   [01;35m[Kg_kOperationMode[m[K = kProfileVelocity ;  // Velocity mode - slave
+[5.281s]       |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[8.368s] [100%] [32m[1mLinking CXX executable safety_node[0m
+[9.135s] [100%] Built target safety_node

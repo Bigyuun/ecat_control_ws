@@ -12,7 +12,11 @@ CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_con
 CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__builder.hpp
 CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__struct.hpp
 CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__traits.hpp
+CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__builder.hpp
+CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__traits.hpp
 CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/gui_button_data.hpp
+CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/haptic_cmd.hpp
 CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_definitions.hpp
 CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_globals.hpp
 CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o: /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_lifecycle.hpp
@@ -633,7 +637,11 @@ CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/in
 CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__builder.hpp
 CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__struct.hpp
 CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/gui_button_data__traits.hpp
+CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__builder.hpp
+CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__struct.hpp
+CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/detail/haptic_cmd__traits.hpp
 CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/gui_button_data.hpp
+CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include/ecat_msgs/msg/haptic_cmd.hpp
 CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_definitions.hpp
 CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_globals.hpp
 CMakeFiles/ecat_node.dir/src/main.cpp.o: /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/include/ecat_pkg/ecat_lifecycle.hpp
