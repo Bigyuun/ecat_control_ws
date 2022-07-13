@@ -38,6 +38,7 @@ find_package(ecat_msgs REQUIRED)
 # CKim - Dependency for node generated file
 #find_package(input_pkg REQUIRED)
 include_directories("include/input_pkg/")
+include_directories("../ecat_pkg/include/")
 # link_directories("${CMAKE_BINARY_DIR}/my_lib/install/usr/local/lib")
 # **********************************************
 

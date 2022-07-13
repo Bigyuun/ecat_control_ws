@@ -132,7 +132,7 @@ void HapticNode::commThread()
   std::string serv_addr = "127.0.0.1 (local)";
   server_addr.sin_addr.s_addr = htonl(INADDR_ANY); // INADDR_ANY는 all client ip enable
   // std::string serv_addr = "192.168.5.1";
-  server_addr.sin_addr.s_addr = inet_addr(serv_addr.c_str()); 
+  //server_addr.sin_addr.s_addr = inet_addr(serv_addr.c_str()); 
   server_addr.sin_port = htons(atoi(m_Port.c_str())); // 프로그램당 포트 1개 사용
   // server_addr.sin_port = ntohs(atoi(m_Port.c_str())); // 프로그램당 포트 1개 사용
 
@@ -344,8 +344,8 @@ void HapticNode::commReadThread(int fd_client)
     // -------------- < Parsing Start > --------------
     // parsing part
     // 'Mode selection code' will be modified...
-    // std::string delim_mode = "speedj";
-    std::string delim_mode = "torquej";
+    std::string delim_mode = "speedj";
+    //std::string delim_mode = "torquej";
     std::string delim_start = "(";
     std::string delim_substart = "[";
     std::string delim_end = ")";

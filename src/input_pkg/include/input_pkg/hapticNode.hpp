@@ -29,6 +29,8 @@
 #include "ecat_msgs/msg/data_received.hpp"
 #include "ecat_msgs/msg/data_sent.hpp"
 
+// DY - for g_kNumberOfServoDrivers
+#include "ecat_globals.hpp"
 
 struct ReceivedData
 {
