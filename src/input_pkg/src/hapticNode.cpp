@@ -91,8 +91,6 @@ void HapticNode::HandleSlaveFeedbackCallbacks(const ecat_msgs::msg::DataReceived
     }
 
   
-
-  
   // RCLCPP_INFO(get_logger(),"%d", received_data_[0].actual_pos);
   
   }
