@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp" "/home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles/hapticNode.dir/src/TCPcomm.cpp.o"
   "/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp" "/home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles/hapticNode.dir/src/hapticNode.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -18,6 +19,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include/input_pkg"
+  "/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/../ecat_pkg/include/ecat_pkg"
+  "/opt/etherlab/include"
   "/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include"
   "/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/include"
   "/opt/ros/foxy/include"

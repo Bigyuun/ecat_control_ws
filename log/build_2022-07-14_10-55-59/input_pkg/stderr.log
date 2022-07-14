@@ -1,0 +1,54 @@
+In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:28[m[K:
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include/input_pkg/hapticNode.hpp:33:10:[m[K [01;31m[Kfatal error: [m[Kecat_globals.hpp: No such file or directory
+   33 | #include [01;31m[K"ecat_globals.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/hapticNode.dir/build.make:63: CMakeFiles/hapticNode.dir/src/hapticNode.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:[m[K In constructor ‘[01m[KTCPCommunication::TCPServer::TCPServer(int)[m[K’:
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:31:39:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Kssize_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K-Wformat=[m[K]
+   31 |     printf("Size of Buffer(server) = [01;35m[K%d[m[K\n", [32m[Kbuffer_size_[m[K);
+      |                                      [01;35m[K~^[m[K     [32m[K~~~~~~~~~~~~[m[K
+      |                                       [01;35m[K|[m[K     [32m[K|[m[K
+      |                                       [01;35m[Kint[m[K   [32m[Kssize_t {aka long int}[m[K
+      |                                      [32m[K%ld[m[K
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:[m[K In constructor ‘[01m[KTCPCommunication::TCPServer::TCPServer(int, int)[m[K’:
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:44:39:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Kssize_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K-Wformat=[m[K]
+   44 |     printf("Size of Buffer(server) = [01;35m[K%d[m[K\n", [32m[Kbuffer_size_[m[K);
+      |                                      [01;35m[K~^[m[K     [32m[K~~~~~~~~~~~~[m[K
+      |                                       [01;35m[K|[m[K     [32m[K|[m[K
+      |                                       [01;35m[Kint[m[K   [32m[Kssize_t {aka long int}[m[K
+      |                                      [32m[K%ld[m[K
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:[m[K In constructor ‘[01m[KTCPCommunication::TCPServer::TCPServer(int, int, int)[m[K’:
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:57:39:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Kssize_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K-Wformat=[m[K]
+   57 |     printf("Size of Buffer(server) = [01;35m[K%d[m[K\n", [32m[Kbuffer_size_[m[K);
+      |                                      [01;35m[K~^[m[K     [32m[K~~~~~~~~~~~~[m[K
+      |                                       [01;35m[K|[m[K     [32m[K|[m[K
+      |                                       [01;35m[Kint[m[K   [32m[Kssize_t {aka long int}[m[K
+      |                                      [32m[K%ld[m[K
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:[m[K In constructor ‘[01m[KTCPCommunication::TCPClient::TCPClient(const char*, int)[m[K’:
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:221:27:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar*[m[K’, but argument 2 has type ‘[01m[Kstd::string[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’} [[01;35m[K-Wformat=[m[K]
+  221 |     printf("IP address : [01;35m[K%s[m[K", IP_address_);
+      |                          [01;35m[K~^[m[K
+      |                           [01;35m[K|[m[K
+      |                           [01;35m[Kchar*[m[K
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:223:48:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Kssize_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K-Wformat=[m[K]
+  223 |     printf("Size of Buffer(client, DEFAULT) = [01;35m[K%d[m[K\n", [32m[Kbuffer_size_[m[K);
+      |                                               [01;35m[K~^[m[K     [32m[K~~~~~~~~~~~~[m[K
+      |                                                [01;35m[K|[m[K     [32m[K|[m[K
+      |                                                [01;35m[Kint[m[K   [32m[Kssize_t {aka long int}[m[K
+      |                                               [32m[K%ld[m[K
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:[m[K In constructor ‘[01m[KTCPCommunication::TCPClient::TCPClient(const char*, int, int)[m[K’:
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:234:27:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar*[m[K’, but argument 2 has type ‘[01m[Kstd::string[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’} [[01;35m[K-Wformat=[m[K]
+  234 |     printf("IP address : [01;35m[K%s[m[K", IP_address_);
+      |                          [01;35m[K~^[m[K
+      |                           [01;35m[K|[m[K
+      |                           [01;35m[Kchar*[m[K
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp:236:39:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 2 has type ‘[01m[Kssize_t[m[K’ {aka ‘[01m[Klong int[m[K’} [[01;35m[K-Wformat=[m[K]
+  236 |     printf("Size of Buffer(client) = [01;35m[K%d[m[K\n", [32m[Kbuffer_size_[m[K);
+      |                                      [01;35m[K~^[m[K     [32m[K~~~~~~~~~~~~[m[K
+      |                                       [01;35m[K|[m[K     [32m[K|[m[K
+      |                                       [01;35m[Kint[m[K   [32m[Kssize_t {aka long int}[m[K
+      |                                      [32m[K%ld[m[K
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/hapticNode.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

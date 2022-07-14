@@ -76,12 +76,12 @@ clean: CMakeFiles/uninstall.dir/clean
 CMakeFiles/hapticNode.dir/all:
 	$(MAKE) -f CMakeFiles/hapticNode.dir/build.make CMakeFiles/hapticNode.dir/depend
 	$(MAKE) -f CMakeFiles/hapticNode.dir/build.make CMakeFiles/hapticNode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles --progress-num=1,2 "Built target hapticNode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles --progress-num=1,2,3 "Built target hapticNode"
 .PHONY : CMakeFiles/hapticNode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hapticNode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hapticNode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles 0
 .PHONY : CMakeFiles/hapticNode.dir/rule

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hapticNode.dir/src/TCPcomm.cpp.o"
   "CMakeFiles/hapticNode.dir/src/hapticNode.cpp.o"
   "hapticNode"
   "hapticNode.pdb"

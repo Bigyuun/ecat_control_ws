@@ -1,0 +1,37 @@
+[0.028s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
+[0.058s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.086s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.253s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.266s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.302s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.306s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.411s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.455s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.457s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.556s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.633s] -- Found ecat_msgs: 0.0.1 (/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/cmake)
+[0.664s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.714s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.715s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.715s] -- Configured cppcheck include dirs: /home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include/input_pkg;/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/../ecat_pkg/include;$<BUILD_INTERFACE:/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include>
+[0.715s] -- Configured cppcheck exclude dirs and/or files: 
+[0.716s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.716s] -- Configured cpplint exclude dirs and/or files: 
+[0.717s] -- Added test 'lint_cmake' to check CMake code style
+[0.717s] -- Added test 'uncrustify' to check C / C++ code style
+[0.718s] -- Configured uncrustify additional arguments: 
+[0.718s] -- Added test 'xmllint' to check XML markup files
+[0.721s] -- Configuring done
+[0.728s] -- Generating done
+[0.729s] -- Build files have been written to: /home/daeyun/Desktop/ecat_control_ws/build/input_pkg
+[0.750s] [35m[1mScanning dependencies of target hapticNode[0m
+[0.780s] [ 50%] [32mBuilding CXX object CMakeFiles/hapticNode.dir/src/hapticNode.cpp.o[0m
+[0.900s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:28[m[K:
+[0.900s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include/input_pkg/hapticNode.hpp:33:10:[m[K [01;31m[Kfatal error: [m[Kecat_globals.hpp: No such file or directory
+[0.900s]    33 | #include [01;31m[K"ecat_globals.hpp"[m[K
+[0.900s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[0.900s] compilation terminated.
+[0.902s] make[2]: *** [CMakeFiles/hapticNode.dir/build.make:63: CMakeFiles/hapticNode.dir/src/hapticNode.cpp.o] Error 1
+[0.902s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/hapticNode.dir/all] Error 2
+[0.902s] make: *** [Makefile:141: all] Error 2
+[0.904s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '2': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8

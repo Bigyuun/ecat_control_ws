@@ -312,6 +312,14 @@ iostream
 ecat_lifecycle.hpp
 -
 
+/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_node.cpp
+ecat_node.hpp
+/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_node.hpp
+
+/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_slave.cpp
+ecat_slave.hpp
+/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/ecat_slave.hpp
+
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/main.cpp
 rclcpp/rclcpp.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg/src/rclcpp/rclcpp.hpp

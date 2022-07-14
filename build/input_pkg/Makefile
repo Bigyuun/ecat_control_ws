@@ -206,6 +206,33 @@ uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
+src/TCPcomm.o: src/TCPcomm.cpp.o
+
+.PHONY : src/TCPcomm.o
+
+# target to build an object file
+src/TCPcomm.cpp.o:
+	$(MAKE) -f CMakeFiles/hapticNode.dir/build.make CMakeFiles/hapticNode.dir/src/TCPcomm.cpp.o
+.PHONY : src/TCPcomm.cpp.o
+
+src/TCPcomm.i: src/TCPcomm.cpp.i
+
+.PHONY : src/TCPcomm.i
+
+# target to preprocess a source file
+src/TCPcomm.cpp.i:
+	$(MAKE) -f CMakeFiles/hapticNode.dir/build.make CMakeFiles/hapticNode.dir/src/TCPcomm.cpp.i
+.PHONY : src/TCPcomm.cpp.i
+
+src/TCPcomm.s: src/TCPcomm.cpp.s
+
+.PHONY : src/TCPcomm.s
+
+# target to generate assembly for a file
+src/TCPcomm.cpp.s:
+	$(MAKE) -f CMakeFiles/hapticNode.dir/build.make CMakeFiles/hapticNode.dir/src/TCPcomm.cpp.s
+.PHONY : src/TCPcomm.cpp.s
+
 src/hapticNode.o: src/hapticNode.cpp.o
 
 .PHONY : src/hapticNode.o
@@ -249,6 +276,9 @@ help:
 	@echo "... test"
 	@echo "... input_pkg_uninstall"
 	@echo "... uninstall"
+	@echo "... src/TCPcomm.o"
+	@echo "... src/TCPcomm.i"
+	@echo "... src/TCPcomm.s"
 	@echo "... src/hapticNode.o"
 	@echo "... src/hapticNode.i"
 	@echo "... src/hapticNode.s"

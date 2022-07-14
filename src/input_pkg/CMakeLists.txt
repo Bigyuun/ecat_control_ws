@@ -31,14 +31,17 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(ecat_msgs REQUIRED)
+#find_package(ecat_pkg REQUIRED)       # DY
 #find_package(dynamixel_sdk REQUIRED)
 # find_package(sdl2_vendor REQUIRED)
 # find_package(sdl2_custom REQUIRED)
 
 # CKim - Dependency for node generated file
 #find_package(input_pkg REQUIRED)
-include_directories("include/input_pkg/")
-include_directories("../ecat_pkg/include/")
+include_directories("include/input_pkg/"
+                    "../ecat_pkg/include/ecat_pkg/"   # DY - using globals.hpp
+                    "/opt/etherlab/include/")         # DY - using ecrt.h for globals.hpp
+#include_directories("../ecat_pkg/include/")
 # link_directories("${CMAKE_BINARY_DIR}/my_lib/install/usr/local/lib")
 # **********************************************
 
@@ -55,7 +58,9 @@ include_directories("../ecat_pkg/include/")
 
 # **********************************************
 # CKim - Files to be compiled and built
-add_executable(hapticNode src/hapticNode.cpp)
+add_executable(hapticNode src/hapticNode.cpp
+                          src/TCPcomm.cpp)
+
 ament_target_dependencies(hapticNode rclcpp std_msgs sensor_msgs ecat_msgs)
 # **********************************************
 

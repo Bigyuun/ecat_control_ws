@@ -1,0 +1,89 @@
+[0.030s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
+[0.067s] [35m[1mScanning dependencies of target hapticNode[0m
+[0.114s] [ 33%] [32mBuilding CXX object CMakeFiles/hapticNode.dir/src/hapticNode.cpp.o[0m
+[2.743s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::commThread()[m[K’:
+[2.743s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:192:22:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kstatus[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+[2.743s]   192 |   std::future_status [01;35m[Kstatus[m[K;
+[2.744s]       |                      [01;35m[K^~~~~~[m[K
+[2.744s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:195:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcount[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.744s]   195 |   static int [01;35m[Kcount[m[K = 0;
+[2.744s]       |              [01;35m[K^~~~~[m[K
+[2.748s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::CommWriteThread(int)[m[K’:
+[2.748s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:233:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktimestamp[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.749s]   233 |     double [01;35m[Ktimestamp[m[K = 0;
+[2.749s]       |            [01;35m[K^~~~~~~~~[m[K
+[2.749s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:234:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_q[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.749s]   234 |     double [01;35m[Ktarget_q[m[K[7] = {0};
+[2.749s]       |            [01;35m[K^~~~~~~~[m[K
+[2.750s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:235:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_qd[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.750s]   235 |     double [01;35m[Ktarget_qd[m[K[7] = {0};
+[2.750s]       |            [01;35m[K^~~~~~~~~[m[K
+[2.750s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:236:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_qdd[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.750s]   236 |     double [01;35m[Ktarget_qdd[m[K[7] = {0};
+[2.750s]       |            [01;35m[K^~~~~~~~~~[m[K
+[2.751s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:237:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_current[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.751s]   237 |     double [01;35m[Ktarget_current[m[K[7] = {0};
+[2.751s]       |            [01;35m[K^~~~~~~~~~~~~~[m[K
+[2.751s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:238:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ktarget_moment[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.751s]   238 |     double [01;35m[Ktarget_moment[m[K[7] = {0};
+[2.751s]       |            [01;35m[K^~~~~~~~~~~~~[m[K
+[2.752s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::CommReadThread(int)[m[K’:
+[2.752s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:433:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.752s]   433 |     for(int i=0; [01;35m[Ki<g_kNumberOfServoDrivers[m[K; i++)
+[2.752s]       |                  [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.759s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:480:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.759s]   480 |     for(int i=0; [01;35m[Ki<g_kNumberOfServoDrivers[m[K; i++)
+[2.759s]       |                  [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.760s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:334:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcount_read[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.760s]   334 |   static int [01;35m[Kcount_read[m[K = 0;
+[2.760s]       |              [01;35m[K^~~~~~~~~~[m[K
+[2.760s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kvoid HapticNode::DoubleToIntByte(char*, double)[m[K’:
+[2.760s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:507:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Klong unsigned int[m[K’ [[01;35m[K-Wsign-compare[m[K]
+[2.761s]   507 |     for(int i=0; [01;35m[Ki<sizeof(cnvt_double.data_char)[m[K; i++)
+[2.761s]       |                  [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.761s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:504:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbuf_data[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[2.761s]   504 |     char [01;35m[Kbuf_data[m[K[8];
+[2.761s]       |          [01;35m[K^~~~~~~~[m[K
+[2.762s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K In member function ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> > HapticNode::Parsing(char*, int)[m[K’:
+[2.762s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:576:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst uint32_t[m[K’ {aka ‘[01m[Kconst unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.763s]   576 |   for (int i = 0; [01;35m[Ki < g_kNumberOfServoDrivers[m[K; i++)
+[2.763s]       |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.765s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:638:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+[2.765s]   638 |   for (int i = 0; [01;35m[Ki < motor_val.size()[m[K; i++)
+[2.765s]       |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~[m[K
+[9.137s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:[m[K At global scope:
+[9.138s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:334:14:[m[K [01;35m[Kwarning: [m[K‘[01m[Kcount_read[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[9.138s]   334 |   static int [01;35m[Kcount_read[m[K = 0;
+[9.138s]       |              [01;35m[K^~~~~~~~~~[m[K
+[9.138s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:195:14:[m[K [01;35m[Kwarning: [m[K‘[01m[Kcount[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[9.138s]   195 |   static int [01;35m[Kcount[m[K = 0;
+[9.139s]       |              [01;35m[K^~~~~[m[K
+[9.139s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:42[m[K,
+[9.139s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include/input_pkg/hapticNode.hpp:33[m[K,
+[9.139s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp:28[m[K:
+[9.140s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/../ecat_pkg/include/ecat_pkg/ecat_definitions.hpp:512:20:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::string GetErrorMessage(const int&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[9.140s]   512 | static std::string [01;35m[KGetErrorMessage[m[K(const int& err_code)
+[9.140s]       |                    [01;35m[K^~~~~~~~~~~~~~~[m[K
+[16.330s] [ 66%] [32m[1mLinking CXX executable hapticNode[0m
+[16.548s] [100%] Built target hapticNode
+[16.558s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
+[16.584s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/input_pkg
+[16.592s] -- Install configuration: ""
+[16.593s] -- Execute custom install script
+[16.593s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib/input_pkg/hapticNode
+[16.593s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/ament_index/resource_index/package_run_dependencies/input_pkg
+[16.593s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/ament_index/resource_index/parent_prefix_path/input_pkg
+[16.594s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/ament_prefix_path.sh
+[16.594s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/ament_prefix_path.dsv
+[16.594s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/path.sh
+[16.594s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/path.dsv
+[16.595s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.bash
+[16.595s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.sh
+[16.595s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.zsh
+[16.595s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.dsv
+[16.595s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.dsv
+[16.604s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/ament_index/resource_index/packages/input_pkg
+[16.604s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/cmake/input_pkgConfig.cmake
+[16.604s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/cmake/input_pkgConfig-version.cmake
+[16.604s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.xml
+[16.609s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/input_pkg

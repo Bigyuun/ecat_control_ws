@@ -1,0 +1,23 @@
+[0.053s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg -- -j8 -l8
+[0.192s] [100%] Built target gui_node
+[0.218s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg -- -j8 -l8
+[0.339s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg
+[0.352s] -- Install configuration: ""
+[0.353s] -- Execute custom install script
+[0.354s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/lib/gui_pkg/gui_node
+[0.356s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/ament_index/resource_index/package_run_dependencies/gui_pkg
+[0.357s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/ament_index/resource_index/parent_prefix_path/gui_pkg
+[0.357s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/environment/ament_prefix_path.sh
+[0.357s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/environment/ament_prefix_path.dsv
+[0.357s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/environment/path.sh
+[0.357s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/environment/path.dsv
+[0.357s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/local_setup.bash
+[0.357s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/local_setup.sh
+[0.358s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/local_setup.zsh
+[0.358s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/local_setup.dsv
+[0.359s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.dsv
+[0.375s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/ament_index/resource_index/packages/gui_pkg
+[0.375s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/cmake/gui_pkgConfig.cmake
+[0.375s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/cmake/gui_pkgConfig-version.cmake
+[0.376s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.xml
+[0.381s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg

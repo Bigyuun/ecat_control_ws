@@ -18,11 +18,6 @@
 #include <iostream>
 #include <fstream>
 
-// DY
-#include <vector>
-#include <sstream>
-#include <mutex>
-
 #include <cmath> //Jkim
 
 #include "rclcpp/rclcpp.hpp"
@@ -32,9 +27,23 @@
 
 #include "hapticNode.hpp"
 
-
+// DY
+#include <vector>
+#include <sstream>
+#include <mutex>
+// DY
+#define SERVER_PORT_NUM "9800"
 #define TCP_BUFFER_SIZE 512
-#define NumOfDrivers  7
+// static int8_t g_kOperationType = kMasterType;
+
+// setting mode
+#define VELOCITY_SINEWAVE_MODE 0
+static int8_t g_kOperationType = kSlaveType;
+
+//#define g_kNumberOfServoDrivers  7
+
+// DY
+using namespace TCPCommunication;
 
 std::mutex tcp_readwrite_mutex;
 std::mutex w_mutex, r_mutex;
@@ -52,7 +61,10 @@ HapticNode::HapticNode(char * argv[]) : rclcpp::Node("HapticNode")
 {
   // CKim - Set IP and Port
   // m_IP = argv[1];     m_Port = argv[2];
-  m_Port = "9800";
+
+  // DY - set IP and Port as Server
+  m_Port = SERVER_PORT_NUM;
+  // m_Port = argv[1];
   
   auto qos = rclcpp::QoS(
     // The "KEEP_LAST" history setting tells DDS to store a fixed-size buffer of values before they
@@ -88,142 +100,58 @@ void HapticNode::HandleSlaveFeedbackCallbacks(const ecat_msgs::msg::DataReceived
         received_data_[i].right_limit_switch_val =  msg->right_limit_switch_val;
         received_data_[i].p_emergency_switch_val =  msg->emergency_switch_val;
         received_data_[i].com_status             =  msg->com_status;
-    }
-
-  
-  // RCLCPP_INFO(get_logger(),"%d", received_data_[0].actual_pos);
-  
+    }  
   }
 
-
-
-
-
-
-
-
-
-
-
 // Haptic Thread 3 start========================================
-
 void HapticNode::commThread()
 {
   RCLCPP_INFO(get_logger(), "Starting Haptic Node");
+  
+  RCLCPP_INFO(get_logger(), "TCP server initializing...");
 
   // create socket (TCP)
-  int server_socket;
-  server_socket = socket(PF_INET, SOCK_STREAM, 0); // create socket by using 'socket()'
-  if (server_socket == -1)
-    printf("socket() error... end");
-  else
-  {
-    printf("socket() init OK\n");
-  }
-
-  // initialize the address info
-  struct sockaddr_in server_addr;
-  memset(&server_addr, 0, sizeof(server_addr));
-
-  // setting server address info (IP, Port)
-  server_addr.sin_family = AF_INET;
-  std::string serv_addr = "127.0.0.1 (local)";
-  server_addr.sin_addr.s_addr = htonl(INADDR_ANY); // INADDR_ANY는 all client ip enable
-  // std::string serv_addr = "192.168.5.1";
-  //server_addr.sin_addr.s_addr = inet_addr(serv_addr.c_str()); 
-  server_addr.sin_port = htons(atoi(m_Port.c_str())); // 프로그램당 포트 1개 사용
-  // server_addr.sin_port = ntohs(atoi(m_Port.c_str())); // 프로그램당 포트 1개 사용
-
-  std::cout << "====== server INFO ======" << std::endl;
-  std::cout << "server IP : " << serv_addr << std::endl;
-  std::cout << server_addr.sin_addr.s_addr << std::endl;
-  std::cout << "PORT NUM : " << m_Port << std::endl;
-  std::cout << server_addr.sin_port << std::endl;
-  std::cout << "=========================" << std::endl;
-
-  // bind() : allocate the IP address & PORT number
-  // 소켓 위에서 생성한 주소 정보를 할당.
-  if (bind(server_socket, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1)
-  {
-    printf("bind() error");
-  }
-  else
-  {
-    printf("bind() OK\n");
-  }
-  // listen() : server socket can be ready state of connection
-  // 클라이언트가 연결요청이 가능하도록 5크기의 대기실 생성
-  if (listen(server_socket, 5) == -1)
-  {
-    printf("listen() error");
-  }
-  else
-  {
-    printf("listen() OK\n");
-  }
-
-  // 클라이언트 소켓 생성
-  int client_socket;
-  struct sockaddr_in client_addr;
-  socklen_t client_addr_size;
-
-  // accept() : allow of connection
-  // if accept() funcion
-  // 실제 데이터를 보낼 수 있는 소켓을 생성하는 함수임.
-  client_addr_size = sizeof(client_addr);
-  client_socket = accept(server_socket, (struct sockaddr *)&client_addr, &client_addr_size);
-  if (client_socket == -1)
-  {
-    printf("accept() error");
-  }
-  else
-  {
-    printf("accept() OK\n");
-  }
-
-  // char message[] = "Connected OK (from Server)";
-  // write() : transfering data. There is a connection request when write() function has been called(implemented)
-  //write(client_socket, message, sizeof(message));
+  std::cout << std::stoi(m_Port) << std::endl;
+  std::cout << m_Port << std::endl;
+  TCPServer Server = TCPServer(std::stoi(m_Port), TCP_BUFFER_SIZE);
+  Server.initSocket();
+  std::cout << Server.server_bind() << std::endl;
+  Server.server_listen();
+  Server.server_accept();
 
   std::future_status status;
   status = future_.wait_for(std::chrono::seconds(0));
   RCLCPP_INFO(get_logger(), "Entering communication loop!");
   static int count = 0;
 
-  // Non-Blocking Mode
-  //int flag = fcntl(client_socket, F_GETFL, 0);
-  //fcntl(client_socket, F_SETFL, flag | O_NONBLOCK);
 
-  comm_write_thread_ = std::thread(&HapticNode::commWriteThread, this, client_socket);
-  comm_read_thread_ = std::thread(&HapticNode::commReadThread, this, client_socket);
+  comm_write_thread_ = std::thread(&HapticNode::CommWriteThread, this, Server.client_socket_);
+  comm_read_thread_ = std::thread(&HapticNode::CommReadThread, this, Server.client_socket_);
 
   while (true)
   {
     
-    //std::cout << "---------- count " << count++ << " ----------" <<std::endl;
-    //status = future_.wait_for(std::chrono::seconds(0));
   }
 
   // CKim - End communication
   RCLCPP_INFO(get_logger(), "Leaving communication loop!");
-  close(client_socket);
-  close(server_socket);
+
+  Server.server_close();
+  // close(client_socket);
+  // close(server_socket);
   usleep(1000);
   return;
 }
 
-void HapticNode::commWriteThread(int fd_client)
+void HapticNode::CommWriteThread(int fd_client)
 { 
   std::cout << "writing Thread Start" << std::endl;
 
-  static int qd_count = 0;
   static int count_write = 0;
   while(1)
   {
-
-    int data_size = TCP_BUFFER_SIZE;
-
     // UR Protocol
+    // int data_size = TCP_BUFFER_SIZE;
     int buf_size = 4;
     double timestamp = 0;
     double target_q[7] = {0};
@@ -233,197 +161,119 @@ void HapticNode::commWriteThread(int fd_client)
     double target_moment[7] = {0};
     double actual_q[7] = {0};
     double actual_qd[7] = {0};
-    
     double protocol_MIDAS[50] = {0};
 
 
-    // Slave
-    // actual_q[0] = received_data_[0].actual_pos*1.03999e-05*0.25;
-    // actual_q[1] = received_data_[1].actual_pos*1.03999e-05*0.25 * (-1.0);
-    // actual_q[2] = received_data_[2].actual_pos*0.000500801*0.25;
-    // actual_q[3] = received_data_[3].actual_pos*9.29685e-05*0.25;
-    // actual_q[4] = received_data_[4].actual_pos*9.29685e-05*0.25;
-    // actual_q[5] = received_data_[5].actual_pos*9.29685e-05*0.25;
-    // actual_q[6] = received_data_[6].actual_pos*9.29685e-05*0.25;
+    // -------------------------------------
+    // Saving each data for making the protocol
+    // -------------------------------------
 
-    // actual_qd[0] = received_data_[0].actual_vel*0.000177;
-    // actual_qd[1] = received_data_[1].actual_vel*0.000177 * (-1.0);
-    // actual_qd[2] = received_data_[2].actual_vel*0.008547;
-    // actual_qd[3] = received_data_[3].actual_vel*0.001587;
-    // actual_qd[4] = received_data_[4].actual_vel*0.001587;
-    // actual_qd[5] = received_data_[5].actual_vel*0.001587;
-    // actual_qd[6] = received_data_[6].actual_vel*0.001587;
-    
-    // Master
-    actual_q[0] = received_data_[0].actual_pos*0.001055022*0.25 * (-1.0);
-    actual_q[1] = received_data_[1].actual_pos*0.000682806*0.25 * (-1.0);
-    actual_q[2] = received_data_[2].actual_pos*0.000682806*0.25;
-    actual_q[3] = received_data_[3].actual_pos*0.000292187*0.5*0.25;
-    actual_q[4] = received_data_[4].actual_pos*0.000292187*0.5*0.25;
-    actual_q[5] = received_data_[5].actual_pos*0.000292187*0.5*0.25;
-    actual_q[6] = received_data_[6].actual_pos*0.000292187*0.5*0.25;
+    // Slave Position & Velocity
+    if(g_kOperationType == kSlaveType)
+    {
+      actual_q[0] = received_data_[0].actual_pos*1.03999e-05*0.25;
+      actual_q[1] = received_data_[1].actual_pos*1.03999e-05*0.25 * (-1.0);
+      actual_q[2] = received_data_[2].actual_pos*0.000500801*0.25;
+      actual_q[3] = received_data_[3].actual_pos*9.29685e-05*0.25;
+      actual_q[4] = received_data_[4].actual_pos*9.29685e-05*0.25;
+      actual_q[5] = received_data_[5].actual_pos*9.29685e-05*0.25;
+      actual_q[6] = received_data_[6].actual_pos*9.29685e-05*0.25;
 
-    actual_qd[0] = received_data_[0].actual_vel*0.008792*(-1.0);
-    actual_qd[1] = received_data_[1].actual_vel*0.00569*(-1.0);
-    actual_qd[2] = received_data_[2].actual_vel*0.00569;
-    actual_qd[3] = received_data_[3].actual_vel*0.004987*0.5;
-    actual_qd[4] = received_data_[4].actual_vel*0.004987*0.5;
-    actual_qd[5] = received_data_[5].actual_vel*0.004987*0.5;
-    actual_qd[6] = received_data_[6].actual_vel*0.004987*0.5;
+      actual_qd[0] = received_data_[0].actual_vel*0.000177;
+      actual_qd[1] = received_data_[1].actual_vel*0.000177 * (-1.0);
+      actual_qd[2] = received_data_[2].actual_vel*0.008547;
+      actual_qd[3] = received_data_[3].actual_vel*0.001587;
+      actual_qd[4] = received_data_[4].actual_vel*0.001587;
+      actual_qd[5] = received_data_[5].actual_vel*0.001587;
+      actual_qd[6] = received_data_[6].actual_vel*0.001587;
+    }
     
     
+    // Master Position & Velocity
+    if(g_kOperationType == kMasterType)
+    {
+      actual_q[0] = received_data_[0].actual_pos * 0.001055022 * 0.25 * (-1.0);
+      actual_q[1] = received_data_[1].actual_pos * 0.000682806 * 0.25 * (-1.0);
+      actual_q[2] = received_data_[2].actual_pos * 0.000682806 * 0.25;
+      actual_q[3] = received_data_[3].actual_pos * 0.000292187 * 0.5 * 0.25;
+      actual_q[4] = received_data_[4].actual_pos * 0.000292187 * 0.5 * 0.25;
+      actual_q[5] = received_data_[5].actual_pos * 0.000292187 * 0.5 * 0.25;
+      actual_q[6] = received_data_[6].actual_pos * 0.000292187 * 0.5 * 0.25;
+
+      actual_qd[0] = received_data_[0].actual_vel * 0.008792 * (-1.0);
+      actual_qd[1] = received_data_[1].actual_vel * 0.00569 * (-1.0);
+      actual_qd[2] = received_data_[2].actual_vel * 0.00569;
+      actual_qd[3] = received_data_[3].actual_vel * 0.004987 * 0.5;
+      actual_qd[4] = received_data_[4].actual_vel * 0.004987 * 0.5;
+      actual_qd[5] = received_data_[5].actual_vel * 0.004987 * 0.5;
+      actual_qd[6] = received_data_[6].actual_vel * 0.004987 * 0.5;
+    }
 
 
     // for testing sine wave position
-    // for(int i=0; i<7; i++)
-    // {
-    //   actual_q[i] = 100*sin(qd_count*0.001);
-    // }
-    // qd_count++;
+    if(VELOCITY_SINEWAVE_MODE)
+    {
+      static uint64_t sine_count = 0;
+      for (int i = 0; i < 7; i++)
+      {
+        actual_q[i] = 200 * sin(sine_count * 0.001);
+      }
+      sine_count++;
+    }
 
+
+
+    // make a fully protocol
     for(int i=0; i<7; i++)
     {
       protocol_MIDAS[i+36] = actual_q[i];
       protocol_MIDAS[i+43] = actual_qd[i];
     }
 
-
+    // DY
+    // ** Caution : "htonl & htond" are functions for changing "Big endian & Little endian"
+    // Each OS (even if CPU) define the type of endian their own
     buf_size = htonl(buf_size);
     for(int i=0; i<50; i++)
     {
       protocol_MIDAS[i] = htond(protocol_MIDAS[i]);
     }
-
+    
     char write_msg[TCP_BUFFER_SIZE] = {};
     memcpy(write_msg                    , &buf_size, sizeof(int));
     memcpy(write_msg + sizeof(int)      , &protocol_MIDAS, 50*sizeof(double));
 
     int send_buf_size_ = write(fd_client, &write_msg, TCP_BUFFER_SIZE);
     std::cout << "[send buf size] : " << send_buf_size_ << "/ [send msg] : " << write_msg << std::endl;
-    for(int i=0; i<7; i++)
-    {
-      std::cout << actual_q[i] << " / ";
-    }
-    std::cout << "" << std::endl;
     std::cout << "--------- Write count : " << count_write++ << "----------" << std::endl;
-    // std::cout << "hapticMsg.string : " << hapticMsg.string << std::endl;
-    
-    
-    
-    // check the subscriber
-    for(int i=0; i<NumOfDrivers; i++)
-    {
-      // std::cout << "subscriber" << i << ":" << received_data_[i].actual_pos << std::endl;
-    }
-    //----------------------------------------------------------------------
     usleep(2000);
   }
 }
 
 
-void HapticNode::commReadThread(int fd_client)
+void HapticNode::CommReadThread(int fd_client)
 {
   std::cout << "Reading Thread Start" << std::endl;
   static int count_read = 0;
+
   while(1)
   {
     char msg[TCP_BUFFER_SIZE]={0};
-
-    //tcp_readwrite_mutex.lock();
-    //std::scoped_lock lock(r_mutex, w_mutex);
     int read_msg_size_ = read(fd_client, msg, TCP_BUFFER_SIZE);
     msg[read_msg_size_] = '\0';
-    //tcp_readwrite_mutex.unlock();
 
-    std::string msg_str = msg;
-    std::cout << "[read_msg_size] : " << read_msg_size_ << " / [read msg] : " << msg_str << std::endl;
-    std::cout << "--------- Read count : " << count_read++ << "----------" << std::endl;
-
-    // -------------- < Parsing Start > --------------
-    // parsing part
-    // 'Mode selection code' will be modified...
-    std::string delim_mode = "speedj";
-    //std::string delim_mode = "torquej";
-    std::string delim_start = "(";
-    std::string delim_substart = "[";
-    std::string delim_end = ")";
-    std::string delim_subend = "]";
-    char delim_ = ',';
-
-    std::string det_str;
-    std::string motor_values;
     std::vector<std::string> motor_val;
-    int index_read_msg[5] = {0};
 
-    index_read_msg[0] = msg_str.find(delim_mode);
-    index_read_msg[1] = msg_str.find(delim_start);
-    index_read_msg[2] = msg_str.find(delim_substart);
-    index_read_msg[3] = msg_str.find(delim_end);
-    index_read_msg[4] = msg_str.find(delim_subend);
-    std::cout << " index is : ";
-    for(int i=0; i<5; i++)
+    motor_val = Parsing(msg, read_msg_size_);
+
+    // read error
+    if(motor_val[0] == "IndexError" || motor_val[0] == "DeliError")
     {
-      std::cout << index_read_msg[i] << " ";
-    }
-    std::cout << "" << std::endl;
-
-    // DY
-    // if there is no protocol characters, loop restart
-    static bool index_err_flag = true;
-    for (int i = 0; i < NumOfDrivers; i++)
-    {
-      if (index_read_msg[i] < 0)
-      {
-        index_err_flag = false;
-        std::cout << "index err : -1" << std::endl;
-        break;
-      }
-      else
-        index_err_flag = true;
-    }
-    if (index_err_flag == false) continue;
-
-    det_str = msg_str.substr(index_read_msg[0], delim_mode.length());
-    if(det_str != delim_mode) {
-      std::cout << " delimiter error" << std::endl;
       continue;
     }
-    det_str = msg_str.substr(index_read_msg[1], delim_start.length());
-    if(det_str != delim_start) {
-      std::cout << " delimiter error" << std::endl;
-      continue;
-    }
-    det_str = msg_str.substr(index_read_msg[2], delim_substart.length());
-    if(det_str != delim_substart){
-      std::cout << " delimiter error" << std::endl;
-      continue;
-    }
-    det_str = msg_str.substr(index_read_msg[3], delim_end.length());
-    if(det_str != delim_end){
-      std::cout << " delimiter error" << std::endl;
-      continue;
-    }
-    det_str = msg_str.substr(index_read_msg[4], delim_subend.length());
-    if(det_str != delim_subend){
-      std::cout << " delimiter error" << std::endl;
-      continue;
-    }
-    std::cout << det_str << std::endl;
 
-
-
-    motor_values = msg_str.substr(index_read_msg[2]+1, (index_read_msg[4]-index_read_msg[2]-1));
-    motor_val = split(motor_values, delim_);
-    // show result
-    std::cout <<  "motor values : " << std::endl;
-    for(int i=0; i<motor_val.size(); i++)
-    {
-      std::cout << motor_val[i] << " / ";
-    }
-    std::cout << " " << std::endl;
-
-    double val[NumOfDrivers] = {0};
-    for(int i=0; i<NumOfDrivers; i++)
+    double val[g_kNumberOfServoDrivers] = {0};
+    for(int i=0; i<g_kNumberOfServoDrivers; i++)
     {
       val[i] = std::stod(motor_val[i]);
       std::cout << "val" << i << ":" << (float)val[i] << "  " << std::endl;
@@ -431,6 +281,7 @@ void HapticNode::commReadThread(int fd_client)
       
     }
 
+    if(g_kOperationMode == )
     // For Publisher - Velocity Mode - Slave
     // hapticMsg.array[0] = val[0]*5634.085;
     // hapticMsg.array[1] = (-1)*val[1]*5634.085;
@@ -468,16 +319,8 @@ void HapticNode::commReadThread(int fd_client)
     // -------------- < Parsing End > --------------
 
 
-    // if(index_read_msg[0] != std::string::npos) msg_str.erase(0,index_read_msg[0]);
     haptic_publisher_->publish(hapticMsg);
-    for(int i=0; i<NumOfDrivers; i++)
-    {
-      // std::cout << "hapticMsg.array" << i << ":" << hapticMsg.array[i] << std::endl;
-    }
-    
-    // std::system("clear");
-    
-    // std::cout << "hapticMsg.string : " << hapticMsg.string << std::endl;
+    std::cout << "--------- Read count : " << count_read++ << "----------" << std::endl;
   }
 }
 
@@ -524,7 +367,117 @@ double HapticNode::htond(double &x)
   return y;
 }
 
-std::vector<std::string> HapticNode::split(std::string input, char delimiter)
+std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  int read_msg_size)
+{
+  std::string msg_str = read_msg;
+  std::cout << "[read_msg_size] : " << read_msg_size << " / [read msg] : " << msg_str << std::endl;
+
+  // -------------- < Parsing Start > --------------
+  // parsing part
+  std::string delim_mode = "";
+  if (g_kOperationMode == kProfileVelocity)
+    delim_mode = "speedj";
+  if (g_kOperationMode == kCSTorque)
+    delim_mode = "torquej";
+
+  std::string delim_start = "(";
+  std::string delim_substart = "[";
+  std::string delim_end = ")";
+  std::string delim_subend = "]";
+  char delim_ = ',';
+
+  std::string det_str;
+  std::string motor_values;
+  std::vector<std::string> motor_val;
+  int index_read_msg[5] = {0};
+
+  index_read_msg[0] = msg_str.find(delim_mode);
+  index_read_msg[1] = msg_str.find(delim_start);
+  index_read_msg[2] = msg_str.find(delim_substart);
+  index_read_msg[3] = msg_str.find(delim_end);
+  index_read_msg[4] = msg_str.find(delim_subend);
+  std::cout << " index is : ";
+  for (int i = 0; i < 5; i++)
+  {
+    std::cout << index_read_msg[i] << " ";
+  }
+  std::cout << "" << std::endl;
+
+  // DY
+  // if there is no protocol characters, loop restart
+  static bool index_err_flag = true;
+  for (int i = 0; i < g_kNumberOfServoDrivers; i++)
+  {
+    if (index_read_msg[i] < 0)
+    {
+      index_err_flag = false;
+      std::cout << "index err : -1" << std::endl;
+      break;
+    }
+    else
+      index_err_flag = true;
+  }
+
+  if (index_err_flag == false)
+  {
+    motor_val.push_back("IndexError");
+    return motor_val;
+  }
+
+  det_str = msg_str.substr(index_read_msg[0], delim_mode.length());
+  if (det_str != delim_mode)
+  {
+    std::cout << " delimiter error" << std::endl;
+    motor_val.push_back("DeliError");
+    return motor_val;
+  }
+  det_str = msg_str.substr(index_read_msg[1], delim_start.length());
+  if (det_str != delim_start)
+  {
+    std::cout << " delimiter error" << std::endl;
+    motor_val.push_back("DeliError");
+    return motor_val;
+  }
+  det_str = msg_str.substr(index_read_msg[2], delim_substart.length());
+  if (det_str != delim_substart)
+  {
+    std::cout << " delimiter error" << std::endl;
+    motor_val.push_back("DeliError");
+    return motor_val;
+  }
+  det_str = msg_str.substr(index_read_msg[3], delim_end.length());
+  if (det_str != delim_end)
+  {
+    std::cout << " delimiter error" << std::endl;
+    motor_val.push_back("DeliError");
+    return motor_val;
+  }
+  det_str = msg_str.substr(index_read_msg[4], delim_subend.length());
+  if (det_str != delim_subend)
+  {
+    std::cout << " delimiter error" << std::endl;
+    motor_val.push_back("DeliError");
+    return motor_val;
+  }
+
+  // if index or delimiter error doesn't occur
+  std::cout << det_str << std::endl;
+
+  motor_values = msg_str.substr(index_read_msg[2] + 1, (index_read_msg[4] - index_read_msg[2] - 1));
+  motor_val = Split(motor_values, delim_);
+
+  // show result
+  std::cout << "motor values : " << std::endl;
+  for (int i = 0; i < motor_val.size(); i++)
+  {
+    std::cout << motor_val[i] << " / ";
+  }
+  std::cout << " " << std::endl;
+
+  return motor_val;
+}
+
+std::vector<std::string> HapticNode::Split(std::string input, char delimiter)
 {
   std::vector<std::string> result;
   std::stringstream ss(input);

@@ -1,0 +1,14 @@
+CMake Warning (dev) at CMakeLists.txt:41:
+  Syntax Warning in cmake code at column 41
+
+  Argument not separated from preceding token by whitespace.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Error at /opt/ros/foxy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:77 (message):
+  ament_target_dependencies() the passed package name 'ecat_pkg' was not
+  found before
+Call Stack (most recent call first):
+  CMakeLists.txt:63 (ament_target_dependencies)
+
+
+make: *** [Makefile:296: cmake_check_build_system] Error 1

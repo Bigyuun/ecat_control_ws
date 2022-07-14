@@ -1,0 +1,24 @@
+[0.026s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
+[0.051s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.068s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.210s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.215s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.244s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.245s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.339s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.377s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.378s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.471s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[0.544s] -- Found ecat_msgs: 0.0.1 (/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/cmake)
+[0.571s] CMake Error at /opt/ros/foxy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:77 (message):
+[0.571s]   ament_target_dependencies() the passed package name 'ecat_pkg' was not
+[0.571s]   found before
+[0.571s] Call Stack (most recent call first):
+[0.571s]   CMakeLists.txt:63 (ament_target_dependencies)
+[0.571s] 
+[0.571s] 
+[0.573s] -- Configuring incomplete, errors occurred!
+[0.573s] See also "/home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles/CMakeOutput.log".
+[0.573s] See also "/home/daeyun/Desktop/ecat_control_ws/build/input_pkg/CMakeFiles/CMakeError.log".
+[0.577s] make: *** [Makefile:296: cmake_check_build_system] Error 1
+[0.579s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '2': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
