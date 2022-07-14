@@ -281,24 +281,27 @@ void HapticNode::CommReadThread(int fd_client)
       
     }
 
-    if(g_kOperationMode == )
+    if(g_kOperationMode == kProfileVelocity)
+    {
     // For Publisher - Velocity Mode - Slave
-    // hapticMsg.array[0] = val[0]*5634.085;
-    // hapticMsg.array[1] = (-1)*val[1]*5634.085;
-    // hapticMsg.array[2] = val[2]*117;
-    // hapticMsg.array[3] = val[3]*630.2536;
-    // hapticMsg.array[4] = val[4]*630.2536;
-    // hapticMsg.array[5] = val[5]*630.2536;
-    // hapticMsg.array[6] = val[6]*630.2536;
-    // hapticMsg.array[0] = 0;
-    // hapticMsg.array[1] = 0;
-    // hapticMsg.array[2] = 0;
-    // hapticMsg.array[3] = 0;
-    // hapticMsg.array[4] = 0;
-    // hapticMsg.array[5] = 0;
-    // hapticMsg.array[6] = 0;
+    hapticMsg.array[0] = val[0]*5634.085;
+    hapticMsg.array[1] = (-1)*val[1]*5634.085;
+    hapticMsg.array[2] = val[2]*117;
+    hapticMsg.array[3] = val[3]*630.2536;
+    hapticMsg.array[4] = val[4]*630.2536;
+    hapticMsg.array[5] = val[5]*630.2536;
+    hapticMsg.array[6] = val[6]*630.2536;
+    hapticMsg.array[0] = 0;
+    hapticMsg.array[1] = 0;
+    hapticMsg.array[2] = 0;
+    hapticMsg.array[3] = 0;
+    hapticMsg.array[4] = 0;
+    hapticMsg.array[5] = 0;
+    hapticMsg.array[6] = 0;
+    }
 
-
+    if(g_kOperationMode == kCSTorque)
+    {
     // For Publisher - Torque Mode - Master
     hapticMsg.array[0] = (-1.0)*val[0]*0.000183559;
     hapticMsg.array[1] = (-1.0)*val[1]*0.000118798;
@@ -307,7 +310,7 @@ void HapticNode::CommReadThread(int fd_client)
     hapticMsg.array[4] = val[4]*0.002978052*0.5;
     hapticMsg.array[5] = val[5]*0.002978052*0.5;
     hapticMsg.array[6] = val[6]*0.002978052*0.5;
-
+    }
     // hapticMsg.array[0] = 0;
     // hapticMsg.array[1] = 0;
     // hapticMsg.array[2] = 0;

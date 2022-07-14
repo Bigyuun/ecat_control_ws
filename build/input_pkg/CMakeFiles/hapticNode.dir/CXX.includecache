@@ -248,6 +248,10 @@ ecat_globals.hpp
 TCPcomm.hpp
 /home/daeyun/Desktop/ecat_control_ws/src/input_pkg/include/input_pkg/TCPcomm.hpp
 
+/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.cpp
+TCPcomm.hpp
+/home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/TCPcomm.hpp
+
 /home/daeyun/Desktop/ecat_control_ws/src/input_pkg/src/hapticNode.cpp
 chrono
 -
