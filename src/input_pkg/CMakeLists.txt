@@ -37,7 +37,10 @@ find_package(ecat_msgs REQUIRED)
 
 # CKim - Dependency for node generated file
 #find_package(input_pkg REQUIRED)
-include_directories("include/input_pkg/")
+include_directories("include/input_pkg/"
+		    "../ecat_pkg/include/ecat_pkg/"	# DY - using globals.hpp				
+		    "/opt/etherlab/include/")		# DY - using ecrt.h for globals.hpp
+
 # link_directories("${CMAKE_BINARY_DIR}/my_lib/install/usr/local/lib")
 # **********************************************
 
@@ -54,7 +57,9 @@ include_directories("include/input_pkg/")
 
 # **********************************************
 # CKim - Files to be compiled and built
-add_executable(hapticNode src/hapticNode.cpp)
+add_executable(hapticNode src/hapticNode.cpp
+			  src/TCPcomm.cpp)
+
 ament_target_dependencies(hapticNode rclcpp std_msgs sensor_msgs ecat_msgs)
 # **********************************************
 

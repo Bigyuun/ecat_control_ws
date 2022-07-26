@@ -27,8 +27,11 @@ rclcpp::NodeOptions().use_intra_process_comms(true))
     auto qos = rclcpp::QoS( rclcpp::KeepLast(1));
     qos.best_effort();
     received_data_publisher_ = this->create_publisher<ecat_msgs::msg::DataReceived>("Slave_Feedback", qos);
-    joystick_subscriber_     = this->create_subscription<sensor_msgs::msg::Joy>("Controller", qos, 
-                                std::bind(&EthercatLifeCycle::HandleControlNodeCallbacks, this,std::placeholders::_1));
+    //joystick_subscriber_     = this->create_subscription<sensor_msgs::msg::Joy>("Controller", qos, 
+    //                            std::bind(&EthercatLifeCycle::HandleControlNodeCallbacks, this,std::placeholders::_1));
+    haptic_subscriber_= this->create_subscription<ecat_msgs::msg::HapticCmd>("HapticInput",qos,
+                                std::bind(&EthercatLifeCycle::HandleHapticNodeCallbacks, this,std::placeholders::_1));
+
     gui_subscriber_          = this->create_subscription<ecat_msgs::msg::GuiButtonData>(
     "gui_buttons", qos,std::bind(&EthercatLifeCycle::HandleGuiNodeCallbacks, 
     this, std::placeholders::_1));
@@ -190,6 +193,7 @@ node_interfaces::LifecycleNodeInterface::CallbackReturn EthercatLifeCycle::on_er
 
 void EthercatLifeCycle::HandleControlNodeCallbacks(const sensor_msgs::msg::Joy::SharedPtr msg)
 {
+      
     //RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Joy Msgs : %.2f, %.2f",msg->axes[0],msg->axes[2]);
 
     controller_.left_x_axis_  = msg->axes[0];
@@ -231,6 +235,19 @@ void EthercatLifeCycle::HandleControlNodeCallbacks(const sensor_msgs::msg::Joy::
         controller_.left_l_button_ = 0; 
     }
 
+}
+
+
+// DY - Callback function for hapticNode (TCP/IP)
+void EthercatLifeCycle::HandleHapticNodeCallbacks(const ecat_msgs::msg::HapticCmd::SharedPtr msg)
+{    
+    target_[0] = msg->array[0];
+    target_[1] = msg->array[1];
+    target_[2] = msg->array[2];
+    target_[3] = msg->array[3];
+    target_[4] = msg->array[4];
+    target_[5] = msg->array[5];
+    target_[6] = msg->array[6];
 }
 
 void EthercatLifeCycle::HandleGuiNodeCallbacks(const ecat_msgs::msg::GuiButtonData::SharedPtr gui_sub)
@@ -633,6 +650,7 @@ void EthercatLifeCycle::StartPdoExchange(void *instance)
         {
             sent_data_.target_pos[i] = received_data_.actual_pos[i];
             sent_data_.target_vel[i] = 0;
+            sent_data_.target_tor[i] = 0;  // JKim added
         }
 
         // CKim - Check status and update control words to enable drivers
@@ -1343,67 +1361,104 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
 void EthercatLifeCycle::UpdateCyclicVelocityModeParameters() 
 {
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
-    int m1_conversion_ratio = GEAR_RATIO*2;  // if you multiply this value with the RPM value mechanism will move in that RPM.
-    float m2_conversion_ratio = GEAR_RATIO*2*12*40/30;
-    float deadzone = 0.1;      
-    float maxSpeed_m1 = 3.0*m1_conversion_ratio;    // Robot will move with 3 RPM (MAX). (Control input range 0~1)
-    float maxSpeed_m2 = m2_conversion_ratio;
-    float maxSpeed = 1500.0;
-    float m1_left=0.0, m1_right=0.0, axis_m2=0.0, axis_m3=0.0;
-    // Motor 1 controls roll axis.
-    if(motor_state_[0]==kOperationEnabled || motor_state_[0]==kSwitchedOn)
-    {
-        m1_left = controller_.left_t_axis_;
-        m1_right = controller_.right_t_axis_;
-        if((m1_right > deadzone))       
-            {   sent_data_.target_vel[0] = int32_t(m1_right*maxSpeed_m1);  }
+    for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
+        if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
+            || motor_state_[i]==kSwitchedOn){
+               /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
+              /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
+            
+            sent_data_.target_vel[0] = target_[0];
+            sent_data_.target_vel[1] = target_[1];
+            sent_data_.target_vel[2] = target_[2];
+            sent_data_.target_vel[3] = target_[3];
+            sent_data_.target_vel[4] = target_[4];
+            sent_data_.target_vel[5] = target_[5];
+            sent_data_.target_vel[6] = target_[6];
 
-        if((m1_left > deadzone))       
-            {   sent_data_.target_vel[0] = int32_t(-m1_left*maxSpeed_m1);  }
-        if(m1_left > 1 || m1_right > 1 || m1_left < -1 || m1_right < -1) sent_data_.target_vel[0] = 0;
-        if(!(m1_left > deadzone || m1_right > deadzone)) sent_data_.target_vel[0]=0;
+            }else{
+                sent_data_.target_vel[i]=0;
+            }
     }
-    else    {   sent_data_.target_vel[0] = 0;   }
-    // sent_data_.control_word[0] = SM_GO_ENABLE;
+    /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
+    // int m1_conversion_ratio = GEAR_RATIO*2;  // if you multiply this value with the RPM value mechanism will move in that RPM.
+    // float m2_conversion_ratio = GEAR_RATIO*2*12*40/30;
+    // float deadzone = 0.1;      
+    // float maxSpeed_m1 = 3.0*m1_conversion_ratio;    // Robot will move with 3 RPM (MAX). (Control input range 0~1)
+    // float maxSpeed_m2 = m2_conversion_ratio;
+    // float maxSpeed = 1500.0;
+    // float m1_left=0.0, m1_right=0.0, axis_m2=0.0, axis_m3=0.0;
+    // // Motor 1 controls roll axis.
+    // if(motor_state_[0]==kOperationEnabled || motor_state_[0]==kSwitchedOn)
+    // {
+    //     m1_left = controller_.left_t_axis_;
+    //     m1_right = controller_.right_t_axis_;
+    //     if((m1_right > deadzone))       
+    //         {   sent_data_.target_vel[0] = int32_t(m1_right*maxSpeed_m1);  }
+
+    //     if((m1_left > deadzone))       
+    //         {   sent_data_.target_vel[0] = int32_t(-m1_left*maxSpeed_m1);  }
+    //     if(m1_left > 1 || m1_right > 1 || m1_left < -1 || m1_right < -1) sent_data_.target_vel[0] = 0;
+    //     if(!(m1_left > deadzone || m1_right > deadzone)) sent_data_.target_vel[0]=0;
+    // }
+    // else    {   sent_data_.target_vel[0] = 0;   }
+    // // sent_data_.control_word[0] = SM_GO_ENABLE;
     
 
-    // Settings for motor 2
-    if(motor_state_[1]==kOperationEnabled || motor_state_[1]==kSwitchedOn)
-    {
-        axis_m2 = controller_.right_y_axis_;
-        if((axis_m2 > deadzone) || (axis_m2 < -deadzone))       
-            {
-                sent_data_.target_vel[1] = int32_t(axis_m2*maxSpeed_m2);
-            }
-        else
-            {
-                sent_data_.target_vel[1] = 0;
-            }
-    }
-    else    {   sent_data_.target_vel[1] = 0;   }
-    // sent_data_.control_word[1] = SM_GO_ENABLE;
+    // // Settings for motor 2
+    // if(motor_state_[1]==kOperationEnabled || motor_state_[1]==kSwitchedOn)
+    // {
+    //     axis_m2 = controller_.right_y_axis_;
+    //     if((axis_m2 > deadzone) || (axis_m2 < -deadzone))       
+    //         {
+    //             sent_data_.target_vel[1] = int32_t(axis_m2*maxSpeed_m2);
+    //         }
+    //     else
+    //         {
+    //             sent_data_.target_vel[1] = 0;
+    //         }
+    // }
+    // else    {   sent_data_.target_vel[1] = 0;   }
+    // // sent_data_.control_word[1] = SM_GO_ENABLE;
 
-    // Settings for motor 2 
-    if((motor_state_[2]==kOperationEnabled || motor_state_[2]==kSwitchedOn))
-    {
-        axis_m3 = controller_.left_x_axis_;
-        if((axis_m3 > deadzone) || (axis_m3 < -deadzone))       
-            {
-                sent_data_.target_vel[2] = int32_t(-axis_m3*maxSpeed);
-                sent_data_.target_vel[1] = sent_data_.target_vel[2];
-            }
-        else
-            {   
-                sent_data_.target_vel[2] = 0;               
-            }
-    }
-    else    {   sent_data_.target_vel[2] = 0;   }
+    // // Settings for motor 2 
+    // if((motor_state_[2]==kOperationEnabled || motor_state_[2]==kSwitchedOn))
+    // {
+    //     axis_m3 = controller_.left_x_axis_;
+    //     if((axis_m3 > deadzone) || (axis_m3 < -deadzone))       
+    //         {
+    //             sent_data_.target_vel[2] = int32_t(-axis_m3*maxSpeed);
+    //             sent_data_.target_vel[1] = sent_data_.target_vel[2];
+    //         }
+    //     else
+    //         {   
+    //             sent_data_.target_vel[2] = 0;               
+    //         }
+    // }
+    // else    {   sent_data_.target_vel[2] = 0;   }
     // sent_data_.control_word[2] = SM_GO_ENABLE;
     
 }
 
 void EthercatLifeCycle::UpdateVelocityModeParameters() 
 {   
+    /// WRITE YOUR CUSTOM CONTROL ALGORITHM VARIABLES DECLARATAION HERE
+    for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
+        if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
+            || motor_state_[i]==kSwitchedOn){
+               /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
+              /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
+            
+            sent_data_.target_vel[0] = target_[0];
+            sent_data_.target_vel[1] = target_[1];
+            sent_data_.target_vel[2] = target_[2];
+            sent_data_.target_vel[3] = target_[3];
+            sent_data_.target_vel[4] = target_[4];
+            sent_data_.target_vel[5] = target_[5];
+            sent_data_.target_vel[6] = target_[6];
+            }else{
+            sent_data_.target_vel[i]=0;
+        }
+    }
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM VARIABLES DECLARATAION HERE
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
@@ -1539,25 +1594,41 @@ void EthercatLifeCycle::UpdateCyclicTorqueModeParameters()
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         // sent_data_.control_word[i] = SM_GO_ENABLE;
         if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached || motor_state_[i]==kSwitchedOn){
-            if(controller_.right_x_axis_ < -0.1 || controller_.right_x_axis_ > 0.1 ){
-                sent_data_.target_tor[0] = controller_.right_x_axis_ * 300 ;
-            }else{
-                sent_data_.target_tor[0] = 0;
-            }
-            if(controller_.left_x_axis_ < -0.1 || controller_.left_x_axis_ > 0.1){
-                sent_data_.target_tor[1] = controller_.left_x_axis_ * 300;
-            }else{
-                sent_data_.target_tor[1] = 0 ;
-            }
-            if(controller_.left_y_axis_ < -0.1 || controller_.left_y_axis_ > 0.1){
-                sent_data_.target_tor[2] = controller_.left_y_axis_ * 300 ;
-            }else{
-                sent_data_.target_tor[2] = 0 ;
-            }
+
+            sent_data_.target_tor[0] = target_[0];
+            sent_data_.target_tor[1] = target_[1];
+            sent_data_.target_tor[2] = target_[2];
+            sent_data_.target_tor[3] = target_[3];
+            sent_data_.target_tor[4] = target_[4];
+            sent_data_.target_tor[5] = target_[5];
+            sent_data_.target_tor[6] = target_[6];
         }else{
             sent_data_.target_tor[i]=0;
         }
     }
+    // // Torque mode: sending target_torque value in per thousand of Motor Rated Torque value.
+    // for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
+    //     // sent_data_.control_word[i] = SM_GO_ENABLE;
+    //     if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached || motor_state_[i]==kSwitchedOn){
+    //         if(controller_.right_x_axis_ < -0.1 || controller_.right_x_axis_ > 0.1 ){
+    //             sent_data_.target_tor[0] = controller_.right_x_axis_ * 300 ;
+    //         }else{
+    //             sent_data_.target_tor[0] = 0;
+    //         }
+    //         if(controller_.left_x_axis_ < -0.1 || controller_.left_x_axis_ > 0.1){
+    //             sent_data_.target_tor[1] = controller_.left_x_axis_ * 300;
+    //         }else{
+    //             sent_data_.target_tor[1] = 0 ;
+    //         }
+    //         if(controller_.left_y_axis_ < -0.1 || controller_.left_y_axis_ > 0.1){
+    //             sent_data_.target_tor[2] = controller_.left_y_axis_ * 300 ;
+    //         }else{
+    //             sent_data_.target_tor[2] = 0 ;
+    //         }
+    //     }else{
+    //         sent_data_.target_tor[i]=0;
+    //     }
+    // }
 }
 
 int8_t EthercatLifeCycle::EnableDrivesViaSDO(int index)

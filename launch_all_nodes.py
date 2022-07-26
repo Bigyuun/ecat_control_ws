@@ -30,10 +30,11 @@ def generate_launch_description():
     return launch.LaunchDescription([
         launch.actions.SetEnvironmentVariable('RCUTILS_COLORIZED_OUTPUT', '1'),
         pd_node,
-        Node(package='controller', executable='joy_node', output='screen', parameters=[
-            {"dev": "/dev/input/js0"}]),
-        Node(package='gui_pkg', executable='gui_node', output='screen',prefix = 'taskset -c 4,5'),
+        #Node(package='controller', executable='joy_node', output='screen', parameters=[
+        #    {"dev": "/dev/input/js0"}]),
+        Node(package='gui_pkg', executable='gui_node', output='screen', prefix = 'taskset -c 4,5'),
+        Node(package='input_pkg', executable='hapticNode', output='screen', prefix = 'taskset -c 4,5'),
         #Node(package='gui_pkg', executable='gui_node', output='screen',prefix='valgrind'),
-        Node(package='safety_pkg', executable='safety_node', output='screen',prefix = 'taskset -c 4,5'),
+        Node(package='safety_pkg', executable='safety_node', output='screen', prefix = 'taskset -c 4,5'),
         Node(package='log_pkg', executable='timing_node', output='screen'),
         ])

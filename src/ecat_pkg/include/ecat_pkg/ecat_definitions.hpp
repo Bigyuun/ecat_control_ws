@@ -280,6 +280,12 @@ typedef struct
     uint8_t  left_limit_switch_val ;
     uint8_t  right_limit_switch_val ;
     uint8_t  s_emergency_switch_val;
+    
+    // DY
+    uint8_t  p_emergency_switch_val;
+    int32_t  right_x_axis;
+    int32_t  left_x_axis;
+    uint8_t  com_status;
 }ReceivedData;
 
 /// CKim - SDO_data Structure holding all data needed to send/receive an SDO object.
