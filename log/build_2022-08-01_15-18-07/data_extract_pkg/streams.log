@@ -1,0 +1,49 @@
+[0.020s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg -- -j6 -l6
+[0.055s] [35m[1mScanning dependencies of target data_extract_node[0m
+[0.089s] [ 50%] [32mBuilding CXX object CMakeFiles/data_extract_node.dir/src/data_extract_node.cpp.o[0m
+[1.010s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/src/data_extract_node.cpp:[m[K In member function ‘[01m[Kuint8_t DataExtractionNode::DataExtraction::CloseFile(std::ofstream)[m[K’:
+[1.011s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/src/data_extract_node.cpp:66:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+[1.011s]    66 | [01;35m[K}[m[K
+[1.011s]       | [01;35m[K^[m[K
+[1.011s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/src/data_extract_node.cpp:63:49:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfstream_file_[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[1.011s]    63 | uint8_t DataExtraction::CloseFile([01;35m[Kstd::ofstream fstream_file_[m[K)
+[1.011s]       |                                   [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[1.011s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/src/data_extract_node.cpp:[m[K In member function ‘[01m[Kvoid DataExtractionNode::DataExtraction::RecordFile(std::ofstream)[m[K’:
+[1.011s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/src/data_extract_node.cpp:68:47:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfstream_file_[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[1.011s]    68 | void DataExtraction::RecordFile([01;35m[Kstd::ofstream fstream_file_[m[K)
+[1.011s]       |                                 [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[2.004s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/include/data_extract_pkg/data_extract_node.hpp:19[m[K,
+[2.004s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/src/data_extract_node.cpp:1[m[K:
+[2.004s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:[m[K At global scope:
+[2.004s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:49:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kg_kOperationMode[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+[2.004s]    49 | static int8_t   [01;35m[Kg_kOperationMode[m[K = kProfileVelocity ;
+[2.004s]       |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[2.004s] In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:42[m[K,
+[2.004s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/include/data_extract_pkg/data_extract_node.hpp:19[m[K,
+[2.004s]                  from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/src/data_extract_node.cpp:1[m[K:
+[2.004s] [01m[K/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg/../ecat_pkg/include/ecat_pkg/ecat_definitions.hpp:508:20:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::string GetErrorMessage(const int&)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+[2.004s]   508 | static std::string [01;35m[KGetErrorMessage[m[K(const int& err_code)
+[2.004s]       |                    [01;35m[K^~~~~~~~~~~~~~~[m[K
+[3.444s] [100%] [32m[1mLinking CXX executable data_extract_node[0m
+[3.607s] [100%] Built target data_extract_node
+[3.616s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg -- -j6 -l6
+[3.636s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg
+[3.643s] -- Install configuration: ""
+[3.643s] -- Execute custom install script
+[3.643s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/lib/data_extract_pkg/data_extract_node
+[3.644s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/ament_index/resource_index/package_run_dependencies/data_extract_pkg
+[3.644s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/ament_index/resource_index/parent_prefix_path/data_extract_pkg
+[3.644s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/environment/ament_prefix_path.sh
+[3.644s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/environment/ament_prefix_path.dsv
+[3.644s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/environment/path.sh
+[3.644s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/environment/path.dsv
+[3.645s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/local_setup.bash
+[3.645s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/local_setup.sh
+[3.645s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/local_setup.zsh
+[3.645s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/local_setup.dsv
+[3.645s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/package.dsv
+[3.652s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/ament_index/resource_index/packages/data_extract_pkg
+[3.653s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/cmake/data_extract_pkgConfig.cmake
+[3.653s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/cmake/data_extract_pkgConfig-version.cmake
+[3.653s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/package.xml
+[3.656s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg

@@ -155,12 +155,20 @@ void DataExtraction::SlaveFeedbackCallbakcs(const ecat_msgs::msg::DataReceived::
     {
         try
         {
+            if(rclcpp::ok())
+            {
+                ROSTime = now();
+            }
+            
+            system_time = time(NULL);
+            CSVFILE_MANAGER <<  std::to_string(ROSTime.nanoseconds()) << ",";
             for (int i = 0; i < c_NumberOfMotorDrivers; i++)
             {
                 CSVFILE_MANAGER << recv_msg_[i].actual_pos << ","
                                 << recv_msg_[i].actual_vel << ","
-                                << recv_msg_[i].actual_tor << "\n";
+                                << recv_msg_[i].actual_tor << ",";
             }
+            CSVFILE_MANAGER << "\n";
         }
         catch(exception &e)
         {

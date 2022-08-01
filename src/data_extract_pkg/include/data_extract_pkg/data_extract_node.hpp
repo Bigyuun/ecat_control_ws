@@ -82,6 +82,7 @@ class DataExtraction final : public rclcpp::Node        // 'final' prevents furt
         SlaveData recv_msg_[g_kNumberOfServoDrivers];
     private:
         time_t system_time;
+        rclcpp::Time ROSTime;
         std::ofstream CSVFILE_MANAGER;
         uint8_t file_stream_flag_;
         // std::string file_stream_flag_;
