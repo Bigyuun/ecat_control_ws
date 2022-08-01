@@ -1,0 +1,4 @@
+Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg -- -j6 -l6
+Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg -- -j6 -l6
+Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg
+Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg

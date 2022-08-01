@@ -1,0 +1,23 @@
+[0.023s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j6 -l6
+[0.074s] [100%] Built target joy_node
+[0.091s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j6 -l6
+[0.125s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/controller
+[0.132s] -- Install configuration: ""
+[0.133s] -- Execute custom install script
+[0.133s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/lib/controller/joy_node
+[0.133s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/package_run_dependencies/controller
+[0.133s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/parent_prefix_path/controller
+[0.133s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/ament_prefix_path.sh
+[0.134s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/ament_prefix_path.dsv
+[0.134s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/path.sh
+[0.134s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/path.dsv
+[0.134s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.bash
+[0.134s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.sh
+[0.135s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.zsh
+[0.135s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.dsv
+[0.135s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.dsv
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/packages/controller
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/cmake/controllerConfig.cmake
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/cmake/controllerConfig-version.cmake
+[0.143s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.xml
+[0.145s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/controller

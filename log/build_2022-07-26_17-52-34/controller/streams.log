@@ -1,0 +1,71 @@
+[0.014s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/controller -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/controller
+[0.162s] -- The C compiler identification is GNU 9.4.0
+[0.276s] -- The CXX compiler identification is GNU 9.4.0
+[0.282s] -- Check for working C compiler: /usr/bin/cc
+[0.337s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.338s] -- Detecting C compiler ABI info
+[0.390s] -- Detecting C compiler ABI info - done
+[0.398s] -- Detecting C compile features
+[0.398s] -- Detecting C compile features - done
+[0.401s] -- Check for working CXX compiler: /usr/bin/c++
+[0.461s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.461s] -- Detecting CXX compiler ABI info
+[0.522s] -- Detecting CXX compiler ABI info - done
+[0.530s] -- Detecting CXX compile features
+[0.530s] -- Detecting CXX compile features - done
+[0.534s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.553s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.553s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.666s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.694s] -- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.731s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.736s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.799s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.822s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.888s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.939s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.941s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.942s] -- Looking for pthread.h
+[1.008s] -- Looking for pthread.h - found
+[1.008s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.064s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.064s] -- Looking for pthread_create in pthreads
+[1.110s] -- Looking for pthread_create in pthreads - not found
+[1.110s] -- Looking for pthread_create in pthread
+[1.166s] -- Looking for pthread_create in pthread - found
+[1.166s] -- Found Threads: TRUE  
+[1.307s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[1.390s] -- Found rttest: 0.9.0 (/opt/ros/foxy/share/rttest/cmake)
+[1.394s] -- Found tlsf_cpp: 0.9.0 (/opt/ros/foxy/share/tlsf_cpp/cmake)
+[1.399s] -- Looking for include file linux/joystick.h
+[1.463s] -- Looking for include file linux/joystick.h - found
+[1.513s] -- Configuring done
+[1.522s] -- Generating done
+[1.523s] -- Build files have been written to: /home/daeyun/Desktop/ecat_control_ws/build/controller
+[1.528s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/controller -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/controller
+[1.531s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j8 -l8
+[1.562s] [35m[1mScanning dependencies of target joy_node[0m
+[1.650s] [ 50%] [32mBuilding CXX object CMakeFiles/joy_node.dir/src/joy_node_linux.cpp.o[0m
+[4.721s] [100%] [32m[1mLinking CXX executable joy_node[0m
+[4.918s] [100%] Built target joy_node
+[4.926s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j8 -l8
+[4.958s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/controller
+[4.968s] -- Install configuration: ""
+[4.968s] -- Execute custom install script
+[4.969s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/lib/controller/joy_node
+[4.977s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/package_run_dependencies/controller
+[4.985s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/parent_prefix_path/controller
+[4.993s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/ament_prefix_path.sh
+[5.001s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/ament_prefix_path.dsv
+[5.009s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/path.sh
+[5.017s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/environment/path.dsv
+[5.026s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.bash
+[5.034s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.sh
+[5.041s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.zsh
+[5.049s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/local_setup.dsv
+[5.057s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.dsv
+[5.064s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/ament_index/resource_index/packages/controller
+[5.071s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/cmake/controllerConfig.cmake
+[5.078s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/cmake/controllerConfig-version.cmake
+[5.085s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.xml
+[5.094s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/controller

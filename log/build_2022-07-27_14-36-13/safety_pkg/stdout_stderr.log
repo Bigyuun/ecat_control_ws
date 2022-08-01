@@ -1,0 +1,9 @@
+[35m[1mScanning dependencies of target safety_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/safety_node.dir/src/safety_node.cpp.o[0m
+In file included from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg/include/safety_pkg/safety_node.hpp:56[m[K,
+                 from [01m[K/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg/src/safety_node.cpp:1[m[K:
+[01m[K/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg/../ecat_pkg/include/ecat_pkg/ecat_globals.hpp:49:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kg_kOperationMode[m[K’ defined but not used [[01;35m[K-Wunused-variable[m[K]
+   49 | static int8_t   [01;35m[Kg_kOperationMode[m[K = kProfileVelocity ;
+      |                 [01;35m[K^~~~~~~~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable safety_node[0m
+[100%] Built target safety_node

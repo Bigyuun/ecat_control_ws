@@ -1,0 +1,8 @@
+[0.055s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j6 -l6
+[0.115s] [35m[1mScanning dependencies of target ecat_node[0m
+[0.218s] [ 16%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/main.cpp.o[0m
+[0.234s] [ 33%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/ecat_node.cpp.o[0m
+[0.246s] [ 50%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/ecat_slave.cpp.o[0m
+[0.248s] [ 66%] [32mBuilding CXX object CMakeFiles/ecat_node.dir/src/ecat_lifecycle.cpp.o[0m
+[17.636s] [ 83%] [32m[1mLinking CXX executable ecat_node[0m
+[18.135s] [100%] Built target ecat_node

@@ -1,0 +1,12 @@
+CMake Error: Cannot open file for write: /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/build.make.tmp
+CMake Error: : System Error: Permission denied
+CMake Error: Cannot open file for write: /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/flags.make.tmp
+CMake Error: : System Error: Permission denied
+CMake Error: Cannot open file for write: /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/link.txt.tmp
+CMake Error: : System Error: Permission denied
+CMake Error: Could not create /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/cmake_clean.cmake
+CMake Error: Cannot open file for write: /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/DependInfo.cmake.tmp
+CMake Error: : System Error: Permission denied
+CMake Error: Cannot open file for write: /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/progress.make.tmp
+CMake Error: : System Error: Permission denied
+CMake Generate step failed.  Build files cannot be regenerated correctly.

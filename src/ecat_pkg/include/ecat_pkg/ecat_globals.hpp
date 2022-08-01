@@ -49,7 +49,7 @@ const uint32_t  g_kNumberOfServoDrivers = 1 ;
 static int8_t   g_kOperationMode = kProfileVelocity ; 
 // static int8_t   g_kOperationMode = kCSVelocity ;  // Velocity mode - slave
 //static int8_t   g_kOperationMode = kCSTorque ;  // Torque mode - master 
-#define NUM_OF_SLAVES     7  /// Total number of connected slave to the bus.
+#define NUM_OF_SLAVES     1  /// Total number of connected slave to the bus.
 /// Set this to 1 if you have custom EtherCAT slave other than servo drive.
 /// @note  That if you have different custom slave than EasyCAT you have to modify PDO mapping by yourself.
 #define CUSTOM_SLAVE      0  

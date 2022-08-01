@@ -1,0 +1,1 @@
+/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs/msg/DataReceived.msg

@@ -1,0 +1,23 @@
+[0.047s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j6 -l6
+[0.145s] [100%] Built target ecat_node
+[0.171s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j6 -l6
+[0.226s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg
+[0.244s] -- Install configuration: ""
+[0.245s] -- Execute custom install script
+[0.245s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib/ecat_pkg/ecat_node
+[0.245s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ament_index/resource_index/package_run_dependencies/ecat_pkg
+[0.246s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ament_index/resource_index/parent_prefix_path/ecat_pkg
+[0.246s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/ament_prefix_path.sh
+[0.246s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/ament_prefix_path.dsv
+[0.246s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/path.sh
+[0.247s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/environment/path.dsv
+[0.248s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.bash
+[0.248s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.sh
+[0.248s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.zsh
+[0.249s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/local_setup.dsv
+[0.249s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.dsv
+[0.262s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ament_index/resource_index/packages/ecat_pkg
+[0.262s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/cmake/ecat_pkgConfig.cmake
+[0.265s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/cmake/ecat_pkgConfig-version.cmake
+[0.268s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.xml
+[0.294s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg

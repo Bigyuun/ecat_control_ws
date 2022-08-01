@@ -1,0 +1,6 @@
+Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs
+Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs
+Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs -- -j8 -l8
+Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs -- -j8 -l8
+Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs
+Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs

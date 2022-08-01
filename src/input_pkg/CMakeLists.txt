@@ -39,7 +39,8 @@ find_package(ecat_msgs REQUIRED)
 #find_package(input_pkg REQUIRED)
 include_directories("include/input_pkg/"
 		    "../ecat_pkg/include/ecat_pkg/"	# DY - using globals.hpp				
-		    "/opt/etherlab/include/")		# DY - using ecrt.h for globals.hpp
+		    "/opt/etherlab/include/"
+        "/usr/include/SDL2/")		# DY - using ecrt.h for globals.hpp
 
 # link_directories("${CMAKE_BINARY_DIR}/my_lib/install/usr/local/lib")
 # **********************************************

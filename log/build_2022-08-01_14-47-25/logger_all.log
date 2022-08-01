@@ -1,0 +1,739 @@
+[0.085s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.085s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fb0a7bd5b80>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=6, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fb0a7bd5b80>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fb0a7be1130>)
+[0.100s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.100s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.100s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.100s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.100s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.100s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.100s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/daeyun/Desktop/ecat_control_ws'
+[0.100s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.101s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore_ament_install'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_pkg']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ros'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['cmake', 'python']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'cmake'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['python_setup_py']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python_setup_py'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ignore', 'ignore_ament_install']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore_ament_install'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_pkg']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_pkg'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_meta']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_meta'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ros']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ros'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['cmake', 'python']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'cmake'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['python_setup_py']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python_setup_py'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extensions ['ignore', 'ignore_ament_install']
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'ignore'
+[0.110s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'ignore_ament_install'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extensions ['colcon_pkg']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'colcon_pkg'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extensions ['colcon_meta']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'colcon_meta'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extensions ['ros']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'ros'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extensions ['cmake', 'python']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'cmake'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'python'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extensions ['python_setup_py']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/doxy_xml) by extension 'python_setup_py'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'ignore'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'ignore_ament_install'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extensions ['colcon_pkg']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'colcon_pkg'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extensions ['colcon_meta']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'colcon_meta'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extensions ['ros']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'ros'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extensions ['cmake', 'python']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'cmake'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'python'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extensions ['python_setup_py']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html) by extension 'python_setup_py'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extensions ['colcon_pkg']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'colcon_pkg'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extensions ['colcon_meta']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'colcon_meta'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extensions ['ros']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'ros'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extensions ['cmake', 'python']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'cmake'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'python'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extensions ['python_setup_py']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/html/search) by extension 'python_setup_py'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extensions ['colcon_pkg']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'colcon_pkg'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extensions ['colcon_meta']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'colcon_meta'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extensions ['ros']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'ros'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extensions ['cmake', 'python']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'cmake'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'python'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extensions ['python_setup_py']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/img) by extension 'python_setup_py'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'ignore'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'ignore_ament_install'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extensions ['colcon_pkg']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'colcon_pkg'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extensions ['colcon_meta']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'colcon_meta'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extensions ['ros']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'ros'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extensions ['cmake', 'python']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'cmake'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'python'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extensions ['python_setup_py']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/latex) by extension 'python_setup_py'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'ignore'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'ignore_ament_install'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extensions ['colcon_pkg']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'colcon_pkg'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extensions ['colcon_meta']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'colcon_meta'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extensions ['ros']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'ros'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extensions ['cmake', 'python']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'cmake'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'python'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extensions ['python_setup_py']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/search) by extension 'python_setup_py'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'ignore'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'ignore_ament_install'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extensions ['colcon_pkg']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'colcon_pkg'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extensions ['colcon_meta']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'colcon_meta'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extensions ['ros']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'ros'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extensions ['cmake', 'python']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'cmake'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'python'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extensions ['python_setup_py']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src) by extension 'python_setup_py'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'ignore'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'ignore_ament_install'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extensions ['colcon_pkg']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'colcon_pkg'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extensions ['colcon_meta']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'colcon_meta'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extensions ['ros']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'ros'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extensions ['cmake', 'python']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'cmake'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'python'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extensions ['python_setup_py']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/doxygen-custom) by extension 'python_setup_py'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extensions ['ignore', 'ignore_ament_install']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'ignore'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'ignore_ament_install'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extensions ['colcon_pkg']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'colcon_pkg'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extensions ['colcon_meta']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'colcon_meta'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extensions ['ros']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'ros'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extensions ['cmake', 'python']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'cmake'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'python'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extensions ['python_setup_py']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(docs/src/img) by extension 'python_setup_py'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extensions ['ignore', 'ignore_ament_install']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extension 'ignore'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extension 'ignore_ament_install'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extensions ['colcon_pkg']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extension 'colcon_pkg'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extensions ['colcon_meta']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extension 'colcon_meta'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extensions ['ros']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/controller) by extension 'ros'
+[0.118s] DEBUG:colcon.colcon_core.package_identification:Package 'src/controller' with type 'ros.ament_cmake' and name 'controller'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extension 'ignore'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extension 'ignore_ament_install'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extensions ['colcon_pkg']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extension 'colcon_pkg'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extensions ['colcon_meta']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extension 'colcon_meta'
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extensions ['ros']
+[0.118s] Level 1:colcon.colcon_core.package_identification:_identify(src/data_extract_pkg) by extension 'ros'
+[0.119s] DEBUG:colcon.colcon_core.package_identification:Package 'src/data_extract_pkg' with type 'ros.ament_cmake' and name 'data_extract_pkg'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extension 'ignore'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extension 'ignore_ament_install'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extensions ['colcon_pkg']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extension 'colcon_pkg'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extensions ['colcon_meta']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extension 'colcon_meta'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extensions ['ros']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_msgs) by extension 'ros'
+[0.119s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ecat_msgs' with type 'ros.ament_cmake' and name 'ecat_msgs'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extension 'ignore'
+[0.119s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extension 'ignore_ament_install'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extensions ['colcon_pkg']
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extension 'colcon_pkg'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extensions ['colcon_meta']
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extension 'colcon_meta'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extensions ['ros']
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/ecat_pkg) by extension 'ros'
+[0.120s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ecat_pkg' with type 'ros.ament_cmake' and name 'ecat_pkg'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extension 'ignore'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extension 'ignore_ament_install'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extensions ['colcon_pkg']
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extension 'colcon_pkg'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extensions ['colcon_meta']
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extension 'colcon_meta'
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extensions ['ros']
+[0.120s] Level 1:colcon.colcon_core.package_identification:_identify(src/gui_pkg) by extension 'ros'
+[0.121s] DEBUG:colcon.colcon_core.package_identification:Package 'src/gui_pkg' with type 'ros.ament_cmake' and name 'gui_pkg'
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extension 'ignore'
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extension 'ignore_ament_install'
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extensions ['colcon_pkg']
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extension 'colcon_pkg'
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extensions ['colcon_meta']
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extension 'colcon_meta'
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extensions ['ros']
+[0.121s] Level 1:colcon.colcon_core.package_identification:_identify(src/input_pkg) by extension 'ros'
+[0.122s] DEBUG:colcon.colcon_core.package_identification:Package 'src/input_pkg' with type 'ros.ament_cmake' and name 'input_pkg'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extension 'ignore'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extension 'ignore_ament_install'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extensions ['colcon_pkg']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extension 'colcon_pkg'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extensions ['colcon_meta']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extension 'colcon_meta'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extensions ['ros']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/log_pkg) by extension 'ros'
+[0.122s] DEBUG:colcon.colcon_core.package_identification:Package 'src/log_pkg' with type 'ros.ament_cmake' and name 'log_pkg'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extensions ['ignore', 'ignore_ament_install']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extension 'ignore'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extension 'ignore_ament_install'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extensions ['colcon_pkg']
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extension 'colcon_pkg'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extensions ['colcon_meta']
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extension 'colcon_meta'
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extensions ['ros']
+[0.123s] Level 1:colcon.colcon_core.package_identification:_identify(src/safety_pkg) by extension 'ros'
+[0.123s] DEBUG:colcon.colcon_core.package_identification:Package 'src/safety_pkg' with type 'ros.ament_cmake' and name 'safety_pkg'
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.146s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 256 installed packages in /opt/ros/foxy
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'cmake_args' from command line to 'None'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'cmake_target' from command line to 'None'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.183s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.184s] DEBUG:colcon.colcon_core.verb:Building package 'controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/controller', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/controller', 'symlink_install': True, 'test_result_base': None}
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'cmake_args' from command line to 'None'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'cmake_target' from command line to 'None'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.184s] Level 5:colcon.colcon_core.verb:set package 'data_extract_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.184s] DEBUG:colcon.colcon_core.verb:Building package 'data_extract_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg', 'symlink_install': True, 'test_result_base': None}
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'cmake_args' from command line to 'None'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'cmake_target' from command line to 'None'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.185s] Level 5:colcon.colcon_core.verb:set package 'ecat_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.185s] DEBUG:colcon.colcon_core.verb:Building package 'ecat_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'cmake_args' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'cmake_target' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'ecat_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.186s] DEBUG:colcon.colcon_core.verb:Building package 'ecat_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg', 'symlink_install': True, 'test_result_base': None}
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'cmake_args' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'cmake_target' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.186s] Level 5:colcon.colcon_core.verb:set package 'gui_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.186s] DEBUG:colcon.colcon_core.verb:Building package 'gui_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg', 'symlink_install': True, 'test_result_base': None}
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'cmake_args' from command line to 'None'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'cmake_target' from command line to 'None'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.187s] Level 5:colcon.colcon_core.verb:set package 'input_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.187s] DEBUG:colcon.colcon_core.verb:Building package 'input_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/input_pkg', 'symlink_install': True, 'test_result_base': None}
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'cmake_target' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'log_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.188s] DEBUG:colcon.colcon_core.verb:Building package 'log_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/log_pkg', 'symlink_install': True, 'test_result_base': None}
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'cmake_target' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.188s] Level 5:colcon.colcon_core.verb:set package 'safety_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.188s] DEBUG:colcon.colcon_core.verb:Building package 'safety_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/daeyun/Desktop/ecat_control_ws/build/safety_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg', 'merge_install': False, 'path': '/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg', 'symlink_install': True, 'test_result_base': None}
+[0.189s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.191s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.192s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs' with build type 'ament_cmake'
+[0.192s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/ecat_msgs'
+[0.195s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.195s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.195s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.198s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/controller' with build type 'ament_cmake'
+[0.198s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/controller'
+[0.199s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.199s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.203s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg' with build type 'ament_cmake'
+[0.203s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg'
+[0.204s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.204s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.213s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs -- -j6 -l6
+[0.217s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j6 -l6
+[0.220s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg -- -j6 -l6
+[0.284s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j6 -l6
+[0.312s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/controller
+[0.330s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(controller)
+[0.331s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/controller
+[0.335s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller' for CMake module files
+[0.335s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller' for CMake config files
+[0.335s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller', 'cmake_prefix_path')
+[0.336s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/hook/cmake_prefix_path.ps1'
+[0.337s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/hook/cmake_prefix_path.dsv'
+[0.337s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/hook/cmake_prefix_path.sh'
+[0.338s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/lib'
+[0.338s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/bin'
+[0.338s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/lib/pkgconfig/controller.pc'
+[0.338s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/lib/python3.8/site-packages'
+[0.338s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/bin'
+[0.339s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.ps1'
+[0.340s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.dsv'
+[0.340s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.sh'
+[0.341s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.bash'
+[0.341s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.zsh'
+[0.341s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/controller/share/colcon-core/packages/controller)
+[0.360s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(controller)
+[0.361s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller' for CMake module files
+[0.362s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller' for CMake config files
+[0.362s] Level 1:colcon.colcon_core.shell:create_environment_hook('controller', 'cmake_prefix_path')
+[0.363s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/hook/cmake_prefix_path.ps1'
+[0.363s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/hook/cmake_prefix_path.dsv'
+[0.363s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/hook/cmake_prefix_path.sh'
+[0.364s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/lib'
+[0.364s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/bin'
+[0.364s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/lib/pkgconfig/controller.pc'
+[0.364s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/lib/python3.8/site-packages'
+[0.364s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/controller/bin'
+[0.365s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.ps1'
+[0.365s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.dsv'
+[0.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.sh'
+[0.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.bash'
+[0.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/controller/share/controller/package.zsh'
+[0.366s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/controller/share/colcon-core/packages/controller)
+[0.396s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs -- -j6 -l6
+[0.464s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs
+[0.532s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ecat_msgs)
+[0.533s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs' for CMake module files
+[0.534s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs
+[0.534s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs' for CMake config files
+[0.534s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_msgs', 'cmake_prefix_path')
+[0.535s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/cmake_prefix_path.ps1'
+[0.536s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/cmake_prefix_path.dsv'
+[0.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/cmake_prefix_path.sh'
+[0.536s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib'
+[0.536s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_msgs', 'ld_library_path_lib')
+[0.537s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/ld_library_path_lib.ps1'
+[0.537s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/ld_library_path_lib.dsv'
+[0.538s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/ld_library_path_lib.sh'
+[0.538s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/bin'
+[0.538s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/pkgconfig/ecat_msgs.pc'
+[0.538s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages'
+[0.538s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_msgs', 'pythonpath')
+[0.539s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/pythonpath.ps1'
+[0.539s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/pythonpath.dsv'
+[0.539s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/pythonpath.sh'
+[0.540s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/bin'
+[0.541s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.ps1'
+[0.541s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.dsv'
+[0.541s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.sh'
+[0.542s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.bash'
+[0.542s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.zsh'
+[0.542s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/colcon-core/packages/ecat_msgs)
+[0.609s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ecat_msgs)
+[0.610s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs' for CMake module files
+[0.610s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs' for CMake config files
+[0.611s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_msgs', 'cmake_prefix_path')
+[0.612s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/cmake_prefix_path.ps1'
+[0.612s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/cmake_prefix_path.dsv'
+[0.612s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/cmake_prefix_path.sh'
+[0.613s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib'
+[0.613s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_msgs', 'ld_library_path_lib')
+[0.613s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/ld_library_path_lib.ps1'
+[0.614s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/ld_library_path_lib.dsv'
+[0.614s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/ld_library_path_lib.sh'
+[0.614s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/bin'
+[0.614s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/pkgconfig/ecat_msgs.pc'
+[0.614s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages'
+[0.614s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_msgs', 'pythonpath')
+[0.615s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/pythonpath.ps1'
+[0.615s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/pythonpath.dsv'
+[0.616s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/hook/pythonpath.sh'
+[0.616s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/bin'
+[0.617s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.ps1'
+[0.617s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.dsv'
+[0.618s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.sh'
+[0.618s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.bash'
+[0.618s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/ecat_msgs/package.zsh'
+[0.618s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/share/colcon-core/packages/ecat_msgs)
+[0.619s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg' with build type 'ament_cmake'
+[0.619s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/ecat_pkg'
+[0.620s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.620s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.624s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg' with build type 'ament_cmake'
+[0.624s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/gui_pkg'
+[0.625s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.625s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.628s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/input_pkg' with build type 'ament_cmake'
+[0.629s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/input_pkg'
+[0.630s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.630s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.633s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/log_pkg' with build type 'ament_cmake'
+[0.634s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/log_pkg'
+[0.635s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.635s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.638s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg' with build type 'ament_cmake'
+[0.639s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/daeyun/Desktop/ecat_control_ws/src/safety_pkg'
+[0.640s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.640s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.648s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j6 -l6
+[0.653s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg -- -j6 -l6
+[0.657s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j6 -l6
+[0.661s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/log_pkg -- -j6 -l6
+[0.671s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/safety_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/safety_pkg -- -j6 -l6
+[0.738s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg -- -j6 -l6
+[0.746s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j6 -l6
+[0.760s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/log_pkg -- -j6 -l6
+[0.766s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/safety_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/safety_pkg -- -j6 -l6
+[0.771s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg -- -j6 -l6
+[0.780s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg
+[0.788s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/log_pkg
+[0.792s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/safety_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/safety_pkg
+[0.796s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/input_pkg
+[0.811s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ecat_pkg)
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg' for CMake module files
+[0.814s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg' for CMake config files
+[0.814s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_pkg', 'cmake_prefix_path')
+[0.815s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/hook/cmake_prefix_path.ps1'
+[0.816s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/ecat_pkg
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/hook/cmake_prefix_path.dsv'
+[0.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/hook/cmake_prefix_path.sh'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/bin'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib/pkgconfig/ecat_pkg.pc'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib/python3.8/site-packages'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/bin'
+[0.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.ps1'
+[0.821s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.dsv'
+[0.822s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.sh'
+[0.822s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.bash'
+[0.822s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.zsh'
+[0.822s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/colcon-core/packages/ecat_pkg)
+[0.826s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(log_pkg)
+[0.828s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg' for CMake module files
+[0.828s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/log_pkg
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg' for CMake config files
+[0.829s] Level 1:colcon.colcon_core.shell:create_environment_hook('log_pkg', 'cmake_prefix_path')
+[0.830s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/hook/cmake_prefix_path.ps1'
+[0.830s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/hook/cmake_prefix_path.dsv'
+[0.830s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/hook/cmake_prefix_path.sh'
+[0.831s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/lib'
+[0.831s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/bin'
+[0.831s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/lib/pkgconfig/log_pkg.pc'
+[0.831s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/lib/python3.8/site-packages'
+[0.831s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/bin'
+[0.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.ps1'
+[0.832s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.dsv'
+[0.833s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.sh'
+[0.833s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.bash'
+[0.833s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.zsh'
+[0.833s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/colcon-core/packages/log_pkg)
+[0.836s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(safety_pkg)
+[0.837s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg' for CMake module files
+[0.838s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/safety_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/safety_pkg
+[0.838s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg' for CMake config files
+[0.838s] Level 1:colcon.colcon_core.shell:create_environment_hook('safety_pkg', 'cmake_prefix_path')
+[0.839s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/hook/cmake_prefix_path.ps1'
+[0.840s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/hook/cmake_prefix_path.dsv'
+[0.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/hook/cmake_prefix_path.sh'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/lib'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/bin'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/lib/pkgconfig/safety_pkg.pc'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/lib/python3.8/site-packages'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/bin'
+[0.842s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.ps1'
+[0.842s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.dsv'
+[0.842s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.sh'
+[0.843s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.bash'
+[0.843s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.zsh'
+[0.843s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/colcon-core/packages/safety_pkg)
+[0.848s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg
+[0.849s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(input_pkg)
+[0.851s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg' for CMake module files
+[0.851s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/input_pkg
+[0.851s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg' for CMake config files
+[0.852s] Level 1:colcon.colcon_core.shell:create_environment_hook('input_pkg', 'cmake_prefix_path')
+[0.853s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/hook/cmake_prefix_path.ps1'
+[0.853s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/hook/cmake_prefix_path.dsv'
+[0.854s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/hook/cmake_prefix_path.sh'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/bin'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib/pkgconfig/input_pkg.pc'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib/python3.8/site-packages'
+[0.854s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/bin'
+[0.855s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.ps1'
+[0.856s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.dsv'
+[0.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.sh'
+[0.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.bash'
+[0.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.zsh'
+[0.857s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/colcon-core/packages/input_pkg)
+[0.864s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ecat_pkg)
+[0.866s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg' for CMake module files
+[0.866s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg' for CMake config files
+[0.867s] Level 1:colcon.colcon_core.shell:create_environment_hook('ecat_pkg', 'cmake_prefix_path')
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/hook/cmake_prefix_path.ps1'
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/hook/cmake_prefix_path.dsv'
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/hook/cmake_prefix_path.sh'
+[0.869s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib'
+[0.869s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/bin'
+[0.869s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib/pkgconfig/ecat_pkg.pc'
+[0.870s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/lib/python3.8/site-packages'
+[0.870s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/bin'
+[0.871s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.ps1'
+[0.872s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.dsv'
+[0.872s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.sh'
+[0.872s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.bash'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/ecat_pkg/package.zsh'
+[0.873s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg/share/colcon-core/packages/ecat_pkg)
+[0.874s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(log_pkg)
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg' for CMake module files
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg' for CMake config files
+[0.876s] Level 1:colcon.colcon_core.shell:create_environment_hook('log_pkg', 'cmake_prefix_path')
+[0.877s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/hook/cmake_prefix_path.ps1'
+[0.878s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/hook/cmake_prefix_path.dsv'
+[0.878s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/hook/cmake_prefix_path.sh'
+[0.878s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/lib'
+[0.878s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/bin'
+[0.878s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/lib/pkgconfig/log_pkg.pc'
+[0.878s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/lib/python3.8/site-packages'
+[0.878s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/bin'
+[0.879s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.ps1'
+[0.880s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.dsv'
+[0.880s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.sh'
+[0.880s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.bash'
+[0.881s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.zsh'
+[0.881s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/colcon-core/packages/log_pkg)
+[0.881s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(gui_pkg)
+[0.883s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg' for CMake module files
+[0.883s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/gui_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/gui_pkg
+[0.883s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg' for CMake config files
+[0.884s] Level 1:colcon.colcon_core.shell:create_environment_hook('gui_pkg', 'cmake_prefix_path')
+[0.884s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/hook/cmake_prefix_path.ps1'
+[0.885s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/hook/cmake_prefix_path.dsv'
+[0.885s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/hook/cmake_prefix_path.sh'
+[0.885s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/lib'
+[0.885s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/bin'
+[0.886s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/lib/pkgconfig/gui_pkg.pc'
+[0.886s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/lib/python3.8/site-packages'
+[0.886s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/bin'
+[0.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.ps1'
+[0.887s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.dsv'
+[0.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.sh'
+[0.888s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.bash'
+[0.888s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.zsh'
+[0.888s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/colcon-core/packages/gui_pkg)
+[0.892s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(safety_pkg)
+[0.893s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg' for CMake module files
+[0.894s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg' for CMake config files
+[0.894s] Level 1:colcon.colcon_core.shell:create_environment_hook('safety_pkg', 'cmake_prefix_path')
+[0.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/hook/cmake_prefix_path.ps1'
+[0.895s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/hook/cmake_prefix_path.dsv'
+[0.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/hook/cmake_prefix_path.sh'
+[0.896s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/lib'
+[0.896s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/bin'
+[0.896s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/lib/pkgconfig/safety_pkg.pc'
+[0.896s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/lib/python3.8/site-packages'
+[0.896s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/bin'
+[0.897s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.ps1'
+[0.897s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.dsv'
+[0.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.sh'
+[0.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.bash'
+[0.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/safety_pkg/package.zsh'
+[0.899s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg/share/colcon-core/packages/safety_pkg)
+[0.900s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(input_pkg)
+[0.901s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg' for CMake module files
+[0.902s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg' for CMake config files
+[0.902s] Level 1:colcon.colcon_core.shell:create_environment_hook('input_pkg', 'cmake_prefix_path')
+[0.903s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/hook/cmake_prefix_path.ps1'
+[0.903s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/hook/cmake_prefix_path.dsv'
+[0.904s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/hook/cmake_prefix_path.sh'
+[0.904s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib'
+[0.904s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/bin'
+[0.904s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib/pkgconfig/input_pkg.pc'
+[0.904s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib/python3.8/site-packages'
+[0.904s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/bin'
+[0.905s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.ps1'
+[0.906s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.dsv'
+[0.906s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.sh'
+[0.906s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.bash'
+[0.906s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.zsh'
+[0.907s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/colcon-core/packages/input_pkg)
+[0.923s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(gui_pkg)
+[0.924s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg' for CMake module files
+[0.925s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg' for CMake config files
+[0.925s] Level 1:colcon.colcon_core.shell:create_environment_hook('gui_pkg', 'cmake_prefix_path')
+[0.926s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/hook/cmake_prefix_path.ps1'
+[0.926s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/hook/cmake_prefix_path.dsv'
+[0.926s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/hook/cmake_prefix_path.sh'
+[0.927s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/lib'
+[0.927s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/bin'
+[0.927s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/lib/pkgconfig/gui_pkg.pc'
+[0.927s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/lib/python3.8/site-packages'
+[0.927s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/bin'
+[0.928s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.ps1'
+[0.928s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.dsv'
+[0.928s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.sh'
+[0.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.bash'
+[0.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/gui_pkg/package.zsh'
+[0.929s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg/share/colcon-core/packages/gui_pkg)
+[2.206s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg -- -j6 -l6
+[2.224s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(data_extract_pkg)
+[2.226s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg' for CMake module files
+[2.226s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg' for CMake config files
+[2.226s] Level 1:colcon.colcon_core.shell:create_environment_hook('data_extract_pkg', 'cmake_prefix_path')
+[2.227s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/hook/cmake_prefix_path.ps1'
+[2.227s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/hook/cmake_prefix_path.dsv'
+[2.228s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/hook/cmake_prefix_path.sh'
+[2.228s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/lib'
+[2.228s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/bin'
+[2.228s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/lib/pkgconfig/data_extract_pkg.pc'
+[2.228s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/lib/python3.8/site-packages'
+[2.228s] Level 1:colcon.colcon_core.environment:checking '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/bin'
+[2.229s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/package.ps1'
+[2.230s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/package.dsv'
+[2.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/package.sh'
+[2.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/package.bash'
+[2.230s] INFO:colcon.colcon_core.shell:Creating package script '/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/data_extract_pkg/package.zsh'
+[2.231s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg/share/colcon-core/packages/data_extract_pkg)
+[2.241s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.241s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.241s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[2.241s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.247s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.247s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.247s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.255s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[2.255s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.256s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/daeyun/Desktop/ecat_control_ws/install/local_setup.ps1'
+[2.257s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/daeyun/Desktop/ecat_control_ws/install/_local_setup_util_ps1.py'
+[2.258s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/daeyun/Desktop/ecat_control_ws/install/setup.ps1'
+[2.259s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/daeyun/Desktop/ecat_control_ws/install/local_setup.sh'
+[2.259s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/daeyun/Desktop/ecat_control_ws/install/_local_setup_util_sh.py'
+[2.259s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/daeyun/Desktop/ecat_control_ws/install/setup.sh'
+[2.260s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/daeyun/Desktop/ecat_control_ws/install/local_setup.bash'
+[2.260s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/daeyun/Desktop/ecat_control_ws/install/setup.bash'
+[2.261s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/daeyun/Desktop/ecat_control_ws/install/local_setup.zsh'
+[2.262s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/daeyun/Desktop/ecat_control_ws/install/setup.zsh'

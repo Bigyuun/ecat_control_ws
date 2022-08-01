@@ -1,0 +1,2 @@
+Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg': /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg
+Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg' returned '1': /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg

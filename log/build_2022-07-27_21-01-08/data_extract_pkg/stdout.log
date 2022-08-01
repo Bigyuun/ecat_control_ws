@@ -1,0 +1,5 @@
+-- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Configuring incomplete, errors occurred!
+See also "/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/CMakeOutput.log".
+See also "/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/CMakeError.log".

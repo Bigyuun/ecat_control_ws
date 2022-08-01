@@ -1,0 +1,23 @@
+[0.029s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
+[0.087s] [100%] Built target hapticNode
+[0.102s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/input_pkg -- -j8 -l8
+[0.129s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/input_pkg
+[0.141s] -- Install configuration: ""
+[0.141s] -- Execute custom install script
+[0.141s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/lib/input_pkg/hapticNode
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/ament_index/resource_index/package_run_dependencies/input_pkg
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/ament_index/resource_index/parent_prefix_path/input_pkg
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/ament_prefix_path.sh
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/ament_prefix_path.dsv
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/path.sh
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/environment/path.dsv
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.bash
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.sh
+[0.142s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.zsh
+[0.143s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/local_setup.dsv
+[0.143s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.dsv
+[0.153s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/ament_index/resource_index/packages/input_pkg
+[0.153s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/cmake/input_pkgConfig.cmake
+[0.153s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/cmake/input_pkgConfig-version.cmake
+[0.154s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/input_pkg/share/input_pkg/package.xml
+[0.165s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/input_pkg' returned '0': AMENT_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/opt/ros/foxy LD_LIBRARY_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/input_pkg

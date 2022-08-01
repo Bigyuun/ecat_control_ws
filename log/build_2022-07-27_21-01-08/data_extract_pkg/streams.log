@@ -1,0 +1,23 @@
+[0.007s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg': /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg
+[0.020s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.035s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.137s] Traceback (most recent call last):
+[0.137s]   File "/opt/ros/foxy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py", line 21, in <module>
+[0.137s]     from ament_package.templates import get_environment_hook_template_path
+[0.137s] ModuleNotFoundError: No module named 'ament_package'
+[0.152s] CMake Error at /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_package_templates-extras.cmake:41 (message):
+[0.152s]   execute_process(/usr/bin/python3
+[0.152s]   /opt/ros/foxy/share/ament_cmake_core/cmake/package_templates/templates_2_cmake.py
+[0.152s]   /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/ament_cmake_package_templates/templates.cmake)
+[0.152s]   returned error code 1
+[0.152s] Call Stack (most recent call first):
+[0.153s]   /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)
+[0.153s]   /opt/ros/foxy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)
+[0.153s]   /opt/ros/foxy/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)
+[0.153s]   CMakeLists.txt:19 (find_package)
+[0.153s] 
+[0.153s] 
+[0.153s] -- Configuring incomplete, errors occurred!
+[0.153s] See also "/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/CMakeOutput.log".
+[0.153s] See also "/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/CMakeError.log".
+[0.155s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg' returned '1': /usr/bin/cmake /home/daeyun/Desktop/ecat_control_ws/src/data_extract_pkg -DCMAKE_INSTALL_PREFIX=/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg

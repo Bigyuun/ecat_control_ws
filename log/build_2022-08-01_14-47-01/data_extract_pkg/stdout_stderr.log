@@ -1,0 +1,9 @@
+CMake Error: Cannot open file for write: /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/depend.make.tmp
+[35m[1mScanning dependencies of target data_extract_node[0m
+CMake Error: : System Error: Permission denied
+CMake Error: Directory Information file not found
+CMake Error: Cannot open file for write: /home/daeyun/Desktop/ecat_control_ws/build/data_extract_pkg/CMakeFiles/data_extract_node.dir/depend.make.tmp
+CMake Error: : System Error: Permission denied
+make[2]: *** [CMakeFiles/data_extract_node.dir/build.make:148: CMakeFiles/data_extract_node.dir/depend] Error 2
+make[1]: *** [CMakeFiles/Makefile2:77: CMakeFiles/data_extract_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

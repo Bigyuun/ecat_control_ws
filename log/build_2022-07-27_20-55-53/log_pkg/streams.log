@@ -1,0 +1,23 @@
+[0.033s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/log_pkg -- -j6 -l6
+[0.110s] [100%] Built target timing_node
+[0.127s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/log_pkg -- -j6 -l6
+[0.159s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/log_pkg
+[0.173s] -- Install configuration: ""
+[0.173s] -- Execute custom install script
+[0.173s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/lib/log_pkg/timing_node
+[0.173s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/ament_index/resource_index/package_run_dependencies/log_pkg
+[0.173s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/ament_index/resource_index/parent_prefix_path/log_pkg
+[0.173s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/environment/ament_prefix_path.sh
+[0.173s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/environment/ament_prefix_path.dsv
+[0.174s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/environment/path.sh
+[0.174s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/environment/path.dsv
+[0.174s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/local_setup.bash
+[0.174s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/local_setup.sh
+[0.175s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/local_setup.zsh
+[0.175s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/local_setup.dsv
+[0.176s] -- Symlinking: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.dsv
+[0.188s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/ament_index/resource_index/packages/log_pkg
+[0.189s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/cmake/log_pkgConfig.cmake
+[0.190s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/cmake/log_pkgConfig-version.cmake
+[0.190s] -- Up-to-date symlink: /home/daeyun/Desktop/ecat_control_ws/install/log_pkg/share/log_pkg/package.xml
+[0.207s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/log_pkg' returned '0': CMAKE_PREFIX_PATH=/home/daeyun/Desktop/ecat_control_ws/install/ecat_msgs:/home/daeyun/Desktop/ecat_control_ws/install/safety_pkg:/home/daeyun/Desktop/ecat_control_ws/install/log_pkg:/home/daeyun/Desktop/ecat_control_ws/install/input_pkg:/home/daeyun/Desktop/ecat_control_ws/install/gui_pkg:/home/daeyun/Desktop/ecat_control_ws/install/ecat_pkg:/home/daeyun/Desktop/ecat_control_ws/install/data_extract_pkg:/home/daeyun/Desktop/ecat_control_ws/install/controller:/opt/ros/foxy /usr/bin/cmake --install /home/daeyun/Desktop/ecat_control_ws/build/log_pkg
