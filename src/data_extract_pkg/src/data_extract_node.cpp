@@ -85,6 +85,7 @@ void DataExtraction::RecordThread()
     while(true)
     {
         std::string command;
+        cout << "Input Command : ";
         cin >> command ;
 
         // file create part
