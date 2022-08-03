@@ -1,1 +1,0 @@
-/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs/rosidl_typesupport_introspection_c/ecat_msgs/msg/detail/data_sent__rosidl_typesupport_introspection_c.h

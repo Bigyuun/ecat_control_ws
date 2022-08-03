@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs/rosidl_generator_py/ecat_msgs/libecat_msgs__python.so" "TARGETS" "ecat_msgs__python" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

@@ -1,1 +1,0 @@
-/home/daeyun/Desktop/ecat_control_ws/build/controller/ament_cmake_environment_hooks/local_setup.bash

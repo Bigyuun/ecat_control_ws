@@ -1,3 +1,0 @@
-[0.023s] Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j6 -l6
-[0.103s] [100%] Built target joy_node
-[0.116s] Invoked command in '/home/daeyun/Desktop/ecat_control_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/controller -- -j6 -l6

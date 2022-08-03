@@ -1,1 +1,0 @@
-Invoking command in '/home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/daeyun/Desktop/ecat_control_ws/build/ecat_msgs -- -j6 -l6

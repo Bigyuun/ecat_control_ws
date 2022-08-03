@@ -1,7 +1,0 @@
-[01m[K/home/daeyun/Desktop/ecat_control_ws/src/log_pkg/src/timing_node.cpp:[m[K In member function ‘[01m[Kvoid Timing::TimingNode::CalculateStatistics()[m[K’:
-[01m[K/home/daeyun/Desktop/ecat_control_ws/src/log_pkg/src/timing_node.cpp:38:36:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kecat_msgs::msg::DataReceived_<std::allocator<void> >::_jitter_ns_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} and ‘[01m[Kint32_t[m[K’ {aka ‘[01m[Kint[m[K’} [[01;35m[K-Wsign-compare[m[K]
-   38 |       if([01;35m[Kreceived_data_->jitter_ns > jitter_max_[m[K)
-      |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
-[01m[K/home/daeyun/Desktop/ecat_control_ws/src/log_pkg/src/timing_node.cpp:40:36:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kecat_msgs::msg::DataReceived_<std::allocator<void> >::_jitter_ns_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} and ‘[01m[Kint32_t[m[K’ {aka ‘[01m[Kint[m[K’} [[01;35m[K-Wsign-compare[m[K]
-   40 |       if([01;35m[Kreceived_data_->jitter_ns < jitter_min_[m[K)
-      |          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
