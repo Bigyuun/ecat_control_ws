@@ -58,7 +58,9 @@ Note that, before running, you might need to change lauch_all_nodes.py file, to 
   source /opt/ros/foxy/setup.bash
   . install/setup.bash
   ros2 launch launch_all_nodes.py
-```
+```  
+##### Note that, two launch files are provided. In launch_all_nodes.py file, state transitions are requested by pressing buttons in GUI node, and Safety Node changes state for the EtherCAT node. In other launch file, ethercat_nodes_launch.py file, state transitions directly triggered in the python script, and in the current version, it brings the EtherCAT node to the active state.
+
 #### Recording Data
 If you want to recording data(from motor drivers), Open an another terminal and put this command.
 (In same directory of upper Build & Running)
@@ -69,5 +71,3 @@ If you want to recording data(from motor drivers), Open an another terminal and 
 ```
 #### Check Point
 This Recording data can extract actual pos/vel/tor. So if you want another data type, you can modify yourself in "data_extract_node.cpp"
-  
-##### Note that, two launch files are provided. In launch_all_nodes.py file, state transitions are requested by pressing buttons in GUI node, and Safety Node changes state for the EtherCAT node. In other launch file, ethercat_nodes_launch.py file, state transitions directly triggered in the python script, and in the current version, it brings the EtherCAT node to the active state.
