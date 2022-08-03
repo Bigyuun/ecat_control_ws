@@ -1,4 +1,0 @@
-source;share/ecat_msgs/local_setup.bash
-source;share/ecat_msgs/local_setup.dsv
-source;share/ecat_msgs/local_setup.sh
-source;share/ecat_msgs/local_setup.zsh
