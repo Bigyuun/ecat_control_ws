@@ -61,6 +61,8 @@
 #include <chrono>
 #include <memory>
 
+// DY
+#include <math.h>
 /****************************************************************************/
 /// IgH EtherCAT library header file the user-space real-time interface library.
 /// IgH, EtherCAT related functions and data types.

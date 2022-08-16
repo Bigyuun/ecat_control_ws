@@ -104,6 +104,28 @@ void HapticNode::HandleSlaveFeedbackCallbacks(const ecat_msgs::msg::DataReceived
 // Haptic Thread 3 start========================================
 void HapticNode::commThread()
 {
+
+  // for testing sine wave position
+  if (VELOCITY_SINEWAVE_MODE)
+  {
+    RCLCPP_WARN(get_logger(), "SINE WAVE TEST (NOT TCP/IP comm)");
+    while (true)
+    {
+      static uint64_t sine_count_read = 0;
+      for (int i = 0; i < NUM_OF_SLAVES; i++)
+      {
+        hapticMsg.array[i] = 800 * sin(sine_count_read * 0.001);
+      }
+      sine_count_read++;
+      haptic_publisher_->publish(hapticMsg);
+      if( (sine_count_read%10000) == 0)
+      {
+        std::cout << "--------- Read count : " << sine_count_read << "----------" << std::endl;
+      }
+      
+    }
+  }
+
   RCLCPP_INFO(get_logger(), "Starting Haptic Node");
   
   RCLCPP_INFO(get_logger(), "TCP server initializing...");
@@ -324,9 +346,6 @@ void HapticNode::CommReadThread(int fd_client)
     // hapticMsg.array[5] = 0;
     // hapticMsg.array[6] = 0;
     }
-    
-    haptic_publisher_->publish(hapticMsg);
-    std::cout << "--------- Read count : " << count_read++ << "----------" << std::endl;
   }
 }
 

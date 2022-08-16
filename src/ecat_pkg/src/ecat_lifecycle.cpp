@@ -1375,9 +1375,31 @@ void EthercatLifeCycle::UpdateCyclicVelocityModeParameters()
             sent_data_.target_vel[5] = target_[5];
             sent_data_.target_vel[6] = target_[6];
 
-            }else{
-                sent_data_.target_vel[i]=0;
+            // Sine wave test
+            static const double pi = 3.1415926;
+            static uint64_t sine_count_read[NUM_OF_SLAVES] = {0};
+            static double duration[NUM_OF_SLAVES] = {0.0002, 0.0002, 0.0002, 0.0002};
+            static double amplitude[NUM_OF_SLAVES] = {100, 100, 75, 75};
+
+            for (int i = 0; i < NUM_OF_SLAVES; i++)
+            {
+                // sent_data_.target_vel[i] = amplitude[i] * sin(pi * ((sine_count_read[i]*duration[i])/180) * );
+                sent_data_.target_vel[i] = amplitude[i] * sin(sine_count_read[i] * duration[i]);
+                sine_count_read[i]++;
+
+                if( ((sine_count_read[i]*duration[i])/180) >= 2*pi ) sine_count_read[i] = 0;
             }
+            // set zero 0
+            // sent_data_.target_vel[0] = 0;
+            // sent_data_.target_vel[1] = 0;
+            sent_data_.target_vel[2] = 0;
+            // sent_data_.target_vel[3] = 0;
+            
+        }
+        else
+        {
+            sent_data_.target_vel[i] = 0;
+        }
     }
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
     // int m1_conversion_ratio = GEAR_RATIO*2;  // if you multiply this value with the RPM value mechanism will move in that RPM.
