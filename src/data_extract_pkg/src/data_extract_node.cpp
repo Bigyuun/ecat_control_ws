@@ -45,11 +45,23 @@ uint8_t DataExtraction::CreateFile(std::string file_name)
 
     if(CSVFILE_MANAGER.is_open())
     {   
-        CSVFILE_MANAGER << "Created Due : " << std::string(ctime(&system_time)) << "\n";
-        CSVFILE_MANAGER << "Time"       << ","
-                        << "actual_pos" << "," 
-                        << "actual_vel" << ","
-                        << "actual_tor" << "\n";
+            CSVFILE_MANAGER << "Create Time : " << std::string(ctime(&system_time)) << "\n\n";
+
+        for(int i; i<NUM_OF_SLAVES; i++)
+        {
+            CSVFILE_MANAGER << "MOTOR #" << i+1 << ", , ,";
+        }
+            CSVFILE_MANAGER << "\n";
+
+            CSVFILE_MANAGER << "Time"       << ",";
+        for(int i; i<NUM_OF_SLAVES; i++)
+        {
+            CSVFILE_MANAGER << "actual_pos" << ","
+                            << "actual_vel" << ","
+                            << "actual_tor" << ",";
+        }
+            CSVFILE_MANAGER << "\n";
+
         RCLCPP_INFO(get_logger(), directory + file_name + FILE_TYPE + " is created!");
         return 1;
     }
@@ -76,7 +88,6 @@ void DataExtraction::RecordThread()
 
     cout << "*************** Command **************" << endl;
     cout << " c             : create & set file you want " << endl;
-    //cout << " c <file name> : create & set file you want " << endl;
     cout << " r             : record start (If didn't input 'c-command', file name will be 'System-Time'" << endl;
     cout << " s             : stop write (record) " << endl;
     cout << " Q             : quit (ctrl+c) " << endl;
