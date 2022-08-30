@@ -168,14 +168,21 @@ ssize_t TCPServer::server_read(char *buffer)
     }
 }
 
-int TCPServer::server_close()
+int TCPServer::client_close()
 {
     if(close(client_socket_)==-1)
     {
         cout << "client close() error" << endl;
         return -1;
     }
+    else
+    {
+        return 0;
+    }
+}
 
+int TCPServer::server_close()
+{
     if(close(server_socket_)==-1)
     {
         cout << "server close() error" << endl;

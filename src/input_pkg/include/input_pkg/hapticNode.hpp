@@ -111,7 +111,8 @@ private:
 
   std::thread comm_write_thread_;    // DY
   std::thread comm_read_thread_;     // DY
-  
+  bool TCP_life = true;
+  int file_descriptor_ = 0;
   std::shared_future<void> future_;
   std::promise<void> exit_signal_;
 

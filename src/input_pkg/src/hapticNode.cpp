@@ -106,6 +106,7 @@ void HapticNode::commThread()
 {
 
   // for testing sine wave position
+  #if VELOCITY_SINEWAVE_MODE
   if (VELOCITY_SINEWAVE_MODE)
   {
     RCLCPP_WARN(get_logger(), "SINE WAVE TEST (NOT TCP/IP comm)");
@@ -125,6 +126,7 @@ void HapticNode::commThread()
       
     }
   }
+  #endif
 
   RCLCPP_INFO(get_logger(), "Starting Haptic Node");
   
@@ -144,13 +146,22 @@ void HapticNode::commThread()
   RCLCPP_INFO(get_logger(), "Entering communication loop!");
   static int count = 0;
 
+  file_descriptor_ = Server.client_socket_;
 
   comm_write_thread_ = std::thread(&HapticNode::CommWriteThread, this, Server.client_socket_);
   comm_read_thread_ = std::thread(&HapticNode::CommReadThread, this, Server.client_socket_);
+  std::cout << "fd : " << Server.client_socket_ << std::endl;
 
   while (true)
   {
-    
+    if(!TCP_life) {
+      Server.client_close();
+      Server.server_listen();
+      Server.server_accept();
+      TCP_life = true;
+      file_descriptor_ = Server.client_socket_;
+      std::cout << "fd : " << Server.client_socket_ << std::endl;
+    }
   }
 
   // CKim - End communication
@@ -168,8 +179,12 @@ void HapticNode::CommWriteThread(int fd_client)
   std::cout << "writing Thread Start" << std::endl;
 
   static int count_write = 0;
-  while(1)
-  {
+  while(true)
+  { 
+    if(!TCP_life) {
+      RCLCPP_WARN(get_logger(), "TCP disconnected");
+      usleep(1000000);
+    }
     // UR Protocol
     // int data_size = TCP_BUFFER_SIZE;
     int buf_size = 4;
@@ -266,15 +281,15 @@ void HapticNode::CommWriteThread(int fd_client)
     memcpy(write_msg                    , &buf_size, sizeof(int));
     memcpy(write_msg + sizeof(int)      , &protocol_MIDAS, 50*sizeof(double));
 
-    int send_buf_size_ = write(fd_client, &write_msg, TCP_BUFFER_SIZE);
+    int send_buf_size_ = write(this->file_descriptor_, &write_msg, TCP_BUFFER_SIZE);
 
-    static char pcount = 0;
-    if(pcount ==5){
-      std::cout << "[send buf size] : " << send_buf_size_ << "/ [send msg] : " << write_msg << std::endl;
-      std::cout << "--------- Write count : " << count_write++ << "----------" << std::endl;
-      pcount =0;
-    }
-    pcount ++;
+    // static char pcount = 0;
+    // if(pcount ==5){
+    //   std::cout << "[send buf size] : " << send_buf_size_ << "/ [send msg] : " << write_msg << std::endl;
+    //   std::cout << "--------- Write count : " << count_write++ << "----------" << std::endl;
+    //   pcount =0;
+    // }
+    // pcount ++;
 
     usleep(2000);
   }
@@ -286,19 +301,30 @@ void HapticNode::CommReadThread(int fd_client)
   std::cout << "Reading Thread Start" << std::endl;
   static int count_read = 0;
 
-  while(1)
+  while(true)
   {
+    if(!TCP_life) continue;
+
     char msg[TCP_BUFFER_SIZE]={0};
-    int read_msg_size_ = read(fd_client, msg, TCP_BUFFER_SIZE);
+    int read_msg_size_ = read(this->file_descriptor_, msg, TCP_BUFFER_SIZE);
     msg[read_msg_size_] = '\0';
 
-    std::vector<std::string> motor_val;
+    if(read_msg_size_ == 0)
+    {
+      RCLCPP_WARN(get_logger(), "EOF from Client... try to reconnect");
+      TCP_life = false;
+    }
 
+    std::vector<std::string> motor_val;
+    std::cout << read_msg_size_ << "/" << msg << std::endl;
     motor_val = Parsing(msg, read_msg_size_);
 
     // read error
     if(motor_val[0] == "IndexError" || motor_val[0] == "DeliError")
     {
+      // usleep(1000000);
+      // count_read++;
+      // RCLCPP_INFO(get_logger(), "count = %d", count_read);
       continue;
     }
 
@@ -346,6 +372,8 @@ void HapticNode::CommReadThread(int fd_client)
     // hapticMsg.array[5] = 0;
     // hapticMsg.array[6] = 0;
     }
+
+    usleep(100);
   }
 }
 
@@ -395,7 +423,7 @@ double HapticNode::htond(double &x)
 std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  int read_msg_size)
 {
   std::string msg_str = read_msg;
-  std::cout << "[read_msg_size] : " << read_msg_size << " / [read msg] : " << msg_str << std::endl;
+  // std::cout << "[read_msg_size] : " << read_msg_size << " / [read msg] : " << msg_str << std::endl;
 
   // -------------- < Parsing Start > --------------
   // parsing part
@@ -422,6 +450,11 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
   index_read_msg[3] = msg_str.find(delim_end);
   index_read_msg[4] = msg_str.find(delim_subend);
   
+  for(int i=0; i<g_kNumberOfServoDrivers; i++)
+  {
+    std::cout << index_read_msg[i] << "/";
+  }
+  std::cout << std::endl;
 
   // DY
   // if there is no protocol characters, loop restart
@@ -431,7 +464,6 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
     if (index_read_msg[i] < 0)
     {
       index_err_flag = false;
-      std::cout << "index err : -1" << std::endl;
       break;
     }
     else
@@ -481,7 +513,7 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
   }
 
   // if index or delimiter error doesn't occur
-  std::cout << det_str << std::endl;
+  // std::cout << det_str << std::endl;
 
   motor_values = msg_str.substr(index_read_msg[2] + 1, (index_read_msg[4] - index_read_msg[2] - 1));
   motor_val = Split(motor_values, delim_);
@@ -489,25 +521,25 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
   
 
   // show result
-  static char mcount =0;
-  if(mcount ==5)
-  {
-    std::cout << " index is : ";
-    for (int i = 0; i < 5; i++)
-    {
-      std::cout << index_read_msg[i] << " ";
-    }
-    std::cout << "" << std::endl;
+  // static char mcount =0;
+  // if(mcount ==5)
+  // {
+  //   std::cout << " index is : ";
+  //   for (int i = 0; i < 5; i++)
+  //   {
+  //     std::cout << index_read_msg[i] << " ";
+  //   }
+  //   std::cout << "" << std::endl;
     
-    std::cout << "motor values : " << std::endl;
-    for (int i = 0; i < motor_val.size(); i++)
-    {
-      std::cout << motor_val[i] << " / ";
-    }
-    std::cout << " " << std::endl;
-    mcount = 0;
-  }
-  mcount++;
+  //   std::cout << "motor values : " << std::endl;
+  //   for (int i = 0; i < motor_val.size(); i++)
+  //   {
+  //     std::cout << motor_val[i] << " / ";
+  //   }
+  //   std::cout << " " << std::endl;
+  //   mcount = 0;
+  // }
+  // mcount++;
 
   return motor_val;
 }

@@ -93,6 +93,13 @@ namespace TCPCommunication
              * @return success size of data bytes(if end of a file is 0), false -1
              */
             ssize_t server_read(char *buffer);
+            
+            /**
+             * @brief close client socket
+             * 
+             * @return success 0, false -1
+             */
+            int client_close();
 
             /**
              * @brief close server socket
