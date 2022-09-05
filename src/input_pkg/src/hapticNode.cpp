@@ -206,42 +206,42 @@ void HapticNode::CommWriteThread(int fd_client)
     // Slave Position & Velocity
     if(g_kOperationType == kSlaveType)
     {
-      actual_q[0] = received_data_[0].actual_pos*1.03999e-05*0.25;
-      actual_q[1] = received_data_[1].actual_pos*1.03999e-05*0.25 * (-1.0);
-      actual_q[2] = received_data_[2].actual_pos*0.000500801*0.25;
-      actual_q[3] = received_data_[3].actual_pos*9.29685e-05*0.25;
-      actual_q[4] = received_data_[4].actual_pos*9.29685e-05*0.25;
-      actual_q[5] = received_data_[5].actual_pos*9.29685e-05*0.25;
-      actual_q[6] = received_data_[6].actual_pos*9.29685e-05*0.25;
+      actual_q[0] = received_data_[0].actual_pos* RATIO_CONVERSION_POS_SLAVE_1;
+      actual_q[1] = received_data_[1].actual_pos* RATIO_CONVERSION_POS_SLAVE_2;
+      actual_q[2] = received_data_[2].actual_pos* RATIO_CONVERSION_POS_SLAVE_3;
+      actual_q[3] = received_data_[3].actual_pos* RATIO_CONVERSION_POS_SLAVE_4;
+      actual_q[4] = received_data_[4].actual_pos* RATIO_CONVERSION_POS_SLAVE_5;
+      actual_q[5] = received_data_[5].actual_pos* RATIO_CONVERSION_POS_SLAVE_6;
+      actual_q[6] = received_data_[6].actual_pos* RATIO_CONVERSION_POS_SLAVE_7;
 
-      actual_qd[0] = received_data_[0].actual_vel*0.000177;
-      actual_qd[1] = received_data_[1].actual_vel*0.000177 * (-1.0);
-      actual_qd[2] = received_data_[2].actual_vel*0.008547;
-      actual_qd[3] = received_data_[3].actual_vel*0.001587;
-      actual_qd[4] = received_data_[4].actual_vel*0.001587;
-      actual_qd[5] = received_data_[5].actual_vel*0.001587;
-      actual_qd[6] = received_data_[6].actual_vel*0.001587;
+      actual_qd[0] = received_data_[0].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_1;
+      actual_qd[1] = received_data_[1].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_2;
+      actual_qd[2] = received_data_[2].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_3;
+      actual_qd[3] = received_data_[3].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_4;
+      actual_qd[4] = received_data_[4].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_5;
+      actual_qd[5] = received_data_[5].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_6;
+      actual_qd[6] = received_data_[6].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_7;
     }
     
     
     // Master Position & Velocity
     if(g_kOperationType == kMasterType)
     {
-      actual_q[0] = received_data_[0].actual_pos * 0.001055022 * 0.25 * (-1.0);
-      actual_q[1] = received_data_[1].actual_pos * 0.000682806 * 0.25 * (-1.0);
-      actual_q[2] = received_data_[2].actual_pos * 0.000682806 * 0.25;
-      actual_q[3] = received_data_[3].actual_pos * 0.000292187 * 0.5 * 0.25;
-      actual_q[4] = received_data_[4].actual_pos * 0.000292187 * 0.5 * 0.25;
-      actual_q[5] = received_data_[5].actual_pos * 0.000292187 * 0.5 * 0.25;
-      actual_q[6] = received_data_[6].actual_pos * 0.000292187 * 0.5 * 0.25;
+      actual_q[0] = received_data_[0].actual_pos * RATIO_CONVERSION_POS_MASTER_1;
+      actual_q[1] = received_data_[1].actual_pos * RATIO_CONVERSION_POS_MASTER_2;
+      actual_q[2] = received_data_[2].actual_pos * RATIO_CONVERSION_POS_MASTER_3;
+      actual_q[3] = received_data_[3].actual_pos * RATIO_CONVERSION_POS_MASTER_4;
+      actual_q[4] = received_data_[4].actual_pos * RATIO_CONVERSION_POS_MASTER_5;
+      actual_q[5] = received_data_[5].actual_pos * RATIO_CONVERSION_POS_MASTER_6;
+      actual_q[6] = received_data_[6].actual_pos * RATIO_CONVERSION_POS_MASTER_7;
 
-      actual_qd[0] = received_data_[0].actual_vel * 0.008792 * (-1.0);
-      actual_qd[1] = received_data_[1].actual_vel * 0.00569 * (-1.0);
-      actual_qd[2] = received_data_[2].actual_vel * 0.00569;
-      actual_qd[3] = received_data_[3].actual_vel * 0.004987 * 0.5;
-      actual_qd[4] = received_data_[4].actual_vel * 0.004987 * 0.5;
-      actual_qd[5] = received_data_[5].actual_vel * 0.004987 * 0.5;
-      actual_qd[6] = received_data_[6].actual_vel * 0.004987 * 0.5;
+      actual_qd[0] = received_data_[0].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_1;
+      actual_qd[1] = received_data_[1].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_2;
+      actual_qd[2] = received_data_[2].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_3;
+      actual_qd[3] = received_data_[3].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_4;
+      actual_qd[4] = received_data_[4].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_5;
+      actual_qd[5] = received_data_[5].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_6;
+      actual_qd[6] = received_data_[6].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_7;
     }
 
 
@@ -270,7 +270,7 @@ void HapticNode::CommWriteThread(int fd_client)
 
     // DY
     // ** Caution : "htonl & htond" are functions for changing "Big endian & Little endian"
-    // Each OS (even if CPU) define the type of endian their own
+    // Each OS (even if CPU) define the type of endian which their own
     buf_size = htonl(buf_size);
     for(int i=0; i<50; i++)
     {
@@ -311,6 +311,14 @@ void HapticNode::CommReadThread(int fd_client)
 
     if(read_msg_size_ == 0)
     {
+      hapticMsg.array[0] = 0;
+      hapticMsg.array[1] = 0;
+      hapticMsg.array[2] = 0;
+      hapticMsg.array[3] = 0;
+      hapticMsg.array[4] = 0;
+      hapticMsg.array[5] = 0;
+      hapticMsg.array[6] = 0;
+
       RCLCPP_WARN(get_logger(), "EOF from Client... try to reconnect");
       TCP_life = false;
     }
@@ -338,13 +346,13 @@ void HapticNode::CommReadThread(int fd_client)
     if(g_kOperationType == kSlaveType)
     {
     // For Publisher - Velocity Mode - Slave
-    hapticMsg.array[0] = val[0]*5634.085;
-    hapticMsg.array[1] = (-1)*val[1]*5634.085;
-    hapticMsg.array[2] = val[2]*117;
-    hapticMsg.array[3] = val[3]*630.2536;
-    hapticMsg.array[4] = val[4]*630.2536;
-    hapticMsg.array[5] = val[5]*630.2536;
-    hapticMsg.array[6] = val[6]*630.2536;
+    hapticMsg.array[0] = val[0]* RATIO_CONVERSION_MOTORDRIVER_SLAVE_1;
+    hapticMsg.array[1] = val[1]* RATIO_CONVERSION_MOTORDRIVER_SLAVE_2;
+    hapticMsg.array[2] = val[2]* RATIO_CONVERSION_MOTORDRIVER_SLAVE_3;
+    hapticMsg.array[3] = val[3]* RATIO_CONVERSION_MOTORDRIVER_SLAVE_4;
+    hapticMsg.array[4] = val[4]* RATIO_CONVERSION_MOTORDRIVER_SLAVE_5;
+    hapticMsg.array[5] = val[5]* RATIO_CONVERSION_MOTORDRIVER_SLAVE_6;
+    hapticMsg.array[6] = val[6]* RATIO_CONVERSION_MOTORDRIVER_SLAVE_7;
     // hapticMsg.array[0] = 0;
     // hapticMsg.array[1] = 0;
     // hapticMsg.array[2] = 0;
@@ -357,13 +365,13 @@ void HapticNode::CommReadThread(int fd_client)
     if(g_kOperationType == kMasterType)
     {
     // For Publisher - Torque Mode - Master
-    hapticMsg.array[0] = (-1.0)*val[0]*0.000183559;
-    hapticMsg.array[1] = (-1.0)*val[1]*0.000118798;
-    hapticMsg.array[2] = val[2]*0.000118798;
-    hapticMsg.array[3] = val[3]*0.002978052*0.5;
-    hapticMsg.array[4] = val[4]*0.002978052*0.5;
-    hapticMsg.array[5] = val[5]*0.002978052*0.5;
-    hapticMsg.array[6] = val[6]*0.002978052*0.5;
+    hapticMsg.array[0] = val[0]* RATIO_CONVERSION_MOTORDRIVER_MASTER_1;
+    hapticMsg.array[1] = val[1]* RATIO_CONVERSION_MOTORDRIVER_MASTER_2;
+    hapticMsg.array[2] = val[2]* RATIO_CONVERSION_MOTORDRIVER_MASTER_3;
+    hapticMsg.array[3] = val[3]* RATIO_CONVERSION_MOTORDRIVER_MASTER_4;
+    hapticMsg.array[4] = val[4]* RATIO_CONVERSION_MOTORDRIVER_MASTER_5;
+    hapticMsg.array[5] = val[5]* RATIO_CONVERSION_MOTORDRIVER_MASTER_6;
+    hapticMsg.array[6] = val[6]* RATIO_CONVERSION_MOTORDRIVER_MASTER_7;
     // hapticMsg.array[0] = 0;
     // hapticMsg.array[1] = 0;
     // hapticMsg.array[2] = 0;
@@ -423,7 +431,6 @@ double HapticNode::htond(double &x)
 std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  int read_msg_size)
 {
   std::string msg_str = read_msg;
-  // std::cout << "[read_msg_size] : " << read_msg_size << " / [read msg] : " << msg_str << std::endl;
 
   // -------------- < Parsing Start > --------------
   // parsing part
@@ -450,11 +457,11 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
   index_read_msg[3] = msg_str.find(delim_end);
   index_read_msg[4] = msg_str.find(delim_subend);
   
-  for(int i=0; i<g_kNumberOfServoDrivers; i++)
-  {
-    std::cout << index_read_msg[i] << "/";
-  }
-  std::cout << std::endl;
+  // for(int i=0; i<g_kNumberOfServoDrivers; i++)
+  // {
+  //   std::cout << index_read_msg[i] << "/";
+  // }
+  // std::cout << std::endl;
 
   // DY
   // if there is no protocol characters, loop restart
@@ -517,29 +524,6 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
 
   motor_values = msg_str.substr(index_read_msg[2] + 1, (index_read_msg[4] - index_read_msg[2] - 1));
   motor_val = Split(motor_values, delim_);
-
-  
-
-  // show result
-  // static char mcount =0;
-  // if(mcount ==5)
-  // {
-  //   std::cout << " index is : ";
-  //   for (int i = 0; i < 5; i++)
-  //   {
-  //     std::cout << index_read_msg[i] << " ";
-  //   }
-  //   std::cout << "" << std::endl;
-    
-  //   std::cout << "motor values : " << std::endl;
-  //   for (int i = 0; i < motor_val.size(); i++)
-  //   {
-  //     std::cout << motor_val[i] << " / ";
-  //   }
-  //   std::cout << " " << std::endl;
-  //   mcount = 0;
-  // }
-  // mcount++;
 
   return motor_val;
 }
