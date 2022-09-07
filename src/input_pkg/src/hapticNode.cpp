@@ -319,8 +319,9 @@ void HapticNode::CommReadThread(int fd_client)
       hapticMsg.array[5] = 0;
       hapticMsg.array[6] = 0;
 
-      RCLCPP_WARN(get_logger(), "EOF from Client... try to reconnect");
       TCP_life = false;
+      RCLCPP_WARN(get_logger(), "EOF from Client... try to reconnect");
+
     }
 
     std::vector<std::string> motor_val;

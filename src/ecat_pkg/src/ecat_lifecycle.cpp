@@ -1360,6 +1360,12 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
 
 void EthercatLifeCycle::UpdateCyclicVelocityModeParameters() 
 {
+    static const double pi = 3.1415926;
+    static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0};
+    // Sine wave test
+    static double duration[NUM_OF_SLAVES] = {0.0002, 0.0002, 0.0002, 0.0002};
+    static double amplitude[NUM_OF_SLAVES] = {100, 100, 75, 75};
+    
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
@@ -1367,32 +1373,16 @@ void EthercatLifeCycle::UpdateCyclicVelocityModeParameters()
                /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
               /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
             
-            sent_data_.target_vel[0] = target_[0];
-            sent_data_.target_vel[1] = target_[1];
-            sent_data_.target_vel[2] = target_[2];
-            sent_data_.target_vel[3] = target_[3];
-            sent_data_.target_vel[4] = target_[4];
-            sent_data_.target_vel[5] = target_[5];
-            sent_data_.target_vel[6] = target_[6];
+            sent_data_.target_vel[i] = target_[i];
 
-            // Sine wave test
-            static const double pi = 3.1415926;
-            static uint64_t sine_count_read[NUM_OF_SLAVES] = {0};
-            static double duration[NUM_OF_SLAVES] = {0.0002, 0.0002, 0.0002, 0.0002};
-            static double amplitude[NUM_OF_SLAVES] = {100, 100, 75, 75};
-
-            for (int i = 0; i < NUM_OF_SLAVES; i++)
-            {
                 // sent_data_.target_vel[i] = amplitude[i] * sin(pi * ((sine_count_read[i]*duration[i])/180) * );
-                sent_data_.target_vel[i] = amplitude[i] * sin(sine_count_read[i] * duration[i]);
-                sine_count_read[i]++;
-
-                if( ((sine_count_read[i]*duration[i])/180) >= 2*pi ) sine_count_read[i] = 0;
-            }
+            sent_data_.target_vel[i] = amplitude[i] * sin(sine_count[i] * duration[i]);
+            sine_count[i]++;
+            if( ((sine_count[i]*duration[i])/180) >= 2*pi ) sine_count[i] = 0;
             // set zero 0
             // sent_data_.target_vel[0] = 0;
             // sent_data_.target_vel[1] = 0;
-            sent_data_.target_vel[2] = 0;
+            // sent_data_.target_vel[2] = 0;
             // sent_data_.target_vel[3] = 0;
             
         }
