@@ -991,42 +991,18 @@ void EthercatLifeCycle::UpdatePositionModeParameters()
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
     /// KEEP IN MIND THAT YOU WILL HAVE TO WAIT FOR THE MOTION TO FINISH IN POSITION MODE, THEREFORE
     /// YOU HAVE TO CHECK 10th BIT OF STATUS WORD TO CHECK WHETHER TARGET IS REACHED OR NOT.
+
     static uint8_t operation_ready = 0 ;
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         if(motor_state_[i]==kOperationEnabled || 
         motor_state_[i]==kTargetReached || motor_state_[i]==kSwitchedOn){
-            if (controller_.xbox_button_){
-                for(int j = 0 ; j < g_kNumberOfServoDrivers ; j++){
-                    sent_data_.target_pos[j] = 0 ; 
-                    if(!operation_ready){
-                         sent_data_.control_word[j] = SM_RUN ;
-                         if(TEST_BIT(received_data_.status_word[j],10)){
-                            operation_ready = 1; 
-                         }
-                    }else{
-                        sent_data_.control_word[0] = SM_GO_ENABLE;
-                        operation_ready = 0; 
-                    }
-                }
-                break;
-            }
+            int val = 10000;
+
             // Settings for motor 1;
-            if(controller_.red_button_ > 0 ){
-                sent_data_.target_pos[0] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.blue_button_ > 0){
-                sent_data_.target_pos[0] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.green_button_ > 0 ){
-                sent_data_.target_pos[0] = THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.yellow_button_ > 0){
-                sent_data_.target_pos[0] = -THIRTY_DEGREE_CCW ;
-            }
-            
-            if(controller_.red_button_ || controller_.blue_button_ || controller_.green_button_ 
-            || controller_.yellow_button_){
+            sent_data_.target_pos[i] = target_[i];
+
                 sent_data_.control_word[0] = SM_GO_ENABLE;
+
                 if(!operation_ready){
                     sent_data_.control_word[0] = SM_RUN ;
                     if(TEST_BIT(received_data_.status_word[0],10)){
@@ -1036,41 +1012,8 @@ void EthercatLifeCycle::UpdatePositionModeParameters()
                     sent_data_.control_word[0] = SM_GO_ENABLE;
                     operation_ready = 0; 
                 }
-            }
-            // Settings for motor 2 
-            if(controller_.left_r_button_ > 0 ){
-                sent_data_.target_pos[1] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_l_button_ > 0){
-                sent_data_.target_pos[1] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_u_button_ > 0 ){
-                sent_data_.target_pos[1] = -THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.left_d_button_ > 0){
-                sent_data_.target_pos[1] = THIRTY_DEGREE_CCW ;
-            }
-
-            if((controller_.left_r_button_ || controller_.left_l_button_ || controller_.left_u_button_ || controller_.left_d_button_)){
-                sent_data_.control_word[1] = SM_GO_ENABLE;
-            }
-
-            // Settings for motor 3 
-            if(controller_.right_rb_button_ > 0 ){
-                sent_data_.target_pos[2] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_rb_button_ > 0){
-                sent_data_.target_pos[2] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_start_button_ > 0 ){
-                sent_data_.target_pos[2] = THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.right_start_button_ > 0){
-                sent_data_.target_pos[2] = -THIRTY_DEGREE_CCW ;
-            }
-            if((controller_.right_rb_button_ || controller_.left_rb_button_ || controller_.left_start_button_ || controller_.right_start_button_)){
-                sent_data_.control_word[2] = SM_GO_ENABLE;
-            }
+            // }
+            
         }
     }
 }
@@ -1300,6 +1243,7 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
     float amp = 1.0 - deadzone;
     float val;
     static uint8_t operation_ready = 0;
+    
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
         || motor_state_[i]==kSwitchedOn)
@@ -1324,36 +1268,10 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
                 sent_data_.control_word[0] = SM_GO_ENABLE;
                 operation_ready = 0; 
             }
-            //}
 
-            // Settings for motor 2 
-            val = controller_.right_x_axis_;
-            if(val > deadzone) {
-                sent_data_.target_pos[1] = received_data_.actual_pos[1] + (val-deadzone)/amp*THIRTY_DEGREE_CCW/50 ;
-            }
-            else if(val < -deadzone) {
-                sent_data_.target_pos[1] = received_data_.actual_pos[1] + (val+deadzone)/amp*THIRTY_DEGREE_CCW/50 ;
-            }
-            // else {
-            //     sent_data_.target_pos[1] = received_data_.actual_pos[1];
-            // }
-            //if((val > deadzone) || (val < -deadzone)){
-                sent_data_.control_word[1] = SM_GO_ENABLE;
-            //}
 
-            // Settings for motor 3 
-            if(controller_.right_rb_button_ > 0 ){
-                sent_data_.target_pos[2] = received_data_.actual_pos[2] + FIVE_DEGREE_CCW/50/2.0 ;
-            }
-            else if(controller_.left_rb_button_ > 0){
-                sent_data_.target_pos[2] = received_data_.actual_pos[2] - FIVE_DEGREE_CCW/50/2.0 ;
-            }
-            // else {
-            //     sent_data_.target_pos[2] = received_data_.actual_pos[2];
-            // }
-            //if(controller_.right_rb_button_ || controller_.left_rb_button_){
-                sent_data_.control_word[2] = SM_GO_ENABLE;
-            //}
+            sent_data_.control_word[2] = SM_GO_ENABLE;
+
         }
     }
 }
@@ -1361,11 +1279,15 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
 void EthercatLifeCycle::UpdateCyclicVelocityModeParameters() 
 {
     static const double pi = 3.1415926;
-    static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0};
+    static uint64_t sine_count[NUM_OF_SLAVES] = {0};
+
+
     // Sine wave test
-    static double duration[NUM_OF_SLAVES] = {0.0002, 0.0002, 0.0002, 0.0002};
-    static double amplitude[NUM_OF_SLAVES] = {100, 100, 75, 75};
-    
+    // static double duration[NUM_OF_SLAVES] = {0.0002, 0.0002, 0.0002, 0.0002};
+    // static double amplitude[NUM_OF_SLAVES] = {100, 100, 75, 75};
+    static double duration[NUM_OF_SLAVES] = {0.002};
+    static double amplitude[NUM_OF_SLAVES] = {100};
+
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
@@ -1373,16 +1295,20 @@ void EthercatLifeCycle::UpdateCyclicVelocityModeParameters()
                /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
               /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
             
+            // DY - For Real system
             sent_data_.target_vel[i] = target_[i];
 
-                // sent_data_.target_vel[i] = amplitude[i] * sin(pi * ((sine_count_read[i]*duration[i])/180) * );
+            // DY - Sine wave test (each motor)
             sent_data_.target_vel[i] = amplitude[i] * sin(sine_count[i] * duration[i]);
+
             sine_count[i]++;
+
             if( ((sine_count[i]*duration[i])/180) >= 2*pi ) sine_count[i] = 0;
+
             // set zero 0
             // sent_data_.target_vel[0] = 0;
             // sent_data_.target_vel[1] = 0;
-            // sent_data_.target_vel[2] = 0;
+            sent_data_.target_vel[2] = 0;
             // sent_data_.target_vel[3] = 0;
             
         }
