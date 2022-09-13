@@ -1361,10 +1361,10 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
 void EthercatLifeCycle::UpdateCyclicVelocityModeParameters() 
 {
     static const double pi = 3.1415926;
-    static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0};
+    static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0, 0, 0, 0};
     // Sine wave test
-    static double duration[NUM_OF_SLAVES] = {0.0002, 0.0002, 0.0002, 0.0002};
-    static double amplitude[NUM_OF_SLAVES] = {100, 100, 75, 75};
+    static double duration[NUM_OF_SLAVES] = {0.002, 0.002, 0.002, 0.002};
+    static double amplitude[NUM_OF_SLAVES] = {100, 100, 50, 50};
     
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
