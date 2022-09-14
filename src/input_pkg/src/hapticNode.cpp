@@ -34,11 +34,20 @@
 // DY
 #define TCP_BUFFER_SIZE 512
 
+
+// DY
+// For Keyboard input mode
+#define KEYBOARD_INPUT_MODE 0
+
 // DY
 // setting mode : 0-non sine wave / 1-sine wave
 #define VELOCITY_SINEWAVE_MODE 0
 
-static int8_t g_kOperationType = kSlaveType;
+
+
+// static int8_t g_kOperationType = kSlaveType;
+// static int8_t g_kOperationType = kMasterType;
+static int8_t g_kOperationType = kPositionControl;
 
 // DY
 using namespace TCPCommunication;
@@ -130,8 +139,27 @@ void HapticNode::commThread()
 
   RCLCPP_INFO(get_logger(), "Starting Haptic Node");
   
-  RCLCPP_INFO(get_logger(), "TCP server initializing...");
 
+  #if KEYBOARD_INPUT_MODE
+  RCLCPP_INFO(get_logger(), "Keyboard input Mode uploaded");
+  static int input_val[g_kNumberOfServoDrivers] = {0};
+  static int input = 0;
+  while(true)
+  {
+    for(int i=0; i<g_kNumberOfServoDrivers; i++)
+    {
+      std::cout << "input value #" << i << " : ";
+      // std::cin >> input_val[i];
+      // hapticMsg.array[i] = input_val[i];
+      std::cin >> input;
+      hapticMsg.array[i] = input;
+      haptic_publisher_->publish(hapticMsg);
+    }
+  }
+  #endif
+
+
+  RCLCPP_INFO(get_logger(), "TCP server initializing...");
   // create socket (TCP)
   std::cout << std::stoi(m_Port) << std::endl;
   std::cout << m_Port << std::endl;
@@ -152,6 +180,8 @@ void HapticNode::commThread()
   comm_read_thread_ = std::thread(&HapticNode::CommReadThread, this, Server.client_socket_);
   std::cout << "fd : " << Server.client_socket_ << std::endl;
 
+
+
   while (true)
   {
     if(!TCP_life) {
@@ -164,10 +194,9 @@ void HapticNode::commThread()
     }
   }
 
+  Server.server_close();
   // CKim - End communication
   RCLCPP_INFO(get_logger(), "Leaving communication loop!");
-
-  Server.server_close();
   // close(client_socket);
   // close(server_socket);
   usleep(1000);
@@ -319,9 +348,8 @@ void HapticNode::CommReadThread(int fd_client)
       hapticMsg.array[5] = 0;
       hapticMsg.array[6] = 0;
 
-      TCP_life = false;
       RCLCPP_WARN(get_logger(), "EOF from Client... try to reconnect");
-
+      TCP_life = false;
     }
 
     std::vector<std::string> motor_val;
@@ -382,6 +410,15 @@ void HapticNode::CommReadThread(int fd_client)
     // hapticMsg.array[6] = 0;
     }
 
+    if(g_kOperationType == kPositionControl)
+    {
+      for(int i=0; i<g_kNumberOfServoDrivers; i++)
+      {
+        hapticMsg.array[i] = val[i];
+      }
+    }
+
+    haptic_publisher_->publish(hapticMsg);
     usleep(100);
   }
 }
@@ -440,6 +477,8 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
     delim_mode = "speedj";
   if (g_kOperationMode == kCSTorque)
     delim_mode = "torquej";
+  if (g_kOperationMode == kProfilePosition)
+    delim_mode = "speedj";
 
   std::string delim_start = "(";
   std::string delim_substart = "[";
