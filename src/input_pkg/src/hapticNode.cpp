@@ -381,8 +381,6 @@ void HapticNode::CommReadThread(int fd_client)
     // hapticMsg.array[5] = 0;
     // hapticMsg.array[6] = 0;
     }
-
-    usleep(100);
   }
 }
 
