@@ -1376,9 +1376,9 @@ void EthercatLifeCycle::UpdateCyclicVelocityModeParameters()
             sent_data_.target_vel[i] = target_[i];
 
                 // sent_data_.target_vel[i] = amplitude[i] * sin(pi * ((sine_count_read[i]*duration[i])/180) * );
-            sent_data_.target_vel[i] = amplitude[i] * sin(sine_count[i] * duration[i]);
-            sine_count[i]++;
-            if( ((sine_count[i]*duration[i])/180) >= 2*pi ) sine_count[i] = 0;
+//             sent_data_.target_vel[i] = amplitude[i] * sin(sine_count[i] * duration[i]);
+//             sine_count[i]++;
+//             if( ((sine_count[i]*duration[i])/180) >= 2*pi ) sine_count[i] = 0;
             // set zero 0
             // sent_data_.target_vel[0] = 0;
             // sent_data_.target_vel[1] = 0;
