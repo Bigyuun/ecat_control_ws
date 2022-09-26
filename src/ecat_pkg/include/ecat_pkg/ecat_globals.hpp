@@ -57,7 +57,7 @@ static int8_t   g_kOperationMode = kCSTorque ;  // Torque mode - master
 #define MEASURE_TIMING    1    /// If you want to measure timings leave it as one, otherwise make it 0.
 #define DISTRIBUTED_CLOCK 0   /// If you want to use distributed clock make it one, otherwise leave it zero.
 /*****************************************************************************/
-#define GEAR_RATIO          49
+#define GEAR_RATIO          44
 #define ENCODER_RESOLUTION  1024
 #define INC_PER_ROTATION      GEAR_RATIO*ENCODER_RESOLUTION*4
 #define FIVE_DEGREE_CCW      int(INC_PER_ROTATION/72)
