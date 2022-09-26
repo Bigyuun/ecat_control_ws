@@ -129,7 +129,17 @@ void HapticNode::commThread()
   #endif
 
   RCLCPP_INFO(get_logger(), "Starting Haptic Node");
-  
+  for(int i=0; i<NUM_OF_SLAVES; i++)
+  {
+      received_data_[i].actual_pos             =  0;
+      received_data_[i].actual_vel             =  0;
+      // received_data_[i].status_word            =  0;
+      // received_data_[i].left_limit_switch_val  =  0;
+      // received_data_[i].right_limit_switch_val =  0;
+      // received_data_[i].p_emergency_switch_val =  0;
+      // received_data_[i].com_status             =  0;
+  }
+
   RCLCPP_INFO(get_logger(), "TCP server initializing...");
 
   // create socket (TCP)
@@ -282,7 +292,7 @@ void HapticNode::CommWriteThread(int fd_client)
     memcpy(write_msg + sizeof(int)      , &protocol_MIDAS, 50*sizeof(double));
 
     int send_buf_size_ = write(this->file_descriptor_, &write_msg, TCP_BUFFER_SIZE);
-
+    // std::cout << write_msg << std::endl;
     // static char pcount = 0;
     // if(pcount ==5){
     //   std::cout << "[send buf size] : " << send_buf_size_ << "/ [send msg] : " << write_msg << std::endl;
@@ -334,6 +344,7 @@ void HapticNode::CommReadThread(int fd_client)
       // usleep(1000000);
       // count_read++;
       // RCLCPP_INFO(get_logger(), "count = %d", count_read);
+      RCLCPP_WARN(get_logger(), "input error : %s", motor_val[0].c_str());
       continue;
     }
 
@@ -429,7 +440,7 @@ double HapticNode::htond(double &x)
   return y;
 }
 
-std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  int read_msg_size)
+std::vector<std::string> HapticNode::Parsing(char read_msg[],  int read_msg_size)
 {
   std::string msg_str = read_msg;
 
@@ -458,16 +469,16 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
   index_read_msg[3] = msg_str.find(delim_end);
   index_read_msg[4] = msg_str.find(delim_subend);
   
-  // for(int i=0; i<g_kNumberOfServoDrivers; i++)
-  // {
-  //   std::cout << index_read_msg[i] << "/";
-  // }
-  // std::cout << std::endl;
+  for(int i=0; i<5; i++)
+  {
+    std::cout << index_read_msg[i] << "/";
+  }
+  std::cout << std::endl;
 
   // DY
   // if there is no protocol characters, loop restart
   static bool index_err_flag = true;
-  for (int i = 0; i < g_kNumberOfServoDrivers; i++)
+  for (int i = 0; i < 5; i++)
   {
     if (index_read_msg[i] < 0)
     {
@@ -525,7 +536,6 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  in
 
   motor_values = msg_str.substr(index_read_msg[2] + 1, (index_read_msg[4] - index_read_msg[2] - 1));
   motor_val = Split(motor_values, delim_);
-
   return motor_val;
 }
 
@@ -538,6 +548,12 @@ std::vector<std::string> HapticNode::Split(std::string input, char delimiter)
   while(getline(ss, tmp, delimiter)) result.push_back(tmp);
 
   return result;
+}
+
+
+void HapticNode::sigint_handler(int signo)
+{
+
 }
 
 // Haptic Thread 3 end ========================================

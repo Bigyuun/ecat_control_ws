@@ -32,6 +32,7 @@
 // DY - for g_kNumberOfServoDrivers / TCP server
 #include "ecat_globals.hpp"
 #include "TCPcomm.hpp"
+#include <sys/signal.h>
 
 
 // TCP Writing Thread used it
@@ -142,7 +143,7 @@ public:
   // CKim - Keyword 'override' tell compiler that this inherited function must be implemented
   ~HapticNode() override;
 
-  ReceivedData received_data_[g_kNumberOfServoDrivers] = {};
+  ReceivedData received_data_[g_kNumberOfServoDrivers] = {0};
 
 private:
   void commThread();
@@ -151,7 +152,7 @@ private:
   void CommReadThread(int fd_client);            // DY
   void DoubleToIntByte(char *buf, double data);  // DY
   double htond(double &x);                       // DY
-
+  void sigint_handler(int signo);                // DY - for ctrl+c sequence
   //void HandleSlaveFeedbackCallbacks(const ecat_msgs::msg::DataReceived::SharedPtr msg); // DY
   std::vector<std::string> Parsing(char read_msg[], int read_msg_size);
   std::vector<std::string> Split(std::string input, char delimiter);  // DY
