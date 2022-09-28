@@ -34,11 +34,20 @@
 // DY
 #define TCP_BUFFER_SIZE 512
 
+
+// DY
+// For Keyboard input mode
+#define KEYBOARD_INPUT_MODE 0
+
 // DY
 // setting mode : 0-non sine wave / 1-sine wave
 #define VELOCITY_SINEWAVE_MODE 0
 
-static int8_t g_kOperationType = kSlaveType;
+
+
+// static int8_t g_kOperationType = kSlaveType;
+static int8_t g_kOperationType = kMasterType;
+// static int8_t g_kOperationType = kPositionControl;
 
 // DY
 using namespace TCPCommunication;
@@ -129,19 +138,28 @@ void HapticNode::commThread()
   #endif
 
   RCLCPP_INFO(get_logger(), "Starting Haptic Node");
-  for(int i=0; i<NUM_OF_SLAVES; i++)
+  
+
+  #if KEYBOARD_INPUT_MODE
+  RCLCPP_INFO(get_logger(), "Keyboard input Mode uploaded");
+  static int input_val[g_kNumberOfServoDrivers] = {0};
+  static int input = 0;
+  while(true)
   {
-      received_data_[i].actual_pos             =  0;
-      received_data_[i].actual_vel             =  0;
-      // received_data_[i].status_word            =  0;
-      // received_data_[i].left_limit_switch_val  =  0;
-      // received_data_[i].right_limit_switch_val =  0;
-      // received_data_[i].p_emergency_switch_val =  0;
-      // received_data_[i].com_status             =  0;
+    for(int i=0; i<g_kNumberOfServoDrivers; i++)
+    {
+      std::cout << "input value #" << i << " : ";
+      // std::cin >> input_val[i];
+      // hapticMsg.array[i] = input_val[i];
+      std::cin >> input;
+      hapticMsg.array[i] = input;
+      haptic_publisher_->publish(hapticMsg);
+    }
   }
+  #endif
+
 
   RCLCPP_INFO(get_logger(), "TCP server initializing...");
-
   // create socket (TCP)
   std::cout << std::stoi(m_Port) << std::endl;
   std::cout << m_Port << std::endl;
@@ -162,6 +180,8 @@ void HapticNode::commThread()
   comm_read_thread_ = std::thread(&HapticNode::CommReadThread, this, Server.client_socket_);
   std::cout << "fd : " << Server.client_socket_ << std::endl;
 
+
+
   while (true)
   {
     if(!TCP_life) {
@@ -174,10 +194,9 @@ void HapticNode::commThread()
     }
   }
 
+  Server.server_close();
   // CKim - End communication
   RCLCPP_INFO(get_logger(), "Leaving communication loop!");
-
-  Server.server_close();
   // close(client_socket);
   // close(server_socket);
   usleep(1000);
@@ -292,7 +311,7 @@ void HapticNode::CommWriteThread(int fd_client)
     memcpy(write_msg + sizeof(int)      , &protocol_MIDAS, 50*sizeof(double));
 
     int send_buf_size_ = write(this->file_descriptor_, &write_msg, TCP_BUFFER_SIZE);
-    // std::cout << write_msg << std::endl;
+
     // static char pcount = 0;
     // if(pcount ==5){
     //   std::cout << "[send buf size] : " << send_buf_size_ << "/ [send msg] : " << write_msg << std::endl;
@@ -315,9 +334,15 @@ void HapticNode::CommReadThread(int fd_client)
   {
     if(!TCP_life) continue;
 
+    count_read++;
     char msg[TCP_BUFFER_SIZE]={0};
     int read_msg_size_ = read(this->file_descriptor_, msg, TCP_BUFFER_SIZE);
     msg[read_msg_size_] = '\0';
+    if(count_read>100)
+    {
+      count_read=0;
+      std::cout << msg << std::endl;
+    }
 
     if(read_msg_size_ == 0)
     {
@@ -329,31 +354,43 @@ void HapticNode::CommReadThread(int fd_client)
       hapticMsg.array[5] = 0;
       hapticMsg.array[6] = 0;
 
-      TCP_life = false;
       RCLCPP_WARN(get_logger(), "EOF from Client... try to reconnect");
-
+      TCP_life = false;
     }
 
     std::vector<std::string> motor_val;
-    std::cout << read_msg_size_ << "/" << msg << std::endl;
     motor_val = Parsing(msg, read_msg_size_);
 
     // read error
+    // std::cout << "mv 0= " << motor_val[0] << std::endl;
+
     if(motor_val[0] == "IndexError" || motor_val[0] == "DeliError")
     {
+      std::cout << "index err~~~~~" << std::endl;
       // usleep(1000000);
       // count_read++;
       // RCLCPP_INFO(get_logger(), "count = %d", count_read);
-      RCLCPP_WARN(get_logger(), "input error : %s", motor_val[0].c_str());
       continue;
     }
 
+    // std::cout << "pass" << std::endl;
     double val[g_kNumberOfServoDrivers] = {0};
-    for(int i=0; i<g_kNumberOfServoDrivers; i++)
+    for(int i=0; i<7; i++)
     {
       val[i] = std::stod(motor_val[i]);
       std::cout << "val" << i << ":" << (float)val[i] << "  " << std::endl;
+
     }
+
+    // if(count_read >= 100)
+    // {
+    //   std::cout << read_msg_size_ << "/" << msg << std::endl;
+    //   for(int i=0; i<7; i++)
+    //   {
+    //     std::cout << "val" << i << ":" << (float)val[i] << "  " << std::endl;
+    //   }
+    //   count_read = 0;
+    // }
 
     if(g_kOperationType == kSlaveType)
     {
@@ -392,6 +429,16 @@ void HapticNode::CommReadThread(int fd_client)
     // hapticMsg.array[5] = 0;
     // hapticMsg.array[6] = 0;
     }
+
+    if(g_kOperationType == kPositionControl)
+    {
+      for(int i=0; i<g_kNumberOfServoDrivers; i++)
+      {
+        hapticMsg.array[i] = val[i];
+      }
+    }
+
+    haptic_publisher_->publish(hapticMsg);
   }
 }
 
@@ -438,7 +485,7 @@ double HapticNode::htond(double &x)
   return y;
 }
 
-std::vector<std::string> HapticNode::Parsing(char read_msg[],  int read_msg_size)
+std::vector<std::string> HapticNode::Parsing(char read_msg[TCP_BUFFER_SIZE],  int read_msg_size)
 {
   std::string msg_str = read_msg;
 
@@ -449,6 +496,8 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[],  int read_msg_size
     delim_mode = "speedj";
   if (g_kOperationMode == kCSTorque)
     delim_mode = "torquej";
+  if (g_kOperationMode == kProfilePosition)
+    delim_mode = "speedj";
 
   std::string delim_start = "(";
   std::string delim_substart = "[";
@@ -467,11 +516,11 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[],  int read_msg_size
   index_read_msg[3] = msg_str.find(delim_end);
   index_read_msg[4] = msg_str.find(delim_subend);
   
-  for(int i=0; i<5; i++)
-  {
-    std::cout << index_read_msg[i] << "/";
-  }
-  std::cout << std::endl;
+  // for(int i=0; i<g_kNumberOfServoDrivers; i++)
+  // {
+  //   std::cout << index_read_msg[i] << "/";
+  // }
+  // std::cout << std::endl;
 
   // DY
   // if there is no protocol characters, loop restart
@@ -481,10 +530,13 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[],  int read_msg_size
     if (index_read_msg[i] < 0)
     {
       index_err_flag = false;
+      std::cout << "flag=false" << std::endl;
       break;
     }
     else
+    {
       index_err_flag = true;
+    }
   }
 
   if (index_err_flag == false)
@@ -534,6 +586,7 @@ std::vector<std::string> HapticNode::Parsing(char read_msg[],  int read_msg_size
 
   motor_values = msg_str.substr(index_read_msg[2] + 1, (index_read_msg[4] - index_read_msg[2] - 1));
   motor_val = Split(motor_values, delim_);
+
   return motor_val;
 }
 
@@ -546,12 +599,6 @@ std::vector<std::string> HapticNode::Split(std::string input, char delimiter)
   while(getline(ss, tmp, delimiter)) result.push_back(tmp);
 
   return result;
-}
-
-
-void HapticNode::sigint_handler(int signo)
-{
-
 }
 
 // Haptic Thread 3 end ========================================
