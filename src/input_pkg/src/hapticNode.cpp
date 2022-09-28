@@ -338,11 +338,6 @@ void HapticNode::CommReadThread(int fd_client)
     char msg[TCP_BUFFER_SIZE]={0};
     int read_msg_size_ = read(this->file_descriptor_, msg, TCP_BUFFER_SIZE);
     msg[read_msg_size_] = '\0';
-    if(count_read>100)
-    {
-      count_read=0;
-      std::cout << msg << std::endl;
-    }
 
     if(read_msg_size_ == 0)
     {
@@ -378,9 +373,19 @@ void HapticNode::CommReadThread(int fd_client)
     for(int i=0; i<7; i++)
     {
       val[i] = std::stod(motor_val[i]);
-      std::cout << "val" << i << ":" << (float)val[i] << "  " << std::endl;
-
+      // std::cout << "val" << i << ":" << (float)val[i] << "  " << std::endl;
     }
+
+    if(count_read>100)
+    {
+      count_read=0;
+      std::cout << msg << std::endl;
+      for(int i=0; i<7; i++)
+      {
+        std::cout << "val" << i << ":" << (float)val[i] << "  " << std::endl;
+      }
+    }
+
 
     // if(count_read >= 100)
     // {
