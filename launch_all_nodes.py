@@ -23,7 +23,7 @@ def generate_launch_description():
         executable = 'ecat_node',
         name = 'ecat_node',
         output = 'screen',
-        prefix = 'taskset -c 4,5',
+        prefix = 'taskset -c 2,3,4,5',
 		parameters=[{"measure_time": 180}]
     )
 
