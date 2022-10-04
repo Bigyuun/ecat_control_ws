@@ -369,7 +369,7 @@ void HapticNode::CommReadThread(int fd_client)
     }
 
     // std::cout << "pass" << std::endl;
-    double val[g_kNumberOfServoDrivers] = {0};
+    double val[7] = {0};
     for(int i=0; i<7; i++)
     {
       val[i] = std::stod(motor_val[i]);
