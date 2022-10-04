@@ -141,18 +141,22 @@ void HapticNode::commThread()
   
 
   #if KEYBOARD_INPUT_MODE
-  RCLCPP_INFO(get_logger(), "Keyboard input Mode uploaded");
+  RCLCPP_INFO(get_logger(), "Operating Keyboard input Mode");
   static int input_val[g_kNumberOfServoDrivers] = {0};
-  static int input = 0;
+  static int input[2] = {0, 0};
   while(true)
   {
     for(int i=0; i<g_kNumberOfServoDrivers; i++)
     {
-      std::cout << "input value #" << i << " : ";
+      std::cout << "input value #";
+      std::cout << "input Slave(Motor Driver) Num #0 ~ " << g_kNumberOfServoDrivers << " :";
+      std::cin >> input[0];
+      std::cout << "input value : ";
+      std::cin >> input[1];
+
       // std::cin >> input_val[i];
       // hapticMsg.array[i] = input_val[i];
-      std::cin >> input;
-      hapticMsg.array[i] = input;
+      hapticMsg.array[input[0]] = input[1];
       haptic_publisher_->publish(hapticMsg);
     }
   }
