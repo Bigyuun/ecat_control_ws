@@ -1002,8 +1002,8 @@ void EthercatLifeCycle::UpdatePositionModeParameters()
 
                     if(!operation_ready)
                     {
-                         sent_data_.control_word[j] = SM_RUN ;
-                         if(TEST_BIT(received_data_.status_word[j],10))
+                         sent_data_.control_word[0] = SM_RUN ;
+                         if(TEST_BIT(received_data_.status_word[0],10))
                          {
                             operation_ready = 1; 
                          }

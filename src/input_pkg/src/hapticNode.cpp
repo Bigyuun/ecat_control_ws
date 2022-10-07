@@ -143,7 +143,7 @@ void HapticNode::commThread()
   #if KEYBOARD_INPUT_MODE
   RCLCPP_INFO(get_logger(), "Operating Keyboard input Mode");
   static int input_val[g_kNumberOfServoDrivers] = {0};
-  static int input[2] = {0, 0};
+  static int double[2] = {0, 0};
   while(true)
   {
     for(int i=0; i<g_kNumberOfServoDrivers; i++)
