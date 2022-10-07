@@ -994,85 +994,28 @@ void EthercatLifeCycle::UpdatePositionModeParameters()
     static uint8_t operation_ready = 0 ;
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         if(motor_state_[i]==kOperationEnabled || 
-        motor_state_[i]==kTargetReached || motor_state_[i]==kSwitchedOn){
-            if (controller_.xbox_button_){
-                for(int j = 0 ; j < g_kNumberOfServoDrivers ; j++){
-                    sent_data_.target_pos[j] = 0 ; 
-                    if(!operation_ready){
+        motor_state_[i]==kTargetReached || motor_state_[i]==kSwitchedOn)
+        {
+            
+            sent_data_.target_pos[i] = target_[i];
+            sent_data_.control_word[0] = SM_GO_ENABLE;
+
+                    if(!operation_ready)
+                    {
                          sent_data_.control_word[j] = SM_RUN ;
-                         if(TEST_BIT(received_data_.status_word[j],10)){
+                         if(TEST_BIT(received_data_.status_word[j],10))
+                         {
                             operation_ready = 1; 
                          }
-                    }else{
+                    }
+                    else
+                    {
                         sent_data_.control_word[0] = SM_GO_ENABLE;
                         operation_ready = 0; 
                     }
-                }
-                break;
-            }
-            // Settings for motor 1;
-            if(controller_.red_button_ > 0 ){
-                sent_data_.target_pos[0] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.blue_button_ > 0){
-                sent_data_.target_pos[0] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.green_button_ > 0 ){
-                sent_data_.target_pos[0] = THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.yellow_button_ > 0){
-                sent_data_.target_pos[0] = -THIRTY_DEGREE_CCW ;
-            }
-            
-            if(controller_.red_button_ || controller_.blue_button_ || controller_.green_button_ 
-            || controller_.yellow_button_){
-                sent_data_.control_word[0] = SM_GO_ENABLE;
-                if(!operation_ready){
-                    sent_data_.control_word[0] = SM_RUN ;
-                    if(TEST_BIT(received_data_.status_word[0],10)){
-                    operation_ready = 1; 
-                    }
-                }else{
-                    sent_data_.control_word[0] = SM_GO_ENABLE;
-                    operation_ready = 0; 
-                }
-            }
-            // Settings for motor 2 
-            if(controller_.left_r_button_ > 0 ){
-                sent_data_.target_pos[1] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_l_button_ > 0){
-                sent_data_.target_pos[1] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_u_button_ > 0 ){
-                sent_data_.target_pos[1] = -THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.left_d_button_ > 0){
-                sent_data_.target_pos[1] = THIRTY_DEGREE_CCW ;
-            }
-
-            if((controller_.left_r_button_ || controller_.left_l_button_ || controller_.left_u_button_ || controller_.left_d_button_)){
-                sent_data_.control_word[1] = SM_GO_ENABLE;
-            }
-
-            // Settings for motor 3 
-            if(controller_.right_rb_button_ > 0 ){
-                sent_data_.target_pos[2] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_rb_button_ > 0){
-                sent_data_.target_pos[2] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_start_button_ > 0 ){
-                sent_data_.target_pos[2] = THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.right_start_button_ > 0){
-                sent_data_.target_pos[2] = -THIRTY_DEGREE_CCW ;
-            }
-            if((controller_.right_rb_button_ || controller_.left_rb_button_ || controller_.left_start_button_ || controller_.right_start_button_)){
-                sent_data_.control_word[2] = SM_GO_ENABLE;
-            }
         }
-    }
+        // break;
+    }         
 }
 
 void EthercatLifeCycle::UpdateMotorStatePositionMode()
@@ -1472,30 +1415,30 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
         }
     }
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM VARIABLES DECLARATAION HERE
-    for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
-        if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
-            || motor_state_[i]==kSwitchedOn){
-               /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
-              /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
-            if(controller_.right_x_axis_ > 0.1 || controller_.right_x_axis_ < -0.1 ){
-                sent_data_.target_vel[0] = controller_.right_x_axis_ *500 ;
-            }else{
-                sent_data_.target_vel[0] = 0;
-            }
-            if(controller_.left_x_axis_ < -0.1 || controller_.left_x_axis_ > 0.1){
-                sent_data_.target_vel[1] = controller_.left_x_axis_ *500 ;
-            }else{
-                sent_data_.target_vel[1] = 0 ;
-            }
-            if(controller_.left_y_axis_ < -0.1 || controller_.left_y_axis_ > 0.1){
-                sent_data_.target_vel[2] = controller_.left_y_axis_ *500 ;
-            }else{
-                sent_data_.target_vel[2] = 0 ;
-            }
-        }else{
-            sent_data_.target_vel[i]=0;
-        }
-    }
+    // for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
+    //     if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
+    //         || motor_state_[i]==kSwitchedOn){
+    //            /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
+    //           /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
+    //         if(controller_.right_x_axis_ > 0.1 || controller_.right_x_axis_ < -0.1 ){
+    //             sent_data_.target_vel[0] = controller_.right_x_axis_ *500 ;
+    //         }else{
+    //             sent_data_.target_vel[0] = 0;
+    //         }
+    //         if(controller_.left_x_axis_ < -0.1 || controller_.left_x_axis_ > 0.1){
+    //             sent_data_.target_vel[1] = controller_.left_x_axis_ *500 ;
+    //         }else{
+    //             sent_data_.target_vel[1] = 0 ;
+    //         }
+    //         if(controller_.left_y_axis_ < -0.1 || controller_.left_y_axis_ > 0.1){
+    //             sent_data_.target_vel[2] = controller_.left_y_axis_ *500 ;
+    //         }else{
+    //             sent_data_.target_vel[2] = 0 ;
+    //         }
+    //     }else{
+    //         sent_data_.target_vel[i]=0;
+    //     }
+    // }
 
 }
 
