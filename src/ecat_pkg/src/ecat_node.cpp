@@ -79,7 +79,7 @@ int EthercatNode::MapDefaultPdos()
         {OD_POSITION_ACTUAL_VAL, 32},
         {OD_DIGITAL_INPUTS, 32},
         {OD_STATUS_WORD, 16},
-        {OD_VELOCITY_ACTUAL_VALUE,32}
+        {OD_VELOCITY_ACTUAL_VALUE,32},
 
     };
 
@@ -105,7 +105,7 @@ int EthercatNode::MapDefaultPdos()
      * Revision number: 0x01600000
      */
     // CKim - First three entries will be read by slave (master sends command). RxPDO
-    ec_pdo_entry_info_t maxon_epos_pdo_entries[10] = {
+    ec_pdo_entry_info_t maxon_epos_pdo_entries[] = {
         {OD_CONTROL_WORD, 16},      
         {OD_TARGET_VELOCITY,32},
         {OD_TARGET_POSITION, 32},
@@ -116,18 +116,22 @@ int EthercatNode::MapDefaultPdos()
         {OD_POSITION_ACTUAL_VAL, 32},
         {OD_VELOCITY_ACTUAL_VALUE,32},
         {OD_TORQUE_ACTUAL_VALUE,16},
-        {OD_ERROR_CODE,16}
+        {OD_ERROR_CODE,16},
+
+        // DY
+        {OD_ANALOG_INPUT_PROPERTIES_1, 16},
+        {OD_ANALOG_INPUT_PROPERTIES_2, 16},
     };
 
-    ec_pdo_info_t maxon_pdos[2] = {
+    ec_pdo_info_t maxon_pdos[] = {
         {0x1600, 5, maxon_epos_pdo_entries + 0},    // CKim - RxPDO index of the EPOS4
-        {0x1a00, 5, maxon_epos_pdo_entries + 5}     // CKim - TxPDO index of the EPOS4
+        {0x1a00, 7, maxon_epos_pdo_entries + 5}     // CKim - TxPDO index of the EPOS4
     };
 
     // CKim - Sync manager configuration of the EPOS4. 0,1 is reserved for SDO communications
     // EC_WD_ENABLE means that the sync manager of the slave will throw error 
     // if it does not synchronize within certain interval
-    ec_sync_info_t maxon_syncs[5] = {
+    ec_sync_info_t maxon_syncs[] = {
         {0, EC_DIR_OUTPUT, 0, NULL, EC_WD_DISABLE},
         {1, EC_DIR_INPUT, 0, NULL, EC_WD_DISABLE},
         {2, EC_DIR_OUTPUT, 1, maxon_pdos + 0, EC_WD_ENABLE},
@@ -208,12 +212,20 @@ int EthercatNode::MapDefaultPdos()
                                                                                   OD_TARGET_TORQUE,g_master_domain,NULL);                                                                                  
         this->slaves_[i].offset_.control_word     = ecrt_slave_config_reg_pdo_entry(this->slaves_[i].slave_config_,
                                                                                   OD_CONTROL_WORD,g_master_domain,NULL);
-                                                                                  
+        // std::cout << '~~~pdo entry~~~' << std::endl;
+        // DY
+        this->slaves_[i].offset_.analog_input_1    = ecrt_slave_config_reg_pdo_entry(this->slaves_[i].slave_config_,
+                                                                                  OD_ANALOG_INPUT_PROPERTIES_1,g_master_domain,NULL);
+        this->slaves_[i].offset_.analog_input_2    = ecrt_slave_config_reg_pdo_entry(this->slaves_[i].slave_config_,
+                                                                                  OD_ANALOG_INPUT_PROPERTIES_2,g_master_domain,NULL);
+
+        std::cout << 'nana' << std::endl;
+
         if(
             (slaves_[i].offset_.actual_pos < 0) || (slaves_[i].offset_.status_word < 0) || (slaves_[i].offset_.actual_vel    < 0)
         ||  (slaves_[i].offset_.target_vel < 0) || (slaves_[i].offset_.target_pos  < 0) || (slaves_[i].offset_.control_word  < 0) 
         ||  (slaves_[i].offset_.target_tor < 0) || (slaves_[i].offset_.actual_tor  < 0) || (slaves_[i].offset_.torque_offset < 0)
-        ||  (slaves_[i].offset_.error_code < 0)
+        ||  (slaves_[i].offset_.error_code < 0) || (slaves_[i].offset_.analog_input_1 < 0) || (slaves_[i].offset_.analog_input_2 < 0)
         )
         {
             RCLCPP_ERROR(rclcpp::get_logger(__PRETTY_FUNCTION__), "Failed to configure  PDOs for motors.!");
@@ -1013,6 +1025,39 @@ int16_t EthercatNode::WriteTargetTorqueViaSDO(int index,uint16_t target_tor)
     }
     return 0;
 }
+
+int16_t EthercatNode::ReadAnalogInput1ViaSDO(int index)
+{
+    SDO_data pack ; 
+    int16_t analog_input_1;  
+    pack.slave_position = index;
+    pack.index = OD_ANALOG_INPUT_PROPERTIES_1 ; 
+    pack.sub_index = 0 ;
+    pack.data_sz = sizeof(int16_t);
+    if(SdoRead(pack)){
+       std::cout << "Error while reading Analog Input #1 " << std::endl;
+        return -1; 
+    }
+    analog_input_1 = (int16_t)(pack.data);
+    return analog_input_1 ; 
+}
+int16_t EthercatNode::ReadAnalogInput2ViaSDO(int index)
+{
+    SDO_data pack ; 
+    int16_t analog_input_2;  
+    pack.slave_position = index;
+    pack.index = OD_ANALOG_INPUT_PROPERTIES_2 ; 
+    pack.sub_index = 0 ;
+    pack.data_sz = sizeof(int16_t);
+    if(SdoRead(pack)){
+       std::cout << "Error while reading Analog Input #1 " << std::endl;
+        return -1; 
+    }
+    analog_input_2 = (int16_t)(pack.data);
+    return analog_input_2 ; 
+}
+
+
 
 int EthercatNode::MapDefaultSdos()
 {

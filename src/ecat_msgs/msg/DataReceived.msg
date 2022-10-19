@@ -16,3 +16,6 @@ uint8  emergency_switch_val
 uint32  period_ns
 uint32  jitter_ns
 uint32  exec_ns
+
+# DY
+uint16[] analog_input

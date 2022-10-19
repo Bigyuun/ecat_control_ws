@@ -182,6 +182,9 @@
 #define OD_QUICK_STOP_MODE             0x605A,0x00
 #define OD_STOP_OPTION_CODE            0x605D,0x00
 
+#define OD_ANALOG_INPUT_PROPERTIES_1   0x3160,0x01
+#define OD_ANALOG_INPUT_PROPERTIES_2   0x3160,0x02
+
 /*****************************************************************/
 // CIA 402 State machine definitions start. 
 

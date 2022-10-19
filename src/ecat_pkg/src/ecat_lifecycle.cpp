@@ -13,6 +13,9 @@ rclcpp::NodeOptions().use_intra_process_comms(true))
     received_data_.error_code.resize(g_kNumberOfServoDrivers);
     received_data_.op_mode_display.resize(g_kNumberOfServoDrivers);
     received_data_.slave_com_status.resize(g_kNumberOfServoDrivers);
+    received_data_.analog_input_1.resize(g_kNumberOfServoDrivers);
+    received_data_.analog_input_2.resize(g_kNumberOfServoDrivers);
+
     sent_data_.control_word.resize(g_kNumberOfServoDrivers);
     sent_data_.target_pos.resize(g_kNumberOfServoDrivers);
     sent_data_.target_vel.resize(g_kNumberOfServoDrivers);
@@ -350,6 +353,11 @@ void EthercatLifeCycle::HandleGuiNodeCallbacks(const ecat_msgs::msg::GuiButtonDa
             received_data_.com_status = 0x02;
             received_data_.status_word[i] = ecat_node_->ReadStatusWordViaSDO(i);
             received_data_.op_mode_display[i] = ecat_node_->ReadOpModeViaSDO(i);
+            
+            //DY
+            received_data_.analog_input_1[i] = ecat_node_ ->ReadAnalogInput1ViaSDO(i);
+            received_data_.analog_input_2[i] = ecat_node_ ->ReadAnalogInput2ViaSDO(i);
+
             if(g_kOperationMode==kProfilePosition || g_kOperationMode==kCSPosition){
                 sent_data_.target_pos[i] = gui_buttons_status_.spn_target_values[i];
                 sent_data_.target_vel[i] = received_data_.actual_vel[i] ;
@@ -935,6 +943,10 @@ void EthercatLifeCycle::ReadFromSlaves()
         received_data_.status_word[i] = EC_READ_U16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.status_word);
         received_data_.actual_tor[i]  = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.actual_tor);
         received_data_.error_code[i]  = EC_READ_U16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.error_code);
+        
+        // DY
+        received_data_.analog_input_1[i] = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.analog_input_1);
+        received_data_.analog_input_2[i] = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.analog_input_2);
     }
     received_data_.com_status = al_state_ ; 
     #if CUSTOM_SLAVE
@@ -1304,10 +1316,10 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
 void EthercatLifeCycle::UpdateCyclicVelocityModeParameters() 
 {
     static const double pi = 3.1415926;
-    static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0, 0, 0, 0};
+    // static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0, 0, 0, 0};
     // Sine wave test
-    static double duration[NUM_OF_SLAVES] = {0.002, 0.002, 0.002, 0.002};
-    static double amplitude[NUM_OF_SLAVES] = {100, 100, 50, 50};
+    // static double duration[NUM_OF_SLAVES] = {0.002, 0.002, 0.002, 0.002};
+    // static double amplitude[NUM_OF_SLAVES] = {100, 100, 50, 50};
     
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
@@ -1403,13 +1415,8 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
                /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
               /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
             
-            sent_data_.target_vel[0] = target_[0];
-            sent_data_.target_vel[1] = target_[1];
-            sent_data_.target_vel[2] = target_[2];
-            sent_data_.target_vel[3] = target_[3];
-            sent_data_.target_vel[4] = target_[4];
-            sent_data_.target_vel[5] = target_[5];
-            sent_data_.target_vel[6] = target_[6];
+            sent_data_.target_vel[i] = target_[i];
+
             }else{
             sent_data_.target_vel[i]=0;
         }

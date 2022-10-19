@@ -21,9 +21,9 @@ def generate_launch_description():
     pd_node = launch_ros.actions.LifecycleNode(
         package = 'ecat_pkg',
         executable = 'ecat_node',
-        name = 'ecat_node',
+        name = 'ecat_node', 
         output = 'screen',
-        prefix = 'taskset -c 2,3,4,5',
+        prefix = 'taskset -c 4,5',
 		parameters=[{"measure_time": 180}]
     )
 

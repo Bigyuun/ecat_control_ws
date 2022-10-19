@@ -107,6 +107,10 @@ void HapticNode::HandleSlaveFeedbackCallbacks(const ecat_msgs::msg::DataReceived
         received_data_[i].right_limit_switch_val =  msg->right_limit_switch_val;
         received_data_[i].p_emergency_switch_val =  msg->emergency_switch_val;
         received_data_[i].com_status             =  msg->com_status;
+
+        // DY analog
+        received_data_[i].analog_input_1         =  msg->analog_input_1[i];
+        received_data_[i].analog_input_2         =  msg->analog_input_2[i];
     }  
   }
 
@@ -142,23 +146,21 @@ void HapticNode::commThread()
 
   #if KEYBOARD_INPUT_MODE
   RCLCPP_INFO(get_logger(), "Operating Keyboard input Mode");
-  static int input_val[g_kNumberOfServoDrivers] = {0};
-  static int double[2] = {0, 0};
-  while(true)
+  // static int input = 0;
+  // static double input_val = 0;
+  int input = 0;
+  double input_val = 0;
+  while(1)
   {
-    for(int i=0; i<g_kNumberOfServoDrivers; i++)
-    {
-      std::cout << "input value #";
       std::cout << "input Slave(Motor Driver) Num #0 ~ " << g_kNumberOfServoDrivers << " :";
-      std::cin >> input[0];
+      std::cin >> input;
       std::cout << "input value : ";
-      std::cin >> input[1];
+      std::cin >> input_val;
 
       // std::cin >> input_val[i];
       // hapticMsg.array[i] = input_val[i];
-      hapticMsg.array[input[0]] = input[1];
+      hapticMsg.array[input] = input_val;
       haptic_publisher_->publish(hapticMsg);
-    }
   }
   #endif
 
@@ -231,6 +233,9 @@ void HapticNode::CommWriteThread(int fd_client)
     double actual_qd[7] = {0};
     double protocol_MIDAS[50] = {0};
 
+    // analog input
+    int AIN_1 = 0;
+    int AIN_2 = 0;
 
     // -------------------------------------
     // Saving each data for making the protocol
