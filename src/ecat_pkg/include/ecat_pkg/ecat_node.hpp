@@ -381,6 +381,15 @@ namespace EthercatCommunication
      * @return 0 if successfull, otherwise -1.
      */
         int16_t WriteTargetTorqueViaSDO(int index,uint16_t target_tor);
+
+    /**
+     * // DY
+     */ 
+        int16_t ReadAnalogInput1ViaSDO(int index);
+        int16_t ReadAnalogInput2ViaSDO(int index);
+        int16_t ReadAnalogOutput1ViaSDO(int index);
+        int16_t ReadAnalogOutput2ViaSDO(int index);
+
     /**
      * @brief Enable CiA402 supported motor drives in specified index via SDO.
      * 

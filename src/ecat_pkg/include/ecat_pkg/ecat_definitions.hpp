@@ -254,6 +254,12 @@ typedef struct
     uint32_t error_code ;
     uint32_t extra_status_reg ;
 
+    // DY
+    uint32_t analog_input_1;
+    uint32_t analog_input_2;
+    uint32_t analog_output_1;
+    uint32_t analog_output_2;
+
     uint32_t r_limit_switch;
     uint32_t l_limit_switch;
     uint32_t emergency_switch;
@@ -288,6 +294,9 @@ typedef struct
     int32_t  right_x_axis;
     int32_t  left_x_axis;
     uint8_t  com_status;
+    int16_t  analog_input_1;
+    int16_t  analog_input_2;
+    
 }ReceivedData;
 
 /// CKim - SDO_data Structure holding all data needed to send/receive an SDO object.

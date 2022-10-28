@@ -13,6 +13,13 @@ rclcpp::NodeOptions().use_intra_process_comms(true))
     received_data_.error_code.resize(g_kNumberOfServoDrivers);
     received_data_.op_mode_display.resize(g_kNumberOfServoDrivers);
     received_data_.slave_com_status.resize(g_kNumberOfServoDrivers);
+
+    // DY
+    received_data_.analog_input_1.resize(g_kNumberOfServoDrivers);
+    received_data_.analog_input_2.resize(g_kNumberOfServoDrivers);
+    received_data_.analog_output_1.resize(g_kNumberOfServoDrivers);
+    received_data_.analog_output_2.resize(g_kNumberOfServoDrivers);
+
     sent_data_.control_word.resize(g_kNumberOfServoDrivers);
     sent_data_.target_pos.resize(g_kNumberOfServoDrivers);
     sent_data_.target_vel.resize(g_kNumberOfServoDrivers);
@@ -350,6 +357,13 @@ void EthercatLifeCycle::HandleGuiNodeCallbacks(const ecat_msgs::msg::GuiButtonDa
             received_data_.com_status = 0x02;
             received_data_.status_word[i] = ecat_node_->ReadStatusWordViaSDO(i);
             received_data_.op_mode_display[i] = ecat_node_->ReadOpModeViaSDO(i);
+            
+            //DY
+            received_data_.analog_input_1[i] = ecat_node_ ->ReadAnalogInput1ViaSDO(i);
+            received_data_.analog_input_2[i] = ecat_node_ ->ReadAnalogInput2ViaSDO(i);
+            // received_data_.analog_output_1[i] = ecat_node_ ->ReadAnalogOutput1ViaSDO(i);
+            // received_data_.analog_output_2[i] = ecat_node_ ->ReadAnalogOutput2ViaSDO(i);
+
             if(g_kOperationMode==kProfilePosition || g_kOperationMode==kCSPosition){
                 sent_data_.target_pos[i] = gui_buttons_status_.spn_target_values[i];
                 sent_data_.target_vel[i] = received_data_.actual_vel[i] ;
@@ -935,6 +949,13 @@ void EthercatLifeCycle::ReadFromSlaves()
         received_data_.status_word[i] = EC_READ_U16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.status_word);
         received_data_.actual_tor[i]  = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.actual_tor);
         received_data_.error_code[i]  = EC_READ_U16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.error_code);
+        
+        // DY
+        received_data_.analog_input_1[i] = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.analog_input_1);
+        received_data_.analog_input_2[i] = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.analog_input_2);
+        // received_data_.analog_output_1[i] = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.analog_output_1);
+        // received_data_.analog_output_2[i] = EC_READ_S16(ecat_node_->slaves_[i].slave_pdo_domain_ + ecat_node_->slaves_[i].offset_.analog_output_2);
+
     }
     received_data_.com_status = al_state_ ; 
     #if CUSTOM_SLAVE
@@ -994,85 +1015,28 @@ void EthercatLifeCycle::UpdatePositionModeParameters()
     static uint8_t operation_ready = 0 ;
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
         if(motor_state_[i]==kOperationEnabled || 
-        motor_state_[i]==kTargetReached || motor_state_[i]==kSwitchedOn){
-            if (controller_.xbox_button_){
-                for(int j = 0 ; j < g_kNumberOfServoDrivers ; j++){
-                    sent_data_.target_pos[j] = 0 ; 
-                    if(!operation_ready){
-                         sent_data_.control_word[j] = SM_RUN ;
-                         if(TEST_BIT(received_data_.status_word[j],10)){
+        motor_state_[i]==kTargetReached || motor_state_[i]==kSwitchedOn)
+        {
+            
+            sent_data_.target_pos[i] = target_[i];
+            sent_data_.control_word[0] = SM_GO_ENABLE;
+
+                    if(!operation_ready)
+                    {
+                         sent_data_.control_word[0] = SM_RUN ;
+                         if(TEST_BIT(received_data_.status_word[0],10))
+                         {
                             operation_ready = 1; 
                          }
-                    }else{
+                    }
+                    else
+                    {
                         sent_data_.control_word[0] = SM_GO_ENABLE;
                         operation_ready = 0; 
                     }
-                }
-                break;
-            }
-            // Settings for motor 1;
-            if(controller_.red_button_ > 0 ){
-                sent_data_.target_pos[0] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.blue_button_ > 0){
-                sent_data_.target_pos[0] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.green_button_ > 0 ){
-                sent_data_.target_pos[0] = THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.yellow_button_ > 0){
-                sent_data_.target_pos[0] = -THIRTY_DEGREE_CCW ;
-            }
-            
-            if(controller_.red_button_ || controller_.blue_button_ || controller_.green_button_ 
-            || controller_.yellow_button_){
-                sent_data_.control_word[0] = SM_GO_ENABLE;
-                if(!operation_ready){
-                    sent_data_.control_word[0] = SM_RUN ;
-                    if(TEST_BIT(received_data_.status_word[0],10)){
-                    operation_ready = 1; 
-                    }
-                }else{
-                    sent_data_.control_word[0] = SM_GO_ENABLE;
-                    operation_ready = 0; 
-                }
-            }
-            // Settings for motor 2 
-            if(controller_.left_r_button_ > 0 ){
-                sent_data_.target_pos[1] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_l_button_ > 0){
-                sent_data_.target_pos[1] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_u_button_ > 0 ){
-                sent_data_.target_pos[1] = -THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.left_d_button_ > 0){
-                sent_data_.target_pos[1] = THIRTY_DEGREE_CCW ;
-            }
-
-            if((controller_.left_r_button_ || controller_.left_l_button_ || controller_.left_u_button_ || controller_.left_d_button_)){
-                sent_data_.control_word[1] = SM_GO_ENABLE;
-            }
-
-            // Settings for motor 3 
-            if(controller_.right_rb_button_ > 0 ){
-                sent_data_.target_pos[2] = -FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_rb_button_ > 0){
-                sent_data_.target_pos[2] = FIVE_DEGREE_CCW ;
-            }
-            if(controller_.left_start_button_ > 0 ){
-                sent_data_.target_pos[2] = THIRTY_DEGREE_CCW ;
-            }
-            if(controller_.right_start_button_ > 0){
-                sent_data_.target_pos[2] = -THIRTY_DEGREE_CCW ;
-            }
-            if((controller_.right_rb_button_ || controller_.left_rb_button_ || controller_.left_start_button_ || controller_.right_start_button_)){
-                sent_data_.control_word[2] = SM_GO_ENABLE;
-            }
         }
-    }
+        // break;
+    }         
 }
 
 void EthercatLifeCycle::UpdateMotorStatePositionMode()
@@ -1361,10 +1325,10 @@ void EthercatLifeCycle::UpdateCyclicPositionModeParameters()
 void EthercatLifeCycle::UpdateCyclicVelocityModeParameters() 
 {
     static const double pi = 3.1415926;
-    static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0, 0, 0, 0};
+    // static volatile uint64_t sine_count[NUM_OF_SLAVES] = {0, 0, 0, 0};
     // Sine wave test
-    static double duration[NUM_OF_SLAVES] = {0.002, 0.002, 0.002, 0.002};
-    static double amplitude[NUM_OF_SLAVES] = {100, 100, 50, 50};
+    // static double duration[NUM_OF_SLAVES] = {0.002, 0.002, 0.002, 0.002};
+    // static double amplitude[NUM_OF_SLAVES] = {100, 100, 50, 50};
     
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM, VARIABLES DECLARATAION HERE, LIKE IN EXAMPLE BELOW.
     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
@@ -1460,42 +1424,37 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
                /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
               /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
             
-            sent_data_.target_vel[0] = target_[0];
-            sent_data_.target_vel[1] = target_[1];
-            sent_data_.target_vel[2] = target_[2];
-            sent_data_.target_vel[3] = target_[3];
-            sent_data_.target_vel[4] = target_[4];
-            sent_data_.target_vel[5] = target_[5];
-            sent_data_.target_vel[6] = target_[6];
+            sent_data_.target_vel[i] = target_[i];
+
             }else{
             sent_data_.target_vel[i]=0;
         }
     }
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM VARIABLES DECLARATAION HERE
-    for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
-        if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
-            || motor_state_[i]==kSwitchedOn){
-               /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
-              /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
-            if(controller_.right_x_axis_ > 0.1 || controller_.right_x_axis_ < -0.1 ){
-                sent_data_.target_vel[0] = controller_.right_x_axis_ *500 ;
-            }else{
-                sent_data_.target_vel[0] = 0;
-            }
-            if(controller_.left_x_axis_ < -0.1 || controller_.left_x_axis_ > 0.1){
-                sent_data_.target_vel[1] = controller_.left_x_axis_ *500 ;
-            }else{
-                sent_data_.target_vel[1] = 0 ;
-            }
-            if(controller_.left_y_axis_ < -0.1 || controller_.left_y_axis_ > 0.1){
-                sent_data_.target_vel[2] = controller_.left_y_axis_ *500 ;
-            }else{
-                sent_data_.target_vel[2] = 0 ;
-            }
-        }else{
-            sent_data_.target_vel[i]=0;
-        }
-    }
+    // for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
+    //     if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
+    //         || motor_state_[i]==kSwitchedOn){
+    //            /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
+    //           /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
+    //         if(controller_.right_x_axis_ > 0.1 || controller_.right_x_axis_ < -0.1 ){
+    //             sent_data_.target_vel[0] = controller_.right_x_axis_ *500 ;
+    //         }else{
+    //             sent_data_.target_vel[0] = 0;
+    //         }
+    //         if(controller_.left_x_axis_ < -0.1 || controller_.left_x_axis_ > 0.1){
+    //             sent_data_.target_vel[1] = controller_.left_x_axis_ *500 ;
+    //         }else{
+    //             sent_data_.target_vel[1] = 0 ;
+    //         }
+    //         if(controller_.left_y_axis_ < -0.1 || controller_.left_y_axis_ > 0.1){
+    //             sent_data_.target_vel[2] = controller_.left_y_axis_ *500 ;
+    //         }else{
+    //             sent_data_.target_vel[2] = 0 ;
+    //         }
+    //     }else{
+    //         sent_data_.target_vel[i]=0;
+    //     }
+    // }
 
 }
 
