@@ -1431,7 +1431,6 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
         }
     }
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM VARIABLES DECLARATAION HERE
-<<<<<<< HEAD
     // for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
     //     if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
     //         || motor_state_[i]==kSwitchedOn){
@@ -1456,7 +1455,6 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
     //         sent_data_.target_vel[i]=0;
     //     }
     // }
-=======
 //     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
 //         if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
 //             || motor_state_[i]==kSwitchedOn){
@@ -1481,8 +1479,6 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
 //             sent_data_.target_vel[i]=0;
 //         }
 //     }
->>>>>>> 45dddc39dd34ecfab1c0cb56a9b40f4e97d17a53
-
 }
 
 void EthercatLifeCycle::UpdateMotorStateVelocityMode()
