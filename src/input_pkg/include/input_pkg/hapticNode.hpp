@@ -123,11 +123,7 @@ typedef enum
 {
     kMasterType = 1,
     kSlaveType = 2,
-<<<<<<< HEAD
     kPositionControl =3,
-=======
-    kPositionControl = 3,
->>>>>>> 45dddc39dd34ecfab1c0cb56a9b40f4e97d17a53
 } OpType ;
 
 
