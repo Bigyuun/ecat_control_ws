@@ -1431,6 +1431,7 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
         }
     }
     /// WRITE YOUR CUSTOM CONTROL ALGORITHM VARIABLES DECLARATAION HERE
+<<<<<<< HEAD
     // for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
     //     if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
     //         || motor_state_[i]==kSwitchedOn){
@@ -1455,6 +1456,32 @@ void EthercatLifeCycle::UpdateVelocityModeParameters()
     //         sent_data_.target_vel[i]=0;
     //     }
     // }
+=======
+//     for(int i = 0 ; i < g_kNumberOfServoDrivers ; i++){
+//         if(motor_state_[i]==kOperationEnabled || motor_state_[i]==kTargetReached 
+//             || motor_state_[i]==kSwitchedOn){
+//                /// WRITE YOUR CUSTOM CONTROL ALGORITHM HERE IF YOU WANT TO USE VELOCITY MODE
+//               /// YOU CAN CHECK  EXAMPLE CONTROL CODE BELOW.
+//             if(controller_.right_x_axis_ > 0.1 || controller_.right_x_axis_ < -0.1 ){
+//                 sent_data_.target_vel[0] = controller_.right_x_axis_ *500 ;
+//             }else{
+//                 sent_data_.target_vel[0] = 0;
+//             }
+//             if(controller_.left_x_axis_ < -0.1 || controller_.left_x_axis_ > 0.1){
+//                 sent_data_.target_vel[1] = controller_.left_x_axis_ *500 ;
+//             }else{
+//                 sent_data_.target_vel[1] = 0 ;
+//             }
+//             if(controller_.left_y_axis_ < -0.1 || controller_.left_y_axis_ > 0.1){
+//                 sent_data_.target_vel[2] = controller_.left_y_axis_ *500 ;
+//             }else{
+//                 sent_data_.target_vel[2] = 0 ;
+//             }
+//         }else{
+//             sent_data_.target_vel[i]=0;
+//         }
+//     }
+>>>>>>> 45dddc39dd34ecfab1c0cb56a9b40f4e97d17a53
 
 }
 
