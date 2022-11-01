@@ -17,8 +17,8 @@ rclcpp::NodeOptions().use_intra_process_comms(true))
     // DY
     received_data_.analog_input_1.resize(g_kNumberOfServoDrivers);
     received_data_.analog_input_2.resize(g_kNumberOfServoDrivers);
-    received_data_.analog_output_1.resize(g_kNumberOfServoDrivers);
-    received_data_.analog_output_2.resize(g_kNumberOfServoDrivers);
+    // received_data_.analog_output_1.resize(g_kNumberOfServoDrivers);
+    // received_data_.analog_output_2.resize(g_kNumberOfServoDrivers);
 
     sent_data_.control_word.resize(g_kNumberOfServoDrivers);
     sent_data_.target_pos.resize(g_kNumberOfServoDrivers);
