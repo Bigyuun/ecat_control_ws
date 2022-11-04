@@ -231,7 +231,8 @@ void HapticNode::CommWriteThread(int fd_client)
     double target_moment[7] = {0};
     double actual_q[7] = {0};
     double actual_qd[7] = {0};
-    double protocol_MIDAS[50] = {0};
+    double analog_input = 0;
+    double protocol_MIDAS[51] = {0};
 
     // analog input
     int AIN_1 = 0;
@@ -259,6 +260,8 @@ void HapticNode::CommWriteThread(int fd_client)
       actual_qd[4] = received_data_[4].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_5;
       actual_qd[5] = received_data_[5].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_6;
       actual_qd[6] = received_data_[6].actual_vel* RATIO_CONVERSION_VELOCITY_SLAVE_7;
+
+      analog_input = received_data_[6].analog_input_1;
     }
     
     
@@ -280,6 +283,8 @@ void HapticNode::CommWriteThread(int fd_client)
       actual_qd[4] = received_data_[4].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_5;
       actual_qd[5] = received_data_[5].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_6;
       actual_qd[6] = received_data_[6].actual_vel * RATIO_CONVERSION_VELOCITY_MASTER_7;
+
+      analog_input = received_data_[6].analog_input_1;
     }
 
 
@@ -304,20 +309,21 @@ void HapticNode::CommWriteThread(int fd_client)
     {
       protocol_MIDAS[i+36] = actual_q[i];
       protocol_MIDAS[i+43] = actual_qd[i];
+      protocol_MIDAS[50] = analog_input;
     }
 
     // DY
     // ** Caution : "htonl & htond" are functions for changing "Big endian & Little endian"
     // Each OS (even if CPU) define the type of endian which their own
     buf_size = htonl(buf_size);
-    for(int i=0; i<50; i++)
+    for(int i=0; i<51; i++)
     {
       protocol_MIDAS[i] = htond(protocol_MIDAS[i]);
     }
     
     char write_msg[TCP_BUFFER_SIZE] = {};
     memcpy(write_msg                    , &buf_size, sizeof(int));
-    memcpy(write_msg + sizeof(int)      , &protocol_MIDAS, 50*sizeof(double));
+    memcpy(write_msg + sizeof(int)      , &protocol_MIDAS, 51*sizeof(double));
 
     int send_buf_size_ = write(this->file_descriptor_, &write_msg, TCP_BUFFER_SIZE);
 

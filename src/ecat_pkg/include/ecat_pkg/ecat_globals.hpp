@@ -54,7 +54,7 @@ static int8_t   g_kOperationMode = kCSTorque ;  // Torque mode - master
 /// Set this to 1 if you have custom EtherCAT slave other than servo drive.
 /// @note  That if you have different custom slave than EasyCAT you have to modify PDO mapping by yourself.
 #define CUSTOM_SLAVE      0  
-#define FREQUENCY       250  /// Ethercat PDO exchange loop frequency in Hz
+#define FREQUENCY       200  /// Ethercat PDO exchange loop frequency in Hz
 #define MEASURE_TIMING    0    /// If you want to measure timings leave it as one, otherwise make it 0.
 #define DISTRIBUTED_CLOCK 0   /// If you want to use distributed clock make it one, otherwise leave it zero.
 /*****************************************************************************/
